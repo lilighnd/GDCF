@@ -13,7 +13,7 @@ class CoreGrids:
         
     def Find_CoreGrids(self):
         dists=distances(self)
-        np.savetxt("distanceblobs.csv", 
+        np.savetxt("/content/drive/MyDrive/Colab Notebooks/distanceblobs.csv", 
            dists,
            delimiter =",", 
            fmt ='% s')
@@ -55,11 +55,11 @@ class CoreGrids:
 
 
 
-        np.savetxt("CoreGrids.csv", 
+        np.savetxt("/content/drive/MyDrive/Colab Notebooks/CoreGrids.csv", 
            Core_Grids,
            delimiter =",", 
            fmt ='% s')
-        np.savetxt("CoreObjects.csv", 
+        np.savetxt("/content/drive/MyDrive/Colab Notebooks/CoreObjects.csv", 
            Core_Objects,
            delimiter =",", 
            fmt ='% s')
