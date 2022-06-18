@@ -63,22 +63,22 @@ blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2,
 #--------------------------------------------------------------------------------------------------
 
 #start_time = time.time()
-m=DataSet.d1()
-True_label=m[1]
-m=m[0].Data
+#m=DataSet.d1()
+#True_label=m[1]
+#m=m[0].Data
 
 m=DataSet.Test30()
 True_label=m[1]
 m=m[0].Data
 
-path = f'..\\GDCFalg\\blobsData.csv'
-df = pd.read_csv(path)
-blobs = df.values.tolist()
-m=blobs
+#path = f'..\\GDCFalg\\blobsData.csv'
+#df = pd.read_csv(path)
+#blobs = df.values.tolist()
+#m=blobs
 
-path = f'..\\GDCFalg\\blobsDataLabels.csv'
-df = pd.read_csv(path)
-True_label = df.values.tolist()
+#path = f'..\\GDCFalg\\blobsDataLabels.csv'
+#df = pd.read_csv(path)
+#True_label = df.values.tolist()
 
 
 Data=[[] for i in range(len(m[0]))]
