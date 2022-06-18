@@ -12,15 +12,15 @@ class CoreGrids:
         self.MinPts=Minpoints
         
     def Find_CoreGrids(self):
-        #dists=distances(self)
-        #np.savetxt("distanceblobs.csv", 
-        #   dists,
-        #   delimiter =",", 
-        #   fmt ='% s')
+        dists=distances(self)
+        np.savetxt("distanceblobs.csv", 
+           dists,
+           delimiter =",", 
+           fmt ='% s')
 
-        path = f'..\\GDCFalg\\distanceblobs.csv'
-        df = pd.read_csv(path)
-        dists = df.values.tolist()
+        #path = f'..\\GDCFalg\\distanceblobs.csv'
+        #df = pd.read_csv(path)
+        #dists = df.values.tolist()
 
         Core_Grids = []
         Core_Objects = []
@@ -67,6 +67,7 @@ class CoreGrids:
 
 def distances(self):
     dist=np.zeros((len(self.Data[0]),len(self.Data[0])))
+    dist[0][0]=0
     for i in range(len(self.Data[0])):
         for j in range(len(self.Data[0])):
             if j>i:
