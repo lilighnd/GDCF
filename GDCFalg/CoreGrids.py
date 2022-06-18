@@ -35,9 +35,9 @@ class CoreGrids:
         for i in range(len(dists)):
             count=0
             for j in range(len(dists[0])):
-                if dists[i][j]<=self.Eps:
+                if dists[i][j] <= self.Eps:
                     count+=1
-            if count>=self.MinPts:
+            if count >= self.MinPts:
                 Core_Objects.append(i)
 
         #Core Grids
