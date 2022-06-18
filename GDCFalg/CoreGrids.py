@@ -12,12 +12,12 @@ class CoreGrids:
         self.MinPts=Minpoints
         
     def Find_CoreGrids(self):
-        dists=distances(self)
-        np.savetxt("/content/drive/MyDrive/Colab Notebooks/distanceblobs.csv", 
-           dists,
-           delimiter =",", 
-           fmt ='% s')
-
+        #dists=distances(self)
+        #np.savetxt("/content/drive/MyDrive/Colab Notebooks/distanceblobs.csv", 
+        #   dists,
+        #   delimiter =",", 
+        #   fmt ='% s')
+        '/content/drive/MyDrive/Colab Notebooks/CoreGrids.csv'
         #path = f'..\\GDCFalg\\distanceblobs.csv'
         #df = pd.read_csv(path)
         #dists = df.values.tolist()
@@ -55,14 +55,14 @@ class CoreGrids:
 
 
 
-        np.savetxt("/content/drive/MyDrive/Colab Notebooks/CoreGrids.csv", 
-           Core_Grids,
-           delimiter =",", 
-           fmt ='% s')
-        np.savetxt("/content/drive/MyDrive/Colab Notebooks/CoreObjects.csv", 
-           Core_Objects,
-           delimiter =",", 
-           fmt ='% s')
+        #np.savetxt("/content/drive/MyDrive/Colab Notebooks/CoreGrids.csv", 
+        #   Core_Grids,
+        #   delimiter =",", 
+        #   fmt ='% s')
+        #np.savetxt("/content/drive/MyDrive/Colab Notebooks/CoreObjects.csv", 
+        #   Core_Objects,
+        #   delimiter =",", 
+        #   fmt ='% s')
         return Core_Grids,Core_Objects
 
 def distances(self):
