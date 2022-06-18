@@ -196,8 +196,8 @@ path = '/content/drive/MyDrive/Colab Notebooks/CoreObjects.csv'
 df = pd.read_csv(path)
 CoreObject = df.values.tolist()
 
-core = CoreGrids(Grids,gridData,Data,Eps,MinPts)
-CoreGrid,CoreObject = core.Find_CoreGrids()
+#core = CoreGrids(Grids,gridData,Data,Eps,MinPts)
+#CoreGrid,CoreObject = core.Find_CoreGrids()
 
 
 #for i in range(len(gridData)):
