@@ -17,7 +17,13 @@ class CoreGrids:
         #   dists,
         #   delimiter =",", 
         #   fmt ='% s')
-        '/content/drive/MyDrive/Colab Notebooks/CoreGrids.csv'
+        
+        path = '/content/drive/MyDrive/Colab Notebooks/CoreGrids.csv'
+        df = pd.read_csv(path)
+        dists = df.values.tolist()
+
+
+
         #path = f'..\\GDCFalg\\distanceblobs.csv'
         #df = pd.read_csv(path)
         #dists = df.values.tolist()
