@@ -75,6 +75,12 @@ path = f'..\\GDCFalg\\blobsData.csv'
 df = pd.read_csv(path)
 blobs = df.values.tolist()
 m=blobs
+
+path = f'..\\GDCFalg\\blobsDataLabels.csv'
+df = pd.read_csv(path)
+True_label = df.values.tolist()
+
+
 Data=[[] for i in range(len(m[0]))]
 for dim in range(len(m[0])):
     for i in range(len(m)):
