@@ -114,10 +114,10 @@ for j in range(len(m)):m[j][1]=m[j][1]
 #   delimiter =",", 
 #   fmt ='% s')
 
-start_time = time.time()
+start_time1 = time.time()
 db = DBSCAN(eps=5,min_samples=5).fit(m)
-alltime=time.time() - start_time
-
+alltime1=time.time() - start_time1
+print(alltime1)
 
 #R2=adjusted_rand_score(True_label, db.labels_)
 MinPts=5
