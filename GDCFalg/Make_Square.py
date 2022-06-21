@@ -95,6 +95,8 @@ class Make_Square():
         plt.legend(loc='upper left');
         plt.show()"""
        
+        
+
         NonEmptyGrid=[]
         dim_Grids=[]
         for i in range(len(DataInGrid)):
