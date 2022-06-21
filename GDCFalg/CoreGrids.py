@@ -1,16 +1,17 @@
 import numpy as np
 from scipy.spatial import distance
 import pandas as pd
+    
 
 class CoreGrids:
     """description of class"""
-    def __init__(self,Grids,DataInGrids,data,Epsilon,Minpoints):
+    def __init__(self,Grids,DataInGrids,data,Epsilon,Minpoints,m):
         self.Grids=Grids
         self.PointsInGrids=DataInGrids
         self.Data=data
         self.Eps=Epsilon
         self.MinPts=Minpoints
-        
+        self.m=m
     def Find_CoreGrids(self):
         dists=distances(self)
         #np.savetxt("/content/drive/MyDrive/Colab Notebooks/distanceblobs.csv", 
@@ -72,15 +73,16 @@ class CoreGrids:
         return Core_Grids,Core_Objects
 
 def distances(self):
-    dist=np.zeros((len(self.Data[0]),len(self.Data[0])))
-    dist[0][0]=0
-    for i in range(len(self.Data[0])):
-        for j in range(len(self.Data[0])):
-            if j>i:
-                dist[j][i]=dist[i][j]=(distance.euclidean([self.Data[0][i],self.Data[1][i]],[self.Data[0][j],self.Data[1][j]]))
-                #dist[j][i]=dist[i][j]=(distance.euclidean([self.Data[0][i][ for ],[self.Data[0][j],self.Data[1][j]]))
-            if i==j:
-                dist[i][j]=0
-            else:
-                continue
+    #dist=np.zeros((len(self.Data[0]),len(self.Data[0])))
+    #dist[0][0]=0
+    #for i in range(len(self.Data[0])):
+    #    for j in range(len(self.Data[0])):
+    #        if j>i:
+    #            dist[j][i]=dist[i][j]=(distance.euclidean([self.Data[0][i],self.Data[1][i]],[self.Data[0][j],self.Data[1][j]]))
+    #            #dist[j][i]=dist[i][j]=(distance.euclidean([self.Data[0][i][ for ],[self.Data[0][j],self.Data[1][j]]))
+    #        if i==j:
+    #            dist[i][j]=0
+    #        else:
+    #            continue
+    dist=distance.cdist(self.m,self.m, 'euclidean')
     return dist

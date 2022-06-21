@@ -33,14 +33,20 @@ from sklearn import cluster, datasets
 from sklearn.preprocessing import StandardScaler
 from itertools import cycle, islice
 #--------------------------------------read data--------------------------------------------------
-n_samples = 15000
-noisy_circles = datasets.make_circles(n_samples=n_samples, factor=0.5, noise=0.05)
+#n_samples = 15000
+#noisy_circles = datasets.make_circles(n_samples=n_samples, factor=0.5, noise=0.05)
+
+
 #noisy_moons = datasets.make_moons(n_samples=n_samples, noise=0.05)
 #blobs = datasets.make_blobs(n_samples=n_samples, random_state=8)
-blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2, 
+
+
+"""blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2, 
                   centers = 5,
                   cluster_std = 0.4,
-                  shuffle = True)
+                  shuffle = True)"""
+
+
 #no_structure = np.random.rand(n_samples, 2), None
 
 ## Anisotropicly distributed data
@@ -61,21 +67,15 @@ blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2,
 
 
 #--------------------------------------------------------------------------------------------------
-
-#start_time = time.time()
-#m=DataSet.d1()
-#True_label=m[1]
-#m=m[0].Data
-
 m=DataSet.Test30()
 True_label=m[1]
 m=m[0].Data
 
+#------Read Data another way---------
 #path = f'..\\GDCFalg\\blobsData.csv'
 #df = pd.read_csv(path)
 #blobs = df.values.tolist()
 #m=blobs
-
 #path = f'..\\GDCFalg\\blobsDataLabels.csv'
 #df = pd.read_csv(path)
 #True_label = df.values.tolist()
@@ -86,18 +86,18 @@ for dim in range(len(m[0])):
     for i in range(len(m)):
         Data[dim].append(m[i][dim])
     
-minx=-(min(Data[0]))
-miny=-(min(Data[1]))
+#minx=-(min(Data[0]))
+#miny=-(min(Data[1]))
 
 
-for i in range(len(Data[0])):Data[0][i]=Data[0][i]
-for j in range(len(Data[1])):Data[1][j]=Data[1][j]
+#for i in range(len(Data[0])):Data[0][i]=Data[0][i]
+#for j in range(len(Data[1])):Data[1][j]=Data[1][j]
 
-for i in range(len(m)):m[i][0]=m[i][0]
-for j in range(len(m)):m[j][1]=m[j][1]
+#for i in range(len(m)):m[i][0]=m[i][0]
+#for j in range(len(m)):m[j][1]=m[j][1]
 
 
-
+#---------for first preprocess dataset-----
 #Data=blobs
 #D=[[] for i in range(len(Data[0][0]))]
 #for dim in range(len(Data[0][0])):
@@ -114,15 +114,12 @@ for j in range(len(m)):m[j][1]=m[j][1]
 #   delimiter =",", 
 #   fmt ='% s')
 
+#---------------run dbscan--------------
 #start_time1 = time.time()
 #db = DBSCAN(eps=5,min_samples=5).fit(m)
 #alltime1=time.time() - start_time1
 #print(alltime1)
-
 #R2=adjusted_rand_score(True_label, db.labels_)
-MinPts=5
-
-
 
 #------------------------------Find the best of Epsilon & MinPoints------------------------------------------
 #all=np.zeros([10000,3])
@@ -139,8 +136,7 @@ MinPts=5
 #indx=np.where(all==max(all[:,0]))
 #best=all[indx[0]]
 #-------------------------------------End----------------------------------------------------
-MinPts=5
-Eps=1
+
 #--------------------------------------plot data--------------------------------------------
 #fig = plt.figure()
 #ax = fig.add_subplot(1, 1, 1)
@@ -178,16 +174,20 @@ Eps=1
 ##Squre
 #partitions=Grid(Data,0.2,3)
 #Grids,gridData=partitions.GridDim()
-
+MinPts=5
+Eps=1
 G=[]
+start_time = time.time()
+#---------------Hex Grids-----------
 #Hexagonal
 #parts=make_Hex(Data,Eps)
 #Grids,gridData=parts.GridHex()
-start_time = time.time()
 
+#-------------Square Grids----------
 parts=Make_Square(Data,Eps)
 Grids,gridData=parts.GridHex()
 
+#-----------------------Recalling Saved Cores-------------------
 #path = '/content/drive/MyDrive/Colab Notebooks/CoreGrids.csv'
 #df = pd.read_csv(path)
 #CoreGrid = df.values.tolist()
@@ -204,7 +204,7 @@ Grids,gridData=parts.GridHex()
 #df = pd.read_csv(path)
 #CoreObject = df.values.tolist()
 
-core = CoreGrids(Grids,gridData,Data,Eps,MinPts)
+core = CoreGrids(Grids,gridData,Data,Eps,MinPts,m)
 CoreGrid,CoreObject = core.Find_CoreGrids()
 
 
