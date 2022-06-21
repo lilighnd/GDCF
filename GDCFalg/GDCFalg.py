@@ -188,16 +188,24 @@ start_time = time.time()
 parts=Make_Square(Data,Eps)
 Grids,gridData=parts.GridHex()
 
-path = '/content/drive/MyDrive/Colab Notebooks/CoreGrids.csv'
-df = pd.read_csv(path)
-CoreGrid = df.values.tolist()
+#path = '/content/drive/MyDrive/Colab Notebooks/CoreGrids.csv'
+#df = pd.read_csv(path)
+#CoreGrid = df.values.tolist()
 
-path = '/content/drive/MyDrive/Colab Notebooks/CoreObjects.csv'
-df = pd.read_csv(path)
-CoreObject = df.values.tolist()
+#path = '/content/drive/MyDrive/Colab Notebooks/CoreObjects.csv'
+#df = pd.read_csv(path)
+#CoreObject = df.values.tolist()
 
-#core = CoreGrids(Grids,gridData,Data,Eps,MinPts)
-#CoreGrid,CoreObject = core.Find_CoreGrids()
+#path = f'..\\GDCFalg\\CoreGrids.csv'
+#df = pd.read_csv(path)
+#CoreGrid = df.values.tolist()
+
+#path = f'..\\GDCFalg\\CoreObjects.csv'
+#df = pd.read_csv(path)
+#CoreObject = df.values.tolist()
+
+core = CoreGrids(Grids,gridData,Data,Eps,MinPts)
+CoreGrid,CoreObject = core.Find_CoreGrids()
 
 
 #for i in range(len(gridData)):

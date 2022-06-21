@@ -61,14 +61,14 @@ class CoreGrids:
 
 
 
-        #np.savetxt("/content/drive/MyDrive/Colab Notebooks/CoreGrids.csv", 
-        #   Core_Grids,
-        #   delimiter =",", 
-        #   fmt ='% s')
-        #np.savetxt("/content/drive/MyDrive/Colab Notebooks/CoreObjects.csv", 
-        #   Core_Objects,
-        #   delimiter =",", 
-        #   fmt ='% s')
+        np.savetxt("/content/drive/MyDrive/Colab Notebooks/CoreGrids.csv", 
+           Core_Grids,
+           delimiter =",", 
+           fmt ='% s')
+        np.savetxt("/content/drive/MyDrive/Colab Notebooks/CoreObjects.csv", 
+           Core_Objects,
+           delimiter =",", 
+           fmt ='% s')
         return Core_Grids,Core_Objects
 
 def distances(self):
