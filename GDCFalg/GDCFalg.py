@@ -233,42 +233,41 @@ print(alltime)
 db.labels_=list(np.float_(db.labels_))
 
 
-plt.subplot(1, 3, 1)
-#Getting unique labels
-label=list(map(int,Pred_label)) 
-u_labels = np.unique(label)
-m=np.array(m)
-#plotting the results:
+#plt.subplot(1, 3, 1)
+##Getting unique labels
+#label=list(map(int,Pred_label)) 
+#u_labels = np.unique(label)
+#m=np.array(m)
+##plotting the results:
  
-for i in u_labels:
-    plt.scatter(m[label == i,0] , m[label == i,1 ] , label = i)
-plt.legend()
-plt.title("Grid")
+#for i in u_labels:
+#    plt.scatter(m[label == i,0] , m[label == i,1 ] , label = i)
+#plt.legend()
+#plt.title("Grid")
 
-plt.subplot(1, 3, 2)
-label=list(map(int,db.labels_)) 
-u_labels = np.unique(label)
-m=np.array(m)
-#plotting the results:
+#plt.subplot(1, 3, 2)
+#label=list(map(int,db.labels_)) 
+#u_labels = np.unique(label)
+#m=np.array(m)
+##plotting the results:
  
-for i in u_labels:
-    plt.scatter(m[label == i,0] , m[label == i,1 ] , label = i)
-plt.legend()
-plt.title("DBSCAN")
+#for i in u_labels:
+#    plt.scatter(m[label == i,0] , m[label == i,1 ] , label = i)
+#plt.legend()
+#plt.title("DBSCAN")
 
-plt.subplot(1, 3, 3)
-label=list(map(int,True_label)) 
-u_labels = np.unique(label)
-m=np.array(m)
-#plotting the results:
+#plt.subplot(1, 3, 3)
+#label=list(map(int,True_label)) 
+#u_labels = np.unique(label)
+#m=np.array(m)
+##plotting the results:
  
-for i in u_labels:
-    plt.scatter(m[label == i,0] , m[label == i,1 ] , label = i)
-plt.legend()
-plt.title("True Label")
+#for i in u_labels:
+#    plt.scatter(m[label == i,0] , m[label == i,1 ] , label = i)
+#plt.legend()
+#plt.title("True Label")
 
-plt.show()
-
+#plt.show()
 
 
 
