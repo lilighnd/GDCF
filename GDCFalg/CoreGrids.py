@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.spatial import distance
 import pandas as pd
+from sklearn.cluster import DBSCAN
     
 
 class CoreGrids:
@@ -33,6 +34,8 @@ class CoreGrids:
         Core_Objects = []
 
         #Core Points
+        # db = DBSCAN(eps=5, min_samples=5).fit(self.m)
+        # Core_Objects = db.core_sample_indices_.tolist()
         for i in range(len(dists)):
             count=0
             for j in range(len(dists[0])):
