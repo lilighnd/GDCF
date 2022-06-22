@@ -1,5 +1,5 @@
 import pandas as pd
-
+import os
 class DataSet:
     def __init__(self, data):
         self.Data = data
@@ -97,7 +97,9 @@ class DataSet:
     def Test30(cls):
         True_label=[]
         path = f'/content/blobs/blobsData.csv'
-        #path = f'.\\blobsData.csv'
+        # my_path = "blobsData.csv"
+        # cd=os.getcwd()
+        # df = pd.read_csv(cd +"\\GDCFalg\\" + my_path)
         df = pd.read_csv(path)
         data = df.values.tolist()
         for i in range(len(data)):
