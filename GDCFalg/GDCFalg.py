@@ -180,12 +180,12 @@ G=[]
 start_time = time.time()
 #---------------Hex Grids-----------
 #Hexagonal
-#parts=make_Hex(Data,Eps)
-#Grids,gridData=parts.GridHex()
+parts=make_Hex(Data,Eps)
+Grids,gridData=parts.GridHex()
 
 #-------------Square Grids----------
-parts=Make_Square(Data,Eps)
-Grids,gridData=parts.GridHex()
+# parts=Make_Square(Data,Eps)
+# Grids,gridData=parts.GridHex()
 
 #-----------------------Recalling Saved Cores-------------------
 #path = '/content/drive/MyDrive/Colab Notebooks/CoreGrids.csv'
