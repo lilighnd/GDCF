@@ -71,6 +71,8 @@ m = DataSet.Test30()
 True_label = m[1]
 m = m[0].Data
 
+print("load m")
+
 # ------Read Data another way---------
 #path = f'..\\GDCFalg\\blobsData.csv'
 #df = pd.read_csv(path)
@@ -85,6 +87,7 @@ Data = [[] for i in range(len(m[0]))]
 for dim in range(len(m[0])):
     for i in range(len(m)):
         Data[dim].append(m[i][dim])
+print("load Data")
 
 # minx=-(min(Data[0]))
 # miny=-(min(Data[1]))
@@ -196,6 +199,7 @@ start_time = time.time()
 # -------------Square Grids----------
 parts = Make_Square(Data, Eps)
 Grids, gridData = parts.GridHex()
+print("run grid")
 
 # -----------------------Recalling Saved Cores-------------------
 #path = '/content/drive/MyDrive/Colab Notebooks/CoreGrids.csv'
@@ -216,6 +220,7 @@ Grids, gridData = parts.GridHex()
 
 core = CoreGrids(Grids, gridData, Data, Eps, MinPts, m)
 CoreGrid, CoreObject = core.Find_CoreGrids()
+print("run core")
 
 
 # for i in range(len(gridData)):
@@ -228,11 +233,14 @@ CoreGrid, CoreObject = core.Find_CoreGrids()
 # ----------------------------------------HGB--------------------------------------------------------------
 HGBmatrix = HGB(Grids, 2)
 B = HGBmatrix.BuildHGB()
+print("run HGB")
 
 # _______________________________________GDCF________________________________________________________________-
 
 gdcf = GDCF(CoreGrid, CoreObject, 2, B, MinPts, Eps)
 ClusterForest = gdcf.BuildGDCF("LDF", gridData, m, Grids)
+print("run GDCF")
+
 Pred_label = []
 for i in range(len(ClusterForest)):
     Pred_label.append(ClusterForest[i][-1])
