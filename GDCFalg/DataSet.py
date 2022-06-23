@@ -100,16 +100,11 @@ class DataSet:
         #path = f'/content/blobs/blobsData1m.csv'
         path = f'/content/drive/MyDrive/Colab Notebooks/blobsData1m.csv'
         df = pd.read_csv(path)
-
-
-        with open(df, "r") as f:
-            reader = csv.reader(f)
-            for header in reader:
-                break
-
         data = df.values.tolist()
 
-
+        with open(r'name', 'a') as f:
+            writer = csv.writer(f)
+            writer.writerow(data)
         
         # my_path = "blobsData1m.csv"
         # cd=os.getcwd()
