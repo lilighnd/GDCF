@@ -47,9 +47,7 @@ n_samples =38000
 #                   shuffle = True)
 
 blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2, 
-                  centers = 3,
-                  
-                  )
+                  centers = 3)
 
 #no_structure = np.random.rand(n_samples, 2), None
 
@@ -109,15 +107,15 @@ print("load Data")
 #    for data in Data[0]:
 #        D[dim].append(data[dim])
 
-# np.savetxt("/content/drive/MyDrive/Colab Notebooks/blobsData1m.csv", 
-#           Data[0],
-#           delimiter =",", 
-#           fmt ='% s')
+np.savetxt("/content/drive/MyDrive/Colab Notebooks/blobsData1m.csv", 
+          Data[0],
+          delimiter =",", 
+          fmt ='% s')
 
-# np.savetxt("/content/drive/MyDrive/Colab Notebooks/blobsLabel1m.csv", 
-#           Data[1],
-#           delimiter =",", 
-#           fmt ='% s')
+np.savetxt("/content/drive/MyDrive/Colab Notebooks/blobsLabel1m.csv", 
+          Data[1],
+          delimiter =",", 
+          fmt ='% s')
 # np.savetxt("blobsData150.csv",
 #   Data[0],
 #   delimiter =",",
