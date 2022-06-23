@@ -82,11 +82,11 @@ blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2,
 #df = pd.read_csv(path)
 #True_label = df.values.tolist()
 
-Data=blobs
-D= [[] for i in range(len(Data[0]))]
-for dim in range(len(Data[0])):
-    for i in range(len(Data)):
-        D[dim].append(Data[i][dim])
+m=blobs
+Data= [[] for i in range(len(m[0]))]
+for dim in range(len(m[0])):
+    for i in range(len(m)):
+        Data[dim].append(m[i][dim])
 print("load Data")
 
 # minx=-(min(Data[0]))
@@ -199,7 +199,7 @@ start_time = time.time()
 # Grids,gridData=parts.GridHex()
 
 # -------------Square Grids----------
-parts = Make_Square(D, Eps)
+parts = Make_Square(Data, Eps)
 Grids, gridData = parts.GridHex()
 print("run grid")
 
@@ -220,7 +220,7 @@ print("run grid")
 #df = pd.read_csv(path)
 #CoreObject = df.values.tolist()
 
-core = CoreGrids(Grids, gridData, Data, Eps, MinPts, Data)
+core = CoreGrids(Grids, gridData, Data, Eps, MinPts, m)
 CoreGrid, CoreObject = core.Find_CoreGrids()
 print("run core")
 
@@ -240,7 +240,7 @@ print("run HGB")
 # _______________________________________GDCF________________________________________________________________-
 
 gdcf = GDCF(CoreGrid, CoreObject, 2, B, MinPts, Eps)
-ClusterForest = gdcf.BuildGDCF("LDF", gridData, Data, Grids)
+ClusterForest = gdcf.BuildGDCF("LDF", gridData, m, Grids)
 print("run GDCF")
 
 Pred_label = []
