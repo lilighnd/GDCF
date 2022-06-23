@@ -15,6 +15,7 @@ class CoreGrids:
         self.m=m
     def Find_CoreGrids(self):
         dists=distances(self)
+        print(dists)
         #np.savetxt("/content/drive/MyDrive/Colab Notebooks/distanceblobs.csv", 
         #   dists,
         #   delimiter =",", 
