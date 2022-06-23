@@ -98,6 +98,7 @@ class DataSet:
         True_label=[]
         path = f'/content/blobs/blobsData1m.csv'
         df = pd.read_csv(path)
+        data = df.values.tolist()
 
         # my_path = "blobsData1m.csv"
         # cd=os.getcwd()
