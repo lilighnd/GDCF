@@ -195,12 +195,12 @@ G = []
 start_time = time.time()
 # ---------------Hex Grids-----------
 # Hexagonal
-# parts=make_Hex(Data,Eps)
-# Grids,gridData=parts.GridHex()
+parts=make_Hex(Data,Eps)
+Grids,gridData=parts.GridHex()
 
 # -------------Square Grids----------
-parts = Make_Square(Data, Eps)
-Grids, gridData = parts.GridHex()
+# parts = Make_Square(Data, Eps)
+# Grids, gridData = parts.GridHex()
 print("run grid")
 
 # -----------------------Recalling Saved Cores-------------------
