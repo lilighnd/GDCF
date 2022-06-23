@@ -110,12 +110,12 @@ print("load Data")
 #        D[dim].append(data[dim])
 
 np.savetxt("/content/drive/MyDrive/Colab Notebooks/blobsData1m.csv", 
-          m[0],
+          m,
           delimiter =",", 
           fmt ='% s')
 
 np.savetxt("/content/drive/MyDrive/Colab Notebooks/blobsLabel1m.csv", 
-          m[1],
+          True_label,
           delimiter =",", 
           fmt ='% s')
 # np.savetxt("blobsData150.csv",
