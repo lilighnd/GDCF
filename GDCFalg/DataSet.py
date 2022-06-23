@@ -102,9 +102,9 @@ class DataSet:
         df = pd.read_csv(path)
         data = df.values.tolist()
 
-        with open(r'name', 'a') as f:
-            writer = csv.writer(f)
-            writer.writerow(data)
+        # with open(r'name', 'a') as f:
+        #     writer = csv.writer(f)
+        #     writer.writerow(data)
         
         # my_path = "blobsData1m.csv"
         # cd=os.getcwd()
