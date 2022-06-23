@@ -93,6 +93,8 @@ print("load Data")
 # miny=-(min(Data[1]))
 
 
+
+
 #for i in range(len(Data[0])):Data[0][i]=Data[0][i]
 #for j in range(len(Data[1])):Data[1][j]=Data[1][j]
 
@@ -197,7 +199,7 @@ start_time = time.time()
 # Grids,gridData=parts.GridHex()
 
 # -------------Square Grids----------
-parts = Make_Square(Data, Eps)
+parts = Make_Square(D, Eps)
 Grids, gridData = parts.GridHex()
 print("run grid")
 
@@ -218,7 +220,7 @@ print("run grid")
 #df = pd.read_csv(path)
 #CoreObject = df.values.tolist()
 
-core = CoreGrids(Grids, gridData, Data, Eps, MinPts, m)
+core = CoreGrids(Grids, gridData, Data, Eps, MinPts, Data)
 CoreGrid, CoreObject = core.Find_CoreGrids()
 print("run core")
 
@@ -238,7 +240,7 @@ print("run HGB")
 # _______________________________________GDCF________________________________________________________________-
 
 gdcf = GDCF(CoreGrid, CoreObject, 2, B, MinPts, Eps)
-ClusterForest = gdcf.BuildGDCF("LDF", gridData, m, Grids)
+ClusterForest = gdcf.BuildGDCF("LDF", gridData, Data, Grids)
 print("run GDCF")
 
 Pred_label = []
