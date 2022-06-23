@@ -46,8 +46,8 @@ n_samples =38000
 #                   cluster_std = 0.4,
 #                   shuffle = True)
 
-blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2, 
-                  centers = 3)
+# blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2, 
+#                   centers = 3)
 
 #no_structure = np.random.rand(n_samples, 2), None
 
@@ -65,9 +65,9 @@ blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2,
 
 
 # --------------------------------------------------------------------------------------------------
-# m = DataSet.Test30()
-# True_label = m[1]
-# m = m[0].Data
+m = DataSet.Test30()
+True_label = m[1]
+m = m[0].Data
 
 # print("load m")
 
@@ -79,8 +79,10 @@ blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2,
 #path = f'..\\GDCFalg\\blobsDataLabels.csv'
 #df = pd.read_csv(path)
 #True_label = df.values.tolist()
-True_label = blobs[1]
-m=blobs[0]
+
+
+# True_label = blobs[1]
+# m=blobs[0]
 Data= [[] for i in range(len(m[0]))]
 for dim in range(len(m[0])):
     for i in range(len(m)):
@@ -128,11 +130,10 @@ print("load Data")
 
 # ---------------run dbscan--------------
 # start_time1 = time.time()
-# db = DBSCAN(eps=5, min_samples=5).fit(m)
+db = DBSCAN(eps=5, min_samples=5).fit(m)
 # core = db.core_sample_indices_
-# alltime1 = time.time() - start_time1
-# print(alltime1)
-#R2=adjusted_rand_score(True_label, db.labels_)
+R2=adjusted_rand_score(True_label, db.labels_)
+MinPts = 5
 
 # ------------------------------Find the best of Epsilon & MinPoints------------------------------------------
 # all=np.zeros([10000,3])
