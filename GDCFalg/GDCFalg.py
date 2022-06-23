@@ -33,7 +33,7 @@ from sklearn import cluster, datasets
 from sklearn.preprocessing import StandardScaler
 from itertools import cycle, islice
 # --------------------------------------read data--------------------------------------------------
-n_samples = 80000
+n_samples = 70000
 #noisy_circles = datasets.make_circles(n_samples=n_samples, factor=0.5, noise=0.05)
 
 
