@@ -96,7 +96,7 @@ class DataSet:
     @classmethod
     def Test30(cls):
         True_label=[]
-        path = f'/content/blobs/blobsData.csv'
+        path = f'/content/blobs/blobsData1m.csv'
         # my_path = "blobsData.csv"
         # cd=os.getcwd()
         # df = pd.read_csv(cd +"\\GDCFalg\\" + my_path)
