@@ -82,11 +82,11 @@ blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2,
 #df = pd.read_csv(path)
 #True_label = df.values.tolist()
 
-m=blobs
-Data = [[] for i in range(len(m[0]))]
-for dim in range(len(m[0])):
-    for i in range(len(m)):
-        Data[dim].append(m[i][dim])
+Data=blobs
+D= [[] for i in range(len(Data[0]))]
+for dim in range(len(Data[0])):
+    for i in range(len(Data)):
+        D[dim].append(Data[i][dim])
 print("load Data")
 
 # minx=-(min(Data[0]))
