@@ -33,7 +33,7 @@ from sklearn import cluster, datasets
 from sklearn.preprocessing import StandardScaler
 from itertools import cycle, islice
 # --------------------------------------read data--------------------------------------------------
-#n_samples = 15000
+n_samples = 1000000
 #noisy_circles = datasets.make_circles(n_samples=n_samples, factor=0.5, noise=0.05)
 
 
@@ -41,11 +41,15 @@ from itertools import cycle, islice
 #blobs = datasets.make_blobs(n_samples=n_samples, random_state=8)
 
 
-"""blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2, 
-                  centers = 5,
-                  cluster_std = 0.4,
-                  shuffle = True)"""
+# blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2, 
+#                   centers = 3,
+#                   cluster_std = 0.4,
+#                   shuffle = True)
 
+blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2, 
+                  centers = 3,
+                  
+                  )
 
 #no_structure = np.random.rand(n_samples, 2), None
 
@@ -63,7 +67,7 @@ from itertools import cycle, islice
 
 
 # --------------------------------------------------------------------------------------------------
-m = DataSet.Test30()
+"""m = DataSet.Test30()
 True_label = m[1]
 m = m[0].Data
 
@@ -80,7 +84,7 @@ m = m[0].Data
 Data = [[] for i in range(len(m[0]))]
 for dim in range(len(m[0])):
     for i in range(len(m)):
-        Data[dim].append(m[i][dim])
+        Data[dim].append(m[i][dim])"""
 
 # minx=-(min(Data[0]))
 # miny=-(min(Data[1]))
@@ -94,27 +98,36 @@ for dim in range(len(m[0])):
 
 
 # ---------for first preprocess dataset-----
-# Data=blobs
-#D=[[] for i in range(len(Data[0][0]))]
+Data=blobs
+# D=[[] for i in range(len(Data[0][0]))]
 # for dim in range(len(Data[0][0])):
 #    for data in Data[0]:
 #        D[dim].append(data[dim])
 
-# np.savetxt("blobsData.csv",
+np.savetxt("/content/drive/MyDrive/Colab Notebooks/blobsData1m.csv", 
+          Data[0],
+          delimiter =",", 
+          fmt ='% s')
+
+np.savetxt("/content/drive/MyDrive/Colab Notebooks/blobsLabel1m.csv", 
+          Data[1],
+          delimiter =",", 
+          fmt ='% s')
+# np.savetxt("blobsData150.csv",
 #   Data[0],
 #   delimiter =",",
 #   fmt ='% s')
 
-# np.savetxt("blobsDataLabels.csv",
+# np.savetxt("blobsDataLabels150.csv",
 #   Data[1],
 #   delimiter =",",
 #   fmt ='% s')
 
 # ---------------run dbscan--------------
-start_time1 = time.time()
-db = DBSCAN(eps=5, min_samples=5).fit(m)
-core = db.core_sample_indices_
-alltime1 = time.time() - start_time1
+# start_time1 = time.time()
+# db = DBSCAN(eps=5, min_samples=5).fit(m)
+# core = db.core_sample_indices_
+# alltime1 = time.time() - start_time1
 # print(alltime1)
 #R2=adjusted_rand_score(True_label, db.labels_)
 
@@ -135,23 +148,23 @@ alltime1 = time.time() - start_time1
 # -------------------------------------End----------------------------------------------------
 
 # --------------------------------------plot data--------------------------------------------
-#fig = plt.figure()
-#ax = fig.add_subplot(1, 1, 1)
-# Major ticks every 20, minor ticks every 5
-#major_ticks = np.arange(0, 4.5, 0.17)
-#minor_ticks = np.arange(0, 4.5, 0.17)
+# fig = plt.figure()
+# ax = fig.add_subplot(1, 1, 1)
+# # Major ticks every 20, minor ticks every 5
+# major_ticks = np.arange(0, 4.5, 0.17)
+# minor_ticks = np.arange(0, 4.5, 0.17)
 # ax.set_xticks(major_ticks)
-#ax.set_xticks(minor_ticks, minor=True)
+# ax.set_xticks(minor_ticks, minor=True)
 # ax.set_yticks(major_ticks)
-#ax.set_yticks(minor_ticks, minor=True)
+# ax.set_yticks(minor_ticks, minor=True)
 # ax.set_xlim([0,5])
 # ax.set_ylim([0,5])
-# And a corresponding grid
+# # And a corresponding grid
 # ax.grid(which='both')
 # plt.grid()
 # p=Plot(Data,0)
-# p2=p.plotClusters()***********************
-# plt.show()*************************
+# p2=p.plotClusters()
+# plt.show()
 
 # ------------------------------------------------------------------------------
 
