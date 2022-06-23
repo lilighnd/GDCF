@@ -131,10 +131,10 @@ print("load Data")
 
 # ---------------run dbscan--------------
 # start_time1 = time.time()
-db = DBSCAN(eps=5, min_samples=5).fit(m)
-# core = db.core_sample_indices_
-R2=adjusted_rand_score(True_label, db.labels_)
-MinPts = 5
+# db = DBSCAN(eps=5, min_samples=5).fit(m)
+# # core = db.core_sample_indices_
+# R2=adjusted_rand_score(True_label, db.labels_)
+# MinPts = 5
 
 # ------------------------------Find the best of Epsilon & MinPoints------------------------------------------
 # all=np.zeros([10000,3])
