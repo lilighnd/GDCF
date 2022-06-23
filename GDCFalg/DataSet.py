@@ -96,7 +96,8 @@ class DataSet:
     @classmethod
     def Test30(cls):
         True_label=[]
-        path = f'/content/blobs/blobsData1m.csv'
+        #path = f'/content/blobs/blobsData1m.csv'
+        path = f'/content/drive/MyDrive/Colab Notebooks/blobsData1m.csv'
         df = pd.read_csv(path)
         data = df.values.tolist()
 
