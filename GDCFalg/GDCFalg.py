@@ -81,8 +81,8 @@ blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2,
 #path = f'..\\GDCFalg\\blobsDataLabels.csv'
 #df = pd.read_csv(path)
 #True_label = df.values.tolist()
-
-m=blobs
+True_label = blobs[1]
+m=blobs[0]
 Data= [[] for i in range(len(m[0]))]
 for dim in range(len(m[0])):
     for i in range(len(m)):
