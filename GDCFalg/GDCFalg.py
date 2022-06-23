@@ -47,7 +47,7 @@ n_samples =38000
 #                   shuffle = True)
 
 blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2, 
-                  centers = 3)
+                  centers = 3,cluster_std = 0.4)
 
 #no_structure = np.random.rand(n_samples, 2), None
 
