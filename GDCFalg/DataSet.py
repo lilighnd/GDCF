@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import csv
 class DataSet:
     def __init__(self, data):
         self.Data = data
@@ -99,8 +100,17 @@ class DataSet:
         #path = f'/content/blobs/blobsData1m.csv'
         path = f'/content/drive/MyDrive/Colab Notebooks/blobsData1m.csv'
         df = pd.read_csv(path)
+
+
+        with open(df, "r") as f:
+            reader = csv.reader(f)
+            for header in reader:
+                break
+
         data = df.values.tolist()
 
+
+        
         # my_path = "blobsData1m.csv"
         # cd=os.getcwd()
         # df = pd.read_csv(cd +"\\GDCFalg\\" + my_path)
