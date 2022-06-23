@@ -68,6 +68,7 @@ n_samples =38000
 m = DataSet.Test30()
 True_label = m[1]
 m = m[0].Data
+print(m[0][0])
 
 # print("load m")
 
