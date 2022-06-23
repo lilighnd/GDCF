@@ -33,7 +33,7 @@ from sklearn import cluster, datasets
 from sklearn.preprocessing import StandardScaler
 from itertools import cycle, islice
 # --------------------------------------read data--------------------------------------------------
-# n_samples = 1000000
+n_samples = 500000
 #noisy_circles = datasets.make_circles(n_samples=n_samples, factor=0.5, noise=0.05)
 
 
@@ -46,10 +46,10 @@ from itertools import cycle, islice
 #                   cluster_std = 0.4,
 #                   shuffle = True)
 
-# blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2, 
-#                   centers = 3,
+blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2, 
+                  centers = 3,
                   
-#                   )
+                  )
 
 #no_structure = np.random.rand(n_samples, 2), None
 
@@ -67,11 +67,11 @@ from itertools import cycle, islice
 
 
 # --------------------------------------------------------------------------------------------------
-m = DataSet.Test30()
-True_label = m[1]
-m = m[0].Data
+# m = DataSet.Test30()
+# True_label = m[1]
+# m = m[0].Data
 
-print("load m")
+# print("load m")
 
 # ------Read Data another way---------
 #path = f'..\\GDCFalg\\blobsData.csv'
@@ -82,7 +82,7 @@ print("load m")
 #df = pd.read_csv(path)
 #True_label = df.values.tolist()
 
-
+m=blobs
 Data = [[] for i in range(len(m[0]))]
 for dim in range(len(m[0])):
     for i in range(len(m)):
