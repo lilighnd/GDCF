@@ -34,6 +34,8 @@ from sklearn.preprocessing import StandardScaler
 from itertools import cycle, islice
 # --------------------------------------read data--------------------------------------------------
 n_samples =38000
+
+
 #noisy_circles = datasets.make_circles(n_samples=n_samples, factor=0.5, noise=0.05)
 
 
@@ -70,7 +72,10 @@ True_label = m[1]
 m = m[0].Data
 
 # print("load m")
-
+db = DBSCAN(eps=1, min_samples=5).fit(m)
+db.labels_ = list(np.float_(db.labels_))
+R2=adjusted_rand_score(True_label, db.labels_)
+print(R2)
 # ------Read Data another way---------
 #path = f'..\\GDCFalg\\blobsData.csv'
 #df = pd.read_csv(path)
@@ -252,7 +257,7 @@ print(alltime)
 
 
 
-db = DBSCAN(eps=5, min_samples=5).fit(m)
+db = DBSCAN(eps=1, min_samples=5).fit(m)
 db.labels_ = list(np.float_(db.labels_))
 
 R1 = adjusted_rand_score(True_label, Pred_label)
@@ -298,6 +303,7 @@ print(R2)
 
 
 # --------------------------------------Evaluation-----------------------------------------------------------
+print("End Run")
 alltime = time.time() - start_time
 
 R1 = adjusted_rand_score(True_label, Pred_label)
