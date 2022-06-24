@@ -202,8 +202,8 @@ print("load Data")
 # Squre
 # partitions=Grid(Data,0.2,3)
 # Grids,gridData=partitions.GridDim()
-MinPts = 5
-Eps = 0.09
+MinPts = 3
+Eps = 0.07
 G = []
 start_time = time.time()
 # ---------------Hex Grids-----------
