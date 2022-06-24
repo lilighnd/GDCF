@@ -75,7 +75,8 @@ m = m[0].Data
 db = DBSCAN(eps=2, min_samples=5).fit(m)
 db.labels_ = list(np.float_(db.labels_))
 print("labels")
-print(type(True_label[0]))
+print(len(True_label))
+print(len(db.labels_ ))
 R2=adjusted_rand_score(True_label, db.labels_)
 print(R2)
 # ------Read Data another way---------
