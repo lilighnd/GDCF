@@ -253,7 +253,7 @@ print(alltime)
 
 
 
-db = DBSCAN(eps=0.03, min_samples=5).fit(m)
+db = DBSCAN(eps=0.07, min_samples=5).fit(m)
 db.labels_ = list(np.float_(db.labels_))
 
 R1 = adjusted_rand_score(True_label, Pred_label)
