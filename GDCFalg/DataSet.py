@@ -116,7 +116,7 @@ class DataSet:
         path = f'/content/drive/MyDrive/Colab Notebooks/blobsLabel1m.csv'
         df = pd.read_csv(path)
         True_label = df.values.tolist()
-
+        print(True_label)
         return cls(data),True_label
 
     @classmethod
