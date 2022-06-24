@@ -112,6 +112,11 @@ class DataSet:
             True_label.append(data[i][-1])
             data[i] = data[i][0:2]
 
+
+        path = f'/content/drive/MyDrive/Colab Notebooks/blobsLabel1m.csv'
+        df = pd.read_csv(path)
+        True_label = df.values.tolist()
+
         return cls(data),True_label
 
     @classmethod
