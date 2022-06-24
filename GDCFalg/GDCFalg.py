@@ -250,9 +250,16 @@ for i in range(len(ClusterForest)):
 alltime = time.time() - start_time
 print(alltime)
 
+
+
+db = DBSCAN(eps=5, min_samples=5).fit(m)
 db.labels_ = list(np.float_(db.labels_))
 
+R1 = adjusted_rand_score(True_label, Pred_label)
+R2=adjusted_rand_score(True_label, db.labels_)
 
+print(R1)
+print(R2)
 #plt.subplot(1, 3, 1)
 # Getting unique labels
 # label=list(map(int,Pred_label))
