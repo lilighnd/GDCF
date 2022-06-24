@@ -203,7 +203,7 @@ print("load Data")
 # partitions=Grid(Data,0.2,3)
 # Grids,gridData=partitions.GridDim()
 MinPts = 3
-Eps = 0.05
+Eps = 0.08
 G = []
 start_time = time.time()
 # ---------------Hex Grids-----------
