@@ -72,7 +72,7 @@ True_label = m[1]
 m = m[0].Data
 
 # print("load m")
-db = DBSCAN(eps=1, min_samples=5).fit(m)
+db = DBSCAN(eps=2, min_samples=5).fit(m)
 db.labels_ = list(np.float_(db.labels_))
 R2=adjusted_rand_score(True_label, db.labels_)
 print(R2)
