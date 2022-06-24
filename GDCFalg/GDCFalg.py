@@ -38,15 +38,7 @@ n_samples =38000
 
 #noisy_circles = datasets.make_circles(n_samples=n_samples, factor=0.5, noise=0.05)
 
-
-#noisy_moons = datasets.make_moons(n_samples=n_samples, noise=0.05)
-#blobs = datasets.make_blobs(n_samples=n_samples, random_state=8)
-
-
-# blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2, 
-#                   centers = 3,
-#                   cluster_std = 0.4,
-#                   shuffle = True)
+# moons = datasets.make_moons (n_samples=n_samples, shuffle=False, noise=0.05, random_state=None)
 
 # blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2, 
 #                   centers = 3,cluster_std = 0.4)
@@ -122,12 +114,12 @@ print("load Data")
 #    for data in Data[0]:
 #        D[dim].append(data[dim])
 
-# np.savetxt("/content/drive/MyDrive/Colab Notebooks/blobsData1m.csv", 
+# np.savetxt("/content/drive/MyDrive/Colab Notebooks/moons38.csv", 
 #           m,
 #           delimiter =",", 
 #           fmt ='% s')
 
-# np.savetxt("/content/drive/MyDrive/Colab Notebooks/blobsLabel1m.csv", 
+# np.savetxt("/content/drive/MyDrive/Colab Notebooks/moons38.csv", 
 #           True_label,
 #           delimiter =",", 
 #           fmt ='% s')
@@ -208,12 +200,12 @@ G = []
 start_time = time.time()
 # ---------------Hex Grids-----------
 # Hexagonal
-parts=make_Hex(Data,Eps)
-Grids,gridData=parts.GridHex()
+# parts=make_Hex(Data,Eps)
+# Grids,gridData=parts.GridHex()
 
 # -------------Square Grids----------
-# parts = Make_Square(Data, Eps)
-# Grids, gridData = parts.GridHex()
+parts = Make_Square(Data, Eps)
+Grids, gridData = parts.GridHex()
 print("run grid")
 
 # -----------------------Recalling Saved Cores-------------------
