@@ -38,7 +38,7 @@ n_samples =38000
 
 #noisy_circles = datasets.make_circles(n_samples=n_samples, factor=0.5, noise=0.05)
 
-# moons = datasets.make_moons (n_samples=n_samples, shuffle=False, noise=0.05, random_state=None)
+moons = datasets.make_moons (n_samples=n_samples, shuffle=False, noise=0.05, random_state=None)
 
 # blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2, 
 #                   centers = 3,cluster_std = 0.4)
@@ -59,9 +59,9 @@ n_samples =38000
 
 
 # --------------------------------------------------------------------------------------------------
-m = DataSet.Test30()
-True_label = m[1]
-m = m[0].Data
+# m = DataSet.Test30()
+# True_label = m[1]
+# m = m[0].Data
 
 
 
@@ -86,8 +86,8 @@ m = m[0].Data
 #True_label = df.values.tolist()
 
 
-# True_label = blobs[1]
-# m=blobs[0]
+True_label = moons[1]
+m=moons[0]
 Data= [[] for i in range(len(m[0]))]
 for dim in range(len(m[0])):
     for i in range(len(m)):
