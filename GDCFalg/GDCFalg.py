@@ -203,7 +203,7 @@ print("load Data")
 # partitions=Grid(Data,0.2,3)
 # Grids,gridData=partitions.GridDim()
 MinPts = 5
-Eps = 0.07
+Eps = 0.03
 G = []
 start_time = time.time()
 # ---------------Hex Grids-----------
@@ -265,7 +265,7 @@ print(alltime)
 
 
 
-db = DBSCAN(eps=0.05, min_samples=5).fit(m)
+db = DBSCAN(eps=0.03, min_samples=5).fit(m)
 db.labels_ = list(np.float_(db.labels_))
 
 #plt.subplot(1, 3, 1)
