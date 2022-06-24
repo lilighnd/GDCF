@@ -240,7 +240,7 @@ print("run HGB")
 # _______________________________________GDCF________________________________________________________________-
 
 gdcf = GDCF(CoreGrid, CoreObject, 2, B, MinPts, Eps)
-ClusterForest = gdcf.BuildGDCF("LNN", gridData, m, Grids)
+ClusterForest = gdcf.BuildGDCF("LDF", gridData, m, Grids)
 print("run GDCF")
 
 Pred_label = []
