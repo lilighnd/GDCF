@@ -71,6 +71,18 @@ m = DataSet.Test30()
 True_label = m[1]
 m = m[0].Data
 
+
+
+db = DBSCAN(eps=0.07, min_samples=5).fit(m)
+db.labels_ = list(np.float_(db.labels_))
+R2=adjusted_rand_score(True_label, db.labels_)
+print(R2)
+print(True_label)
+print(db.labels_)
+print("end db")
+
+
+
 # print("load m")
 # ------Read Data another way---------
 #path = f'..\\GDCFalg\\blobsData.csv'
