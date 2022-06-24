@@ -98,15 +98,15 @@ class DataSet:
     def Test30(cls):
         True_label=[]
         #path = f'/content/blobs/blobsData1m.csv'
-        #path = f'/content/drive/MyDrive/Colab Notebooks/blobsData1m.csv'
-        # df = pd.read_csv(path)
-        # data = df.values.tolist()
+        path = f'/content/drive/MyDrive/Colab Notebooks/blobsData1m.csv'
+        df = pd.read_csv(path)
+        data = df.values.tolist()
 
         
-        my_path = "blobsData1m.csv"
-        cd=os.getcwd()
-        df = pd.read_csv(cd +"\\GDCFalg\\" + my_path)
-        data = df.values.tolist()
+        # my_path = "blobsData1m.csv"
+        # cd=os.getcwd()
+        # df = pd.read_csv(cd +"\\GDCFalg\\" + my_path)
+        # data = df.values.tolist()
         #for i in range(len(data)):
         for i in range(len(data)):
             True_label.append(data[i][-1])
