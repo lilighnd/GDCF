@@ -194,7 +194,7 @@ print("load Data")
 # Squre
 # partitions=Grid(Data,0.2,3)
 # Grids,gridData=partitions.GridDim()
-MinPts = 5
+MinPts = 8
 Eps = 0.07
 G = []
 start_time = time.time()
