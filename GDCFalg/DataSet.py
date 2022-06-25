@@ -1,6 +1,8 @@
 import pandas as pd
 import os
 import csv
+import sklearn
+from sklearn.model_selection import train_test_split
 class DataSet:
     def __init__(self, data):
         self.Data = data
@@ -58,14 +60,7 @@ class DataSet:
             tmpdata[i] = tmpdata[i][0:2]
         return tmpdata
 
-    @classmethod
-    def Heartdata(cls):
-        path = f'..\DataSet\HeartData.csv'
-        df = pd.read_csv(path)
-        tmpdata = df.values.tolist()
-        for i in range(len(tmpdata)):
-            tmpdata[i] = tmpdata[i][0:2]
-        return tmpdata
+   
 
     @classmethod
     def IrisOnlyInput(cls):
@@ -85,14 +80,7 @@ class DataSet:
             data[i] = data[i][4]
         return cls(data)
 
-    @classmethod
-    def PizzaData(cls):
-        path = f'..\DataSet\Pizza.csv'
-        df = pd.read_csv(path)
-        data = df.values.tolist()
-        for i in range(len(data)):
-            data[i] = data[i][1:8]
-        return cls(data)
+    
 
     @classmethod
     def Test30(cls):
@@ -109,15 +97,11 @@ class DataSet:
         # df = pd.read_csv(cd +"\\GDCFalg\\" + my_path)
         # data = df.values.tolist()
         # for i in range(len(data)):
-        d=[]
         for i in range(len(data)):
-            # True_label.append(data[i][-1])
-            # data[i] = data[i][0:2]
-            if i<20:
-                d.append(data[i][0:2])
-            else:
-                break
-        print(d)
+            True_label.append(data[i][-1])
+            data[i] = data[i][0:2]
+            
+        
         
 
         # path = f'/content/drive/MyDrive/Colab Notebooks/blobsLabel1m.csv'
@@ -127,7 +111,11 @@ class DataSet:
         # for i in range(len(True_label)):
         for i in range(20):
             True_label[i] = True_label[i][0]
-        print(data,True_label)
+
+
+
+        X_train,X_test,Y_train,Y_test = train_test_split(data,True_label,test_size=0.33)
+        print(X_test,Y_test)
 
         return cls(data),True_label
 
