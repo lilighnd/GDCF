@@ -195,7 +195,7 @@ print("load Data")
 # partitions=Grid(Data,0.2,3)
 # Grids,gridData=partitions.GridDim()
 MinPts = 3
-Eps = 0.05
+Eps = 0.07
 G = []
 start_time = time.time()
 # ---------------Hex Grids-----------
@@ -259,7 +259,10 @@ print(alltime)
 
 db = DBSCAN(eps=Eps, min_samples=MinPts).fit(m)
 db.labels_ = list(np.float_(db.labels_))
-
+db1=db.labels_
+db.labels_=[]
+for i in range(30000):
+    db.labels_.append(db1[i])
 #plt.subplot(1, 3, 1)
 # Getting unique labels
 # label=list(map(int,Pred_label))
