@@ -114,12 +114,12 @@ print("load Data")
 #    for data in Data[0]:
 #        D[dim].append(data[dim])
 
-np.savetxt("/content/drive/MyDrive/Colab Notebooks/moons38.csv", 
+np.savetxt("/content/drive/MyDrive/Colab Notebooks/moonsData38.csv", 
           m,
           delimiter =",", 
           fmt ='% s')
 
-np.savetxt("/content/drive/MyDrive/Colab Notebooks/moons38.csv", 
+np.savetxt("/content/drive/MyDrive/Colab Notebooks/moonsLabels38.csv", 
           True_label,
           delimiter =",", 
           fmt ='% s')
