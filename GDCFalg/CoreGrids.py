@@ -14,7 +14,7 @@ class CoreGrids:
         self.m = m
 
     def Find_CoreObject(self):
-        self.Core_Objects = []
+        Core_Objects = []
         for pointOfData in range(len(self.Data)):
             dists = distances(self, self.Data[pointOfData])
             print(pointOfData,dists)#####
@@ -26,7 +26,7 @@ class CoreGrids:
             if count >= self.MinPts:
                 self.Core_Objects.append(pointOfData)
         print(self.Core_Objects)#####
-        return self.Core_Objects
+        return Core_Objects
 
     def Find_CoreGrids(self):
         # np.savetxt("/content/drive/MyDrive/Colab Notebooks/distanceblobs.csv",
@@ -41,7 +41,8 @@ class CoreGrids:
         #path = f'..\\GDCFalg\\distanceblobs.csv'
         #df = pd.read_csv(path)
         #dists = df.values.tolist()
-
+        Core_Objects=Find_CoreObject()
+    
         print("Core grid is running")#####
         Core_Grids = []
         # Core Grids
@@ -51,7 +52,7 @@ class CoreGrids:
                 break
 
             for Point_grid in self.PointsInGrids[grid]:
-                if Point_grid in self.Core_Objects:
+                if Point_grid in Core_Objects:
                     Core_Grids.append(self.Grids[grid])
 
             if self.Grids[grid] not in Core_Grids:
@@ -81,7 +82,7 @@ class CoreGrids:
         #   Core_Objects,
         #   delimiter =",",
         #   fmt ='% s')
-        return Core_Grids, self.Core_Objects
+        return Core_Grids,Core_Objects
 
 
 def distances(self, Point):
