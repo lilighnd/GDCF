@@ -114,16 +114,16 @@ print("load Data")
 #    for data in Data[0]:
 #        D[dim].append(data[dim])
 
-# np.savetxt("/content/drive/MyDrive/Colab Notebooks/moons38.csv", 
-#           m,
-#           delimiter =",", 
-#           fmt ='% s')
+np.savetxt("/content/drive/MyDrive/Colab Notebooks/moons38.csv", 
+          m,
+          delimiter =",", 
+          fmt ='% s')
 
-# np.savetxt("/content/drive/MyDrive/Colab Notebooks/moons38.csv", 
-#           True_label,
-#           delimiter =",", 
-#           fmt ='% s')
-
+np.savetxt("/content/drive/MyDrive/Colab Notebooks/moons38.csv", 
+          True_label,
+          delimiter =",", 
+          fmt ='% s')
+print("Save Data")
 # np.savetxt("blobsData150.csv",
 #   Data[0],
 #   delimiter =",",
