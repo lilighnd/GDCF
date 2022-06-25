@@ -48,7 +48,7 @@ class CoreGrids:
         #path = f'..\\GDCFalg\\distanceblobs.csv'
         #df = pd.read_csv(path)
         #dists = df.values.tolist()
-        Core_Objects=self.Find_CoreObject(self)
+        CorePoints =self.Find_CoreObject(self)
     
         print("Core grid is running")#####
         Core_Grids = []
@@ -59,7 +59,7 @@ class CoreGrids:
                 break
 
             for Point_grid in self.PointsInGrids[grid]:
-                if Point_grid in Core_Objects:
+                if Point_grid in CorePoints:
                     Core_Grids.append(self.Grids[grid])
 
             if self.Grids[grid] not in Core_Grids:
