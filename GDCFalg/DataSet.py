@@ -113,10 +113,13 @@ class DataSet:
 
 
 
+        path = f'/content/drive/MyDrive/Colab Notebooks/moonsData38.csv'
+        path = f'/content/drive/MyDrive/Colab Notebooks/moonsLabels38.csv'
         X_train,X_test,Y_train,Y_test = train_test_split(data,True_label,test_size=0.33)
         print(len(X_test),len(Y_test))
-
-        return cls(data),True_label
+        
+        return cls(X_test),Y_test
+        # return cls(data),True_label
 
     @classmethod
     def d1(cls):
