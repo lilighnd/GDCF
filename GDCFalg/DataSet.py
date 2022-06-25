@@ -1,7 +1,6 @@
 import pandas as pd
 import os
 import csv
-import sklearn
 from sklearn.model_selection import train_test_split
 class DataSet:
     def __init__(self, data):
