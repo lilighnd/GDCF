@@ -195,17 +195,17 @@ print("load Data")
 # partitions=Grid(Data,0.2,3)
 # Grids,gridData=partitions.GridDim()
 MinPts = 3
-Eps = 0.068
+Eps = 0.07
 G = []
 start_time = time.time()
 # ---------------Hex Grids-----------
 # Hexagonal
-parts=make_Hex(Data,Eps)
-Grids,gridData=parts.GridHex()
+# parts=make_Hex(Data,Eps)
+# Grids,gridData=parts.GridHex()
 
 # -------------Square Grids----------
-# parts = Make_Square(Data, Eps)
-# Grids, gridData = parts.GridHex()
+parts = Make_Square(Data, Eps)
+Grids, gridData = parts.GridHex()
 print("run grid")
 
 # -----------------------Recalling Saved Cores-------------------
