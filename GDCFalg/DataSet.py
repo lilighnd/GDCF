@@ -116,7 +116,7 @@ class DataSet:
         path = f'/content/drive/MyDrive/Colab Notebooks/moonsData38.csv'
         path = f'/content/drive/MyDrive/Colab Notebooks/moonsLabels38.csv'
         X_train,X_test,Y_train,Y_test = train_test_split(data,True_label,test_size=0.33)
-        print(type(X_test[0]),type(Y_test[0]))
+        print(type(X_test[0][0]),type(Y_test[0]))
 
         return cls(X_test),Y_test
         # return cls(data),True_label
