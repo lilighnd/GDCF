@@ -109,10 +109,15 @@ class DataSet:
         # df = pd.read_csv(cd +"\\GDCFalg\\" + my_path)
         # data = df.values.tolist()
         # for i in range(len(data)):
-        for i in range(20):
-            True_label.append(data[i][-1])
-            data[i] = data[i][0:2]
-
+        for i in range(len(data)):
+            # True_label.append(data[i][-1])
+            # data[i] = data[i][0:2]
+            if i<20:
+                data[i]=data[i][0:2]
+            else:
+                break
+        print(data)
+        
 
         # path = f'/content/drive/MyDrive/Colab Notebooks/blobsLabel1m.csv'
         path = f'/content/drive/MyDrive/Colab Notebooks/moonsLabels38.csv'
@@ -121,8 +126,8 @@ class DataSet:
         # for i in range(len(True_label)):
         for i in range(20):
             True_label[i] = True_label[i][0]
-        print(cls(data),True_label)
-        
+        print(data,True_label)
+
         return cls(data),True_label
 
     @classmethod
