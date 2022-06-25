@@ -112,10 +112,10 @@ class DataSet:
             True_label[i] = True_label[i][0]
 
 
-
+        random_state=42
         X_train,X_test,Y_train,Y_test = train_test_split(data,True_label,test_size=0.33,random_state=42)
-        seed_val=42
-        train_test_split.seed(seed_val)
+        # seed_val=42
+        # random.seed(seed_val)
         test_list = [int(i) for i in Y_test[:][0]]
         print(test_list)
         print(type(X_test[0][0]),type(Y_test[0]))
