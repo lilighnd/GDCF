@@ -109,14 +109,15 @@ class DataSet:
         # df = pd.read_csv(cd +"\\GDCFalg\\" + my_path)
         # data = df.values.tolist()
         # for i in range(len(data)):
+        d=[]
         for i in range(len(data)):
             # True_label.append(data[i][-1])
             # data[i] = data[i][0:2]
             if i<20:
-                data[i]=data[i][0:2]
+                d.append(data[i][0:2])
             else:
                 break
-        print(data)
+        print(d)
         
 
         # path = f'/content/drive/MyDrive/Colab Notebooks/blobsLabel1m.csv'
