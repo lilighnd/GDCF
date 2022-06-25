@@ -108,8 +108,8 @@ class DataSet:
         # cd=os.getcwd()
         # df = pd.read_csv(cd +"\\GDCFalg\\" + my_path)
         # data = df.values.tolist()
-        #for i in range(len(data)):
-        for i in range(30000):
+        # for i in range(len(data)):
+        for i in range(20):
             True_label.append(data[i][-1])
             data[i] = data[i][0:2]
 
@@ -119,9 +119,10 @@ class DataSet:
         df = pd.read_csv(path)
         True_label = df.values.tolist()
         # for i in range(len(True_label)):
-        for i in range(30000):
+        for i in range(20):
             True_label[i] = True_label[i][0]
-        print(True_label)
+        print(cls(data),True_label)
+        
         return cls(data),True_label
 
     @classmethod

@@ -259,10 +259,6 @@ print(alltime)
 
 db = DBSCAN(eps=Eps, min_samples=MinPts).fit(m)
 db.labels_ = list(np.float_(db.labels_))
-db1=db.labels_
-db.labels_=[]
-for i in range(30000):
-    db.labels_.append(db1[i])
 #plt.subplot(1, 3, 1)
 # Getting unique labels
 # label=list(map(int,Pred_label))
