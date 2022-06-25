@@ -116,7 +116,7 @@ class DataSet:
         X_train,X_test,Y_train,Y_test = train_test_split(data,True_label,test_size=0.33,random_state=42)
         # seed_val=42
         # random.seed(seed_val)
-        test_list = [int(i) for i in Y_test[i][0]]
+        test_list = [int(i) for i in Y_test[:,0]]
         print(test_list)
         print(type(X_test[0][0]),type(Y_test[0]))
         print(type(data[0]),type(True_label[0]))
