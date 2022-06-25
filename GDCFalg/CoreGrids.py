@@ -48,7 +48,7 @@ class CoreGrids:
         #path = f'..\\GDCFalg\\distanceblobs.csv'
         #df = pd.read_csv(path)
         #dists = df.values.tolist()
-        CorePoints =self.Find_CoreObject(self)
+        CorePoints =self.Find_CoreObject()
     
         print("Core grid is running")#####
         Core_Grids = []
