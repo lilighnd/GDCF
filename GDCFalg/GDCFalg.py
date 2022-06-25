@@ -248,11 +248,12 @@ gdcf = GDCF(CoreGrid, CoreObject, 2, B, MinPts, Eps)
 ClusterForest = gdcf.BuildGDCF("LDF", gridData, m, Grids)
 print("run GDCF")
 
+alltime = time.time() - start_time
+
 Pred_label = []
 for i in range(len(ClusterForest)):
     Pred_label.append(ClusterForest[i][-1])
 
-alltime = time.time() - start_time
 print(alltime)
 
 
