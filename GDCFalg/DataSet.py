@@ -1,3 +1,4 @@
+from tkinter import Y
 import pandas as pd
 import os
 import csv
@@ -116,9 +117,8 @@ class DataSet:
         X_train,X_test,Y_train,Y_test = train_test_split(data,True_label,test_size=0.33,random_state=42)
         # seed_val=42
         # random.seed(seed_val)
-        print(Y_test)
-        test_list = [int(i) for i in Y_test]
-        print(test_list)
+        for i in range(len(Y_test)):
+            Y_test[i] = Y_test[i][0]
         print(type(X_test[0][0]),type(Y_test[0]))
         print(type(data[0]),type(True_label[0]))
 
