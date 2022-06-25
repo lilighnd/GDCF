@@ -109,7 +109,7 @@ class DataSet:
         df = pd.read_csv(path)
         True_label = df.values.tolist()
         # for i in range(len(True_label)):
-        for i in range(20):
+        for i in range(len(True_label)):
             True_label[i] = True_label[i][0]
 
 
@@ -117,10 +117,9 @@ class DataSet:
         X_train,X_test,Y_train,Y_test = train_test_split(data,True_label,test_size=0.33,random_state=42)
         # seed_val=42
         # random.seed(seed_val)
-        print(Y_test[1][0])
         for i in range(len(Y_test)):
-            del Y_test[i]
             Y_test[i] = Y_test[i][0]
+        print("true")   
         print(type(X_test[0][0]),type(Y_test[0]))
         print(type(data[0]),type(True_label[0]))
 
