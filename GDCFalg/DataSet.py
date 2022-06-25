@@ -114,7 +114,7 @@ class DataSet:
 
 
         X_train,X_test,Y_train,Y_test = train_test_split(data,True_label,test_size=0.33)
-        print(X_test,Y_test)
+        print(len(X_test),len(Y_test))
 
         return cls(data),True_label
 
