@@ -114,6 +114,7 @@ class DataSet:
 
 
         X_train,X_test,Y_train,Y_test = train_test_split(data,True_label,test_size=0.33)
+        test_list = [int(i) for i in Y_test]
         print(type(X_test[0][0]),type(Y_test[0]))
         print(type(data[0]),type(True_label[0]))
 
