@@ -14,7 +14,7 @@ class CoreGrids:
         self.m = m
 
     def Find_CoreObject(self):
-        Core_Objects = []
+        self.Core_Objects = []
         for pointOfData in range(len(self.Data)):
             dists = distances(self, self.Data[pointOfData])
             print(pointOfData,dists)#####
@@ -24,7 +24,7 @@ class CoreGrids:
                     print(SecodPointOfData)#####
                     count += 1
             if count >= self.MinPts:
-                Core_Objects.append(pointOfData)
+                self.Core_Objects.append(pointOfData)
         print(self.Core_Objects)#####
         return self.Core_Objects
 
@@ -51,7 +51,7 @@ class CoreGrids:
                 break
 
             for Point_grid in self.PointsInGrids[grid]:
-                if Point_grid in self.CoreObject:
+                if Point_grid in self.Core_Objects:
                     Core_Grids.append(self.Grids[grid])
 
             if self.Grids[grid] not in Core_Grids:
