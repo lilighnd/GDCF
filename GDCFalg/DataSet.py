@@ -98,7 +98,8 @@ class DataSet:
     def Test30(cls):
         True_label=[]
         #path = f'/content/blobs/blobsData1m.csv'
-        path = f'/content/drive/MyDrive/Colab Notebooks/blobsData1m.csv'
+        # path = f'/content/drive/MyDrive/Colab Notebooks/blobsData1m.csv'
+        path = f'/content/drive/MyDrive/Colab Notebooks/moonsData38.csv'
         df = pd.read_csv(path)
         data = df.values.tolist()
 
@@ -113,7 +114,8 @@ class DataSet:
             data[i] = data[i][0:2]
 
 
-        path = f'/content/drive/MyDrive/Colab Notebooks/blobsLabel1m.csv'
+        # path = f'/content/drive/MyDrive/Colab Notebooks/blobsLabel1m.csv'
+        path = f'/content/drive/MyDrive/Colab Notebooks/moonsLabels38.csv'
         df = pd.read_csv(path)
         True_label = df.values.tolist()
         for i in range(len(True_label)):

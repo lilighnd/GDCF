@@ -38,7 +38,7 @@ n_samples =38000
 
 #noisy_circles = datasets.make_circles(n_samples=n_samples, factor=0.5, noise=0.05)
 
-moons = datasets.make_moons (n_samples=n_samples, shuffle=False, noise=0.05, random_state=None)
+# moons = datasets.make_moons (n_samples=n_samples, shuffle=False, noise=0.05, random_state=None)
 
 # blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2, 
 #                   centers = 3,cluster_std = 0.4)
@@ -59,9 +59,9 @@ moons = datasets.make_moons (n_samples=n_samples, shuffle=False, noise=0.05, ran
 
 
 # --------------------------------------------------------------------------------------------------
-# m = DataSet.Test30()
-# True_label = m[1]
-# m = m[0].Data
+m = DataSet.Test30()
+True_label = m[1]
+m = m[0].Data
 
 
 
@@ -86,8 +86,8 @@ moons = datasets.make_moons (n_samples=n_samples, shuffle=False, noise=0.05, ran
 #True_label = df.values.tolist()
 
 
-True_label = moons[1]
-m=moons[0]
+# True_label = moons[1]
+# m=moons[0]
 Data= [[] for i in range(len(m[0]))]
 for dim in range(len(m[0])):
     for i in range(len(m)):
@@ -114,16 +114,16 @@ print("load Data")
 #    for data in Data[0]:
 #        D[dim].append(data[dim])
 
-np.savetxt("/content/drive/MyDrive/Colab Notebooks/moonsData38.csv", 
-          m,
-          delimiter =",", 
-          fmt ='% s')
+# np.savetxt("/content/drive/MyDrive/Colab Notebooks/moonsData38.csv", 
+#           m,
+#           delimiter =",", 
+#           fmt ='% s')
 
-np.savetxt("/content/drive/MyDrive/Colab Notebooks/moonsLabels38.csv", 
-          True_label,
-          delimiter =",", 
-          fmt ='% s')
-print("Save Data")
+# np.savetxt("/content/drive/MyDrive/Colab Notebooks/moonsLabels38.csv", 
+#           True_label,
+#           delimiter =",", 
+#           fmt ='% s')
+# print("Save Data")
 # np.savetxt("blobsData150.csv",
 #   Data[0],
 #   delimiter =",",
