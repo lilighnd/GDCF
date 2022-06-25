@@ -119,6 +119,7 @@ class DataSet:
         # random.seed(seed_val)
         print(Y_test[1][0])
         for i in range(len(Y_test)):
+            del Y_test[i]
             Y_test[i] = Y_test[i][0]
         print(type(X_test[0][0]),type(Y_test[0]))
         print(type(data[0]),type(True_label[0]))
