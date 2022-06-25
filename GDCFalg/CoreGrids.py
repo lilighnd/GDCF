@@ -13,10 +13,15 @@ class CoreGrids:
         self.MinPts = Minpoints
         self.m = m
 
+    def distances(self, Point):
+        dist = distance.cdist([Point], self.m, 'euclidean')
+        return dist
+
+
     def Find_CoreObject(self):
         Core_Objects = []
         for pointOfData in range(len(self.Data)):
-            dists = distances(self, self.Data[pointOfData])
+            dists = self.distances(self, self.Data[pointOfData])
             print(pointOfData,dists)#####
             count = 0
             for SecodPointOfData in range(len(self.Data)):
@@ -27,6 +32,8 @@ class CoreGrids:
                 self.Core_Objects.append(pointOfData)
         print(self.Core_Objects)#####
         return Core_Objects
+
+
 
     def Find_CoreGrids(self):
         # np.savetxt("/content/drive/MyDrive/Colab Notebooks/distanceblobs.csv",
@@ -41,7 +48,7 @@ class CoreGrids:
         #path = f'..\\GDCFalg\\distanceblobs.csv'
         #df = pd.read_csv(path)
         #dists = df.values.tolist()
-        Core_Objects=Find_CoreObject()
+        Core_Objects=self.Find_CoreObject(self)
     
         print("Core grid is running")#####
         Core_Grids = []
@@ -85,19 +92,19 @@ class CoreGrids:
         return Core_Grids,Core_Objects
 
 
-def distances(self, Point):
-    # "Point" is point that checked all distances for another points
+    # def distances(self, Point):
+    #     # "Point" is point that checked all distances for another points
 
-    # dist=np.zeros((len(self.Data[0]),len(self.Data[0])))
-    # dist[0][0]=0
-    # for i in range(len(self.Data[0])):
-    #    for j in range(len(self.Data[0])):
-    #        if j>i:
-    #            dist[j][i]=dist[i][j]=(distance.euclidean([self.Data[0][i],self.Data[1][i]],[self.Data[0][j],self.Data[1][j]]))
-    #            #dist[j][i]=dist[i][j]=(distance.euclidean([self.Data[0][i][ for ],[self.Data[0][j],self.Data[1][j]]))
-    #        if i==j:
-    #            dist[i][j]=0
-    #        else:
-    #            continue
-    dist = distance.cdist([Point], self.m, 'euclidean')
-    return dist
+    #     # dist=np.zeros((len(self.Data[0]),len(self.Data[0])))
+    #     # dist[0][0]=0
+    #     # for i in range(len(self.Data[0])):
+    #     #    for j in range(len(self.Data[0])):
+    #     #        if j>i:
+    #     #            dist[j][i]=dist[i][j]=(distance.euclidean([self.Data[0][i],self.Data[1][i]],[self.Data[0][j],self.Data[1][j]]))
+    #     #            #dist[j][i]=dist[i][j]=(distance.euclidean([self.Data[0][i][ for ],[self.Data[0][j],self.Data[1][j]]))
+    #     #        if i==j:
+    #     #            dist[i][j]=0
+    #     #        else:
+    #     #            continue
+    #     dist = distance.cdist([Point], self.m, 'euclidean')
+    #     return dist
