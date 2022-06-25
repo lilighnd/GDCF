@@ -22,11 +22,11 @@ class CoreGrids:
 
     def Find_CoreObject(self):
         Core_Objects = []
-        for pointOfData in range(len(self.Data)):
-            dists = self.distances(self.Data[pointOfData])
+        for pointOfData in range(len(self.m)):
+            dists = self.distances(self.m[pointOfData])
             print(pointOfData,dists)#####
             count = 0
-            for SecodPointOfData in range(len(self.Data)):
+            for SecodPointOfData in range(len(self.m)):
                 if dists[0][SecodPointOfData] <= self.Eps:
                     print(SecodPointOfData)#####
                     count += 1
