@@ -57,15 +57,16 @@ class CoreGrids:
                 print(grid,'1')
                 Core_Grids.append(self.Grids[grid])
                 print(Core_Grids)
-            else:
-                for Point_grid in self.PointsInGrids[grid]:
-                    print(grid,'2')
-                    print(Point_grid,'p2')
-                    if Point_grid in CorePoints:
-                        Core_Grids.append(self.Grids[grid])
-
-            if self.Grids[grid] not in Core_Grids:
-                Core_Grids.append([])
+                continue
+            
+            for Point_grid in self.PointsInGrids[grid]:
+                print(grid,'2')
+                print(Point_grid,'p2')
+                if Point_grid in CorePoints:
+                    Core_Grids.append(self.Grids[grid])
+                    break
+                
+            Core_Grids.append([])
 
 
 

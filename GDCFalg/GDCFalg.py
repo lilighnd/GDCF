@@ -191,9 +191,6 @@ print("load Data")
 
 
 # ----------------------------------Kinds of Grid--------------------------------------------------------
-# Squre
-# partitions=Grid(Data,0.2,3)
-# Grids,gridData=partitions.GridDim()
 MinPts = 3
 Eps = 0.07
 G = []

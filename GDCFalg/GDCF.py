@@ -3,41 +3,49 @@ from scipy.spatial import distance
 import random
 class GDCF:
     def __init__(self,CoreGrids,coreobjects,dim,b,Minpts,Eps):
-        self.C=CoreGrids
-        self.d=dim
-        self.B=b
+        self.Core_Grids=CoreGrids
+        self.dimention=dim
+        self.HGBLst=b
         self.Minpts=Minpts
         self.Eps=Eps
         self.Core_Objects=coreobjects
     def BuildGDCF(self,mode,DataGrids,Data,NonEmptyGrids):
         #-----------------------------------------LDF---------------------------------------
         if mode=="LDF":
+            # L=[]
+            # Q=[]
+            # for i in range(len(self.Core_Grids)):
+            #     if self.Core_Grids[i]!=[]:
+            #         L.append([len(DataGrids[i]),i])
+            # L=sorted(L)
+            # for j in range(len(L)):
+            #     Q.append(self.Core_Grids[L[j][1]])
             L=[]
             Q=[]
-            for i in range(len(self.C)):
-                if self.C[i]!=[]:
-                    L.append([len(DataGrids[i]),i])
+            for g,grid in enumerate(self.Core_Grids):
+                if grid!=[]:
+                    L.append([len(DataGrids[g]),g])
             L=sorted(L)
             for j in range(len(L)):
-                Q.append(self.C[L[j][1]])
+                Q.append(self.Core_Grids[L[j][1]])
 
         #----------------------------------Random-------------------------------------------
         if mode=="Random":
             L=[]
             Q=[]
-            for i in range(len(self.C)):
-                L.append([len(self.C[i]),i])
+            for i in range(len(self.Core_Grids)):
+                L.append([len(self.Core_Grids[i]),i])
             random.shuffle(L)
             for j in range(len(L)):
-                Q.append(self.C[L[j][1]])
+                Q.append(self.Core_Grids[L[j][1]])
 
 
         #---------------------------------LNN-------------------------------------------------
         if mode=="LNN":
             Neighbours=[]
-            for g in self.C:
+            for g in self.Core_Grids:
                 if g!=[]:
-                    G1=NeighbourGridQuery(g,self.d,self.B)
+                    G1=NeighbourGridQuery(g,self.dimention,self.HGBLst)
                     N=G1.NeighbourGrid(NonEmptyGrids)
                     Neighbours.append([g,N])
                     Q=list(sorted(Neighbours,reverse=True,key=sort)) 
@@ -49,7 +57,7 @@ class GDCF:
         h=1
         h2=1
         for g in Q:
-            G1=NeighbourGridQuery(g,self.d,self.B)#LDF
+            G1=NeighbourGridQuery(g,self.dimention,self.HGBLst)#LDF
             G=G1.NeighbourGrid(NonEmptyGrids)#LDF
             g=[g,G]#LDF
             A=[g[0]]
@@ -119,7 +127,7 @@ class GDCF:
 
         Noise=[]
         NotCoreGrids=[]
-        NotCoreGrids =[x for x in NonEmptyGrids if not x in self.C]
+        NotCoreGrids =[x for x in NonEmptyGrids if not x in self.Core_Grids]
        #list(set(NonEmptyGrids)-set(self.C))
         for grid in NotCoreGrids:
             if any(grid in sublist for sublist in Forest):
@@ -161,13 +169,13 @@ class GDCF:
                     for h in range(len(DataGrids[indx])):
                         Clusters[c].append(DataGrids[indx][h])
                 c+=1
-        Cluster_Num=np.zeros([len(Data),self.d+1])
+        Cluster_Num=np.zeros([len(Data),self.dimention+1])
         for i in range(len(Clusters)):
             for j in range(len(Clusters[i])):
-                for k in range(self.d+1):
-                    if k==self.d and len(Clusters[i])<10:#self.Minpts
+                for k in range(self.dimention+1):
+                    if k==self.dimention and len(Clusters[i])<10:#self.Minpts
                         Cluster_Num[Clusters[i][j]][k]=-1
-                    elif k==self.d:
+                    elif k==self.dimention:
                         Cluster_Num[Clusters[i][j]][k]=i+1
                     else:
                         Cluster_Num[Clusters[i][j]][k]=Data[Clusters[i][j]][k]
