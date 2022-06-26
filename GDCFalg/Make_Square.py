@@ -54,10 +54,11 @@ class Make_Square():
                 #    n1hx.append(self.ahex(n1[i]))
                 #n1hx = np.array(n1hx)
                 poly = path.Path(hex1)
-
+                q=0
                 inner_d = poly.contains_points(self.Data)
                 inner_data = np.where(inner_d)
-                print("inner",inner_data[0])
+                print(q,"inner",inner_data[0])
+                q+=1
                 DataInGrid.append(list(inner_data[0]))
 
                 #if flg:
