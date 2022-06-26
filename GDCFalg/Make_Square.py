@@ -59,7 +59,7 @@ class Make_Square():
                 inner_data = np.where(inner_d)
                 print(f"inner data[0] : {inner_data[0]}")
                 DataInGrid.append(inner_data[0])
-                print(f"DataInGrid : {DataInGrid[0]}")
+                print(f"DataInGrid : {DataInGrid[-1GC]}")
                 # print(DataInGrid)
 
                 #if flg:
