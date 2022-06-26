@@ -55,8 +55,9 @@ class Make_Square():
                 #n1hx = np.array(n1hx)
                 poly = path.Path(hex1)
 
-                inner_data = poly.contains_points(self.Data)
-                inner_data, = np.where(inner_data)
+                inner_d = poly.contains_points(self.Data)
+                inner_data = np.where(inner_d)
+                print(f"inner data : {inner_data}")
                 DataInGrid.append(list(inner_data))
 
                 #if flg:
