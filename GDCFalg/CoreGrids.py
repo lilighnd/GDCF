@@ -52,13 +52,14 @@ class CoreGrids:
         Core_Grids = []
         # Core Grids
         for grid in range(len(self.Grids)):
+            print(self.Grids)
+            print(self.PointsInGrids)
+            print(CorePoints)
             if len(self.PointsInGrids[grid]) >= self.MinPts:
                 Core_Grids.append(self.Grids[grid])
                 break
 
             for Point_grid in self.PointsInGrids[grid]:
-                print(Point_grid)
-                print(type(Point_grid),type(CorePoints[0]))
                 if Point_grid in CorePoints:
                     Core_Grids.append(self.Grids[grid])
 
