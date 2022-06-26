@@ -23,10 +23,10 @@ class GDCF:
             L=[]
             Q=[]
             print(f"lenght datagris : {DataGrids}")
-            print(f"lenght self.Core_Grids : {len(self.Core_G)}")
+            # print(f"lenght self.Core_Grids : {len(self.Core_G)}")
             for g,grid in enumerate(self.Core_G):
                 if grid!=[]:
-                    print(f"g : {g} grid : {grid}")
+                    # print(f"g : {g} grid : {grid}")
                     L.append([len(DataGrids[g]),g])
             L=sorted(L)
             for j in range(len(L)):
