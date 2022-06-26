@@ -57,8 +57,7 @@ class Make_Square():
 
                 inner_d = poly.contains_points(self.Data)
                 inner_data = np.where(inner_d)
-                print(f"inner d : {inner_d},{type(inner_d)}")
-                print(f"inner data : {inner_data},{type(inner_data)}")
+                print(f"inner data : {list(inner_data)}")
                 DataInGrid.append(list(inner_data))
 
                 #if flg:
