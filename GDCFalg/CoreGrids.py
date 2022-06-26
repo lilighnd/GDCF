@@ -49,23 +49,18 @@ class CoreGrids:
         CorePoints =self.Find_CoreObject()
     
         print("Core grid is running")#####
-        print(self.Grids)
         Core_Grids = []
         # Core Grids
         for grid in range(len(self.Grids)):
             if len(self.PointsInGrids[grid]) >= self.MinPts:
-                print(grid,'1')
                 Core_Grids.append(self.Grids[grid])
-                print(Core_Grids)
                 continue
             
             for Point_grid in self.PointsInGrids[grid]:
-                print(grid,'2')
-                print(Point_grid,'p2')
                 if Point_grid in CorePoints:
                     Core_Grids.append(self.Grids[grid])
                     break
-                
+
             Core_Grids.append([])
 
 

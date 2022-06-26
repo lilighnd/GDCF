@@ -24,6 +24,7 @@ class GDCF:
             Q=[]
             for g,grid in enumerate(self.Core_Grids):
                 if grid!=[]:
+                    print(f"g : {g} grid : {grid}")
                     L.append([len(DataGrids[g]),g])
             L=sorted(L)
             for j in range(len(L)):
