@@ -22,7 +22,7 @@ class GDCF:
             #     Q.append(self.Core_Grids[L[j][1]])
             L=[]
             Q=[]
-            print(len(DataGrids))
+            print(f"lenght datagris : {len(DataGrids)}")
             for g,grid in enumerate(self.Core_Grids):
                 if grid!=[]:
                     print(f"g : {g} grid : {grid}")
