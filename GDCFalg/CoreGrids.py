@@ -64,8 +64,8 @@ class CoreGrids:
                     if Point_grid in CorePoints:
                         Core_Grids.append(self.Grids[grid])
 
-                if self.Grids[grid] not in Core_Grids:
-                    Core_Grids.append([])
+            if self.Grids[grid] not in Core_Grids:
+                Core_Grids.append([])
 
 
 
