@@ -31,8 +31,8 @@ class CoreGrids:
                     print(SecodPointOfData)#####
                     count += 1
             if count >= self.MinPts:
-                self.Core_Objects.append(pointOfData)
-        print(self.Core_Objects)#####
+                Core_Objects.append(pointOfData)
+        print(Core_Objects)#####
         return Core_Objects
 
 
