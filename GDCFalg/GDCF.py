@@ -3,7 +3,7 @@ from scipy.spatial import distance
 import random
 class GDCF:
     def __init__(self,CoreGrids,coreobjects,dim,b,Minpts,Eps):
-        self.Core_Grids=CoreGrids
+        self.Core_G=CoreGrids
         self.dimention=dim
         self.HGBLst=b
         self.Minpts=Minpts
@@ -22,31 +22,31 @@ class GDCF:
             #     Q.append(self.Core_Grids[L[j][1]])
             L=[]
             Q=[]
-            print(f"lenght datagris : {len(DataGrids)}")
-            print(f"lenght self.Core_Grids : {len(self.Core_Grids)}")
-            for g,grid in enumerate(self.Core_Grids):
+            print(f"lenght datagris : {DataGrids}")
+            print(f"lenght self.Core_Grids : {len(self.Core_G)}")
+            for g,grid in enumerate(self.Core_G):
                 if grid!=[]:
                     print(f"g : {g} grid : {grid}")
                     L.append([len(DataGrids[g]),g])
             L=sorted(L)
             for j in range(len(L)):
-                Q.append(self.Core_Grids[L[j][1]])
+                Q.append(self.Core_G[L[j][1]])
 
         #----------------------------------Random-------------------------------------------
         if mode=="Random":
             L=[]
             Q=[]
-            for i in range(len(self.Core_Grids)):
-                L.append([len(self.Core_Grids[i]),i])
+            for i in range(len(self.Core_G)):
+                L.append([len(self.Core_G[i]),i])
             random.shuffle(L)
             for j in range(len(L)):
-                Q.append(self.Core_Grids[L[j][1]])
+                Q.append(self.Core_G[L[j][1]])
 
 
         #---------------------------------LNN-------------------------------------------------
         if mode=="LNN":
             Neighbours=[]
-            for g in self.Core_Grids:
+            for g in self.Core_G:
                 if g!=[]:
                     G1=NeighbourGridQuery(g,self.dimention,self.HGBLst)
                     N=G1.NeighbourGrid(NonEmptyGrids)
@@ -130,7 +130,7 @@ class GDCF:
 
         Noise=[]
         NotCoreGrids=[]
-        NotCoreGrids =[x for x in NonEmptyGrids if not x in self.Core_Grids]
+        NotCoreGrids =[x for x in NonEmptyGrids if not x in self.Core_G]
        #list(set(NonEmptyGrids)-set(self.C))
         for grid in NotCoreGrids:
             if any(grid in sublist for sublist in Forest):
