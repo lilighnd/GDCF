@@ -15,7 +15,6 @@ class CoreGrids:
         print(self.m)
 
     def distances(self,Point):
-        print(Point)
         dist = distance.cdist([Point], self.m, 'euclidean')
         return dist
 
@@ -24,15 +23,12 @@ class CoreGrids:
         Core_Objects = []
         for pointOfData in range(len(self.m)):
             dists = self.distances(self.m[pointOfData])
-            print(pointOfData,dists)#####
             count = 0
             for SecodPointOfData in range(len(self.m)):
                 if dists[0][SecodPointOfData] <= self.Eps:
-                    print(SecodPointOfData)#####
                     count += 1
             if count >= self.MinPts:
                 Core_Objects.append(pointOfData)
-        print(Core_Objects)#####
         return Core_Objects
 
 
@@ -61,13 +57,13 @@ class CoreGrids:
                 break
 
             for Point_grid in self.PointsInGrids[grid]:
+                print(Point_grid)
+                print(type(Point_grid),type(CorePoints[0]))
                 if Point_grid in CorePoints:
                     Core_Grids.append(self.Grids[grid])
 
             if self.Grids[grid] not in Core_Grids:
                 Core_Grids.append([])
-            print(grid)#####
-            print(Core_Grids)#####
 
 
 
