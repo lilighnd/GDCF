@@ -91,7 +91,7 @@ class CoreGrids:
         #   Core_Objects,
         #   delimiter =",",
         #   fmt ='% s')
-        return Core_Grids,Core_Objects
+        return Core_Grids,CorePoints
 
 
     # def distances(self, Point):
