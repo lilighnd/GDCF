@@ -59,7 +59,7 @@ class Make_Square():
                 inner_data = np.where(inner_d)
                 l=[]
                 l.append(inner_data[0])
-                print("l",l,len(l))
+                print("l",l,l[0])
                 DataInGrid.append(list(inner_data))
 
                 #if flg:
