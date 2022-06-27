@@ -33,7 +33,7 @@ from sklearn import cluster, datasets
 from sklearn.preprocessing import StandardScaler
 from itertools import cycle, islice
 # --------------------------------------read data--------------------------------------------------
-n_samples =38000
+n_samples =1000000
 
 
 #noisy_circles = datasets.make_circles(n_samples=n_samples, factor=0.5, noise=0.05)
@@ -41,7 +41,7 @@ n_samples =38000
 # moons = datasets.make_moons (n_samples=n_samples, shuffle=False, noise=0.05, random_state=None)
 
 # blobs = datasets.make_blobs(n_samples=n_samples, n_features = 2, 
-#                   centers = 3,cluster_std = 0.4)
+#                   centers = 3,cluster_std = 0,random_state=42)
 
 #no_structure = np.random.rand(n_samples, 2), None
 
@@ -59,7 +59,7 @@ n_samples =38000
 
 
 # --------------------------------------------------------------------------------------------------
-m = DataSet.Test30()
+m = DataSet.moons1m()
 True_label = m[1]
 m = m[0].Data
 

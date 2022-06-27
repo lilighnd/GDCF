@@ -3,6 +3,8 @@ import pandas as pd
 import os
 import csv
 from sklearn.model_selection import train_test_split
+from sklearn import cluster, datasets
+
 class DataSet:
     def __init__(self, data):
         self.Data = data
@@ -114,13 +116,21 @@ class DataSet:
 
 
         X_train,X_test,Y_train,Y_test = train_test_split(data,True_label,test_size=0.90,random_state=42)
-        # seed_val=42
-        # random.seed(seed_val)
         print(X_test,Y_test)
 
         return cls(X_test),Y_test
         # return cls(data),True_label
 
+    @classmethod
+    def moons1m(cls):
+        True_label=[]
+        moons = datasets.make_moons(n_samples=1000000,noise=0.05,random_state=42)
+        True_label = moons[1]
+        Data=moons[0] 
+        # X_train,X_test,Y_train,Y_test = train_test_split(moons,True_label,test_size=1,random_state=42)
+
+        return cls(Data),True_label   
+        # return cls(X_test),Y_test   
     @classmethod
     def d1(cls):
         True_label=[]
