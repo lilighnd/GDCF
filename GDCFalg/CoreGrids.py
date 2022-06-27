@@ -62,7 +62,7 @@ class CoreGrids:
                     break
 
             Core_Grids.append([])
-
+            print("empty core grid")
 
 
             # for j in range(len(self.PointsInGrids[i])):
