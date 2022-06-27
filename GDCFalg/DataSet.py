@@ -128,7 +128,7 @@ class DataSet:
         True_label = moons[1]
         Data=moons[0] 
         # X_train,X_test,Y_train,Y_test = train_test_split(moons,True_label,test_size=1,random_state=42)
-
+        print(f"Data and labels :{Data,True_label}")
         return cls(Data),True_label   
         # return cls(X_test),Y_test   
     @classmethod
