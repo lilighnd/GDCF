@@ -52,17 +52,21 @@ class CoreGrids:
         Core_Grids = []
         # Core Grids
         for grid in range(len(self.Grids)):
+            NotAdd = True
             if len(self.PointsInGrids[grid]) >= self.MinPts:
                 Core_Grids.append(self.Grids[grid])
+                NotAdd = False
                 continue
             
             for Point_grid in self.PointsInGrids[grid]:
                 if Point_grid in CorePoints:
                     Core_Grids.append(self.Grids[grid])
+                    NotAdd = False
                     break
-
-            Core_Grids.append([])
-            print("empty core grid")
+            
+            if NotAdd == True:
+                Core_Grids.append([])
+                print("empty core grid")
 
 
             # for j in range(len(self.PointsInGrids[i])):
