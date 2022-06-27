@@ -47,7 +47,9 @@ class CoreGrids:
         #df = pd.read_csv(path)
         #dists = df.values.tolist()
         CorePoints =self.Find_CoreObject()
-    
+        print(f"Core points : {CorePoints}")
+        print(f"all Grids : {self.Grids}")
+
         print("Core grid is running")#####
         Core_Grids = []
         # Core Grids
