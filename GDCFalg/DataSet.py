@@ -113,7 +113,7 @@ class DataSet:
             True_label[i] = True_label[i][0]
 
 
-        X_train,X_test,Y_train,Y_test = train_test_split(data,True_label,test_size=0.33,random_state=42)
+        X_train,X_test,Y_train,Y_test = train_test_split(data,True_label,test_size=0.90,random_state=42)
         # seed_val=42
         # random.seed(seed_val)
         print(X_test,Y_test)
