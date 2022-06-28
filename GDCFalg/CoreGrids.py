@@ -16,16 +16,6 @@ class CoreGrids:
 
     def distances(self,Point):
         dist = distance.cdist([Point], self.m, 'euclidean')
-        distlst = dist.tolist()
-        with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
-  
-        # # Reading from json file
-            save_object = json.load(openfile)
-
-        save_object["dintances"] = distlst
-        save_object = json.dumps(save_object,indent = 1)
-        with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outfile:
-            outfile.write(save_object)
         return dist
 
 
@@ -59,6 +49,10 @@ class CoreGrids:
         CorePoints =self.Find_CoreObject()
         # print(f"Core points : {CorePoints}")
         # print(f"all Grids : {self.Grids}")
+
+        
+        
+
 
         print("Core grid is running")#####
         Core_Grids = []

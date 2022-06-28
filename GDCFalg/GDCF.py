@@ -1,6 +1,8 @@
 from NeighbourGridQuery import *
 from scipy.spatial import distance
 import random
+import json
+import time
 class GDCF:
     def __init__(self,CoreGrids,coreobjects,dim,b,Minpts,Eps):
         self.Core_G=CoreGrids
@@ -59,17 +61,65 @@ class GDCF:
         A=[]
         h=1
         h2=1
-        for g in Q:
+        offset = -1
+        for gi,g in enumerate(Q,starts=(offset+1)):
+
+            #read
+            with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
+                # Reading from json file
+                save_object = json.load(openfile)
+                openfile.close()
+            #update
+            save_object['count_g'] = gi
+            #write
+            with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'w') as openfile:
+                Saveobj = json.dump(save_object,openfile)
+                openfile.close()
+
+
             G1=NeighbourGridQuery(g,self.dimention,self.HGBLst)#LDF
             G=G1.NeighbourGrid(NonEmptyGrids)#LDF
+
+            #read
+            with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
+                # Reading from json file
+                save_object = json.load(openfile)
+                openfile.close()
+            #update
+            save_object['neighbour'] = G
+            #write
+            with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'w') as openfile:
+                Saveobj = json.dump(save_object,openfile)
+                openfile.close()
+
             g=[g,G]#LDF
             A=[g[0]]
+
+
+
             if any(g[0] in sublist for sublist in Forest)==False:#نباشد P عضو جنگل  g
                 Tree=[X,g[0]]
                 Forest.append(Tree)
                 X+=1
 
-            for gprim in g[1]:
+
+
+            offset2=-1
+            for gprim_count,gprim in enumerate(g[1],starts=(offset2+1)):
+
+                #read
+                with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
+                    # Reading from json file
+                    save_object = json.load(openfile)
+                    openfile.close()
+                #update
+                save_object['count_gprim'] = gprim_count
+                #write
+                with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'w') as openfile:
+                    Saveobj = json.dump(save_object,openfile)
+                    openfile.close()
+
+
                 Root_g,_=findRoot(Forest,g[0])
                 Root_gprim,_=findRoot(Forest,gprim)
                 #indx_g=self.C.index(g[0])new
@@ -126,6 +176,19 @@ class GDCF:
                         for i in range(1,len(Forest[RootIndex])):
                             Forest[RootIndexIrc].append(Forest[RootIndex][i])
                         Forest[RootIndex].clear()
+             #read
+            with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
+                # Reading from json file
+                save_object = json.load(openfile)
+                openfile.close()
+            #update
+            save_object['forest'] = Forest
+            save_object['cluster_number'] = X
+            save_object['A'] = A
+            #write
+            with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'w') as openfile:
+                Saveobj = json.dump(save_object,openfile)
+                openfile.close()
 
 
         Noise=[]

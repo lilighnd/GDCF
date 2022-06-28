@@ -36,28 +36,24 @@ import getopt, sys
 import json
 # from numpyencoder import NumpyEncoder
 # --------------------------------------read data--------------------------------------------------
-grids=[]
-gridsData=[]
-dists=[]
-corepoints=[]
-coregrids=[]
+countg=0
 grid=0
-hgb=[]
-g=[]
-gprim=[]
+a = None
+Neighbour = None
+forest = None
+cluster_num = 0
+gprim=0
 Forest=[]
 Alltime=0
 r1=0
 rdb=0
 s_obj = {
-        "grid" : grids,
-        "datagrid" : gridsData,
-        "dintances" : dists,
-        "coreobjects" : corepoints,
-        "coregrids" : coregrids,
-        "count_grid" : grid,
-        "hgbmatrix" : hgb,
-        "count_g" : g,
+        
+        "count_g" : countg,
+        "neighbour" : Neighbour,
+        "a" : a,
+        "forest" : forest,
+        "cluster_number" : cluster_num,
         "count_gprim" : gprim,
         "forest" : Forest,
         "alltime" : Alltime,
@@ -65,7 +61,8 @@ s_obj = {
         "rand_indexdb" : rdb
 
 }
-save_object = json.dumps(s_obj, indent = 13)
+save_object = json.dumps(s_obj)
+
 with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outfile:
     outfile.write(save_object)
 # n_samples =1000000
@@ -315,16 +312,7 @@ if modeGrid == int(1):
     print("Hex mode")
     parts=make_Hex(Data,Eps)
     Grids,gridData=parts.GridHex()
-#-*-*-*-*-*-*-*-*-Json-*-*-*-*-*-*-*-*-*-*-*-
-    with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
-  
-        # Reading from json file
-        save_object = json.load(openfile)
 
-    s_obj["grid"] = Grids
-    save_object = json.dumps(s_obj)
-    with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outfile:
-            outfile.write(save_object)
     
 
     # with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
