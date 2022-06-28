@@ -133,7 +133,7 @@ print(json_object)
 print(type(json_object))
 q=json_object["data"]
 print (f"json_object data : {q} ")
-m = DataSet.q()
+m = DataSet.json_object["data"]()
 True_label = m[1]
 m = m[0].Data
 
