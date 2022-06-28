@@ -59,7 +59,7 @@ import json
 #    n_samples=n_samples, cluster_std=[1.0, 2.5, 0.5], random_state=random_state
 # )
 Dataset = "moons"
-Mode = "make_Hex"
+Mode = 1
 Number_Data = 38000
 Noise = 0.05
 Random_state = 42
@@ -272,13 +272,13 @@ start_time = time.time()
 # ---------------Hex Grids-----------
 modeGrid=json_object["mode_grid"]
 # Hexagonal
-if modeGrid == "make_Hex":
+if modeGrid == 1:
     print("Hex mode")
     parts=make_Hex(Data,Eps)
     Grids,gridData=parts.GridHex()
 
 # -------------Square Grids----------
-if modeGrid == "make_Square":
+if modeGrid == 2:
     print("Hex mode")
     parts = Make_Square(Data, Eps)
     Grids, gridData = parts.GridHex()
