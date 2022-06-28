@@ -320,7 +320,7 @@ if modeGrid == int(1):
     with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outfile:
         outfile.write(save_object)
 
-    save_object = json.dumps(s_obj["datagrid"],indent=13)
+    save_object = json.dumps(s_obj["datagrid"])
     with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outfile:
         outfile.write(save_object)
 
