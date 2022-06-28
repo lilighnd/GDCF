@@ -124,7 +124,7 @@ class DataSet:
     @classmethod
     def moons1m(cls):
         True_label=[]
-        moons = datasets.make_moons(n_samples=1000000,noise=0.05,random_state=42)
+        moons = datasets.make_moons(n_samples=1000,noise=0.05,random_state=42)
         True_label = moons[1]
         Data=moons[0] 
         # X_train,X_test,Y_train,Y_test = train_test_split(moons,True_label,test_size=1,random_state=42)

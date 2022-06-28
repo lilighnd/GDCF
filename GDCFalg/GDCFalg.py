@@ -32,8 +32,10 @@ import matplotlib.pyplot as plt
 from sklearn import cluster, datasets
 from sklearn.preprocessing import StandardScaler
 from itertools import cycle, islice
+import getopt, sys
+import json
 # --------------------------------------read data--------------------------------------------------
-n_samples =1000000
+# n_samples =1000000
 
 
 #noisy_circles = datasets.make_circles(n_samples=n_samples, factor=0.5, noise=0.05)
@@ -56,10 +58,82 @@ n_samples =1000000
 # varied = datasets.make_blobs(
 #    n_samples=n_samples, cluster_std=[1.0, 2.5, 0.5], random_state=random_state
 # )
+Dataset = "moons"
+Mode = "make_Hex"
+Number_Data = 38000
+Noise = 0.05
+Random_state = 42
+features = 2
+Centers = 3
+Epsilon = 0.07
+Minpoints = 3
+argumentList = sys.argv[1:]
+# Options
+options = "d:M:n:N:r:f:c:e:m:"
+ 
+# Long options
+long_options = ["Dataset", "Mode", "Number_Data", "Noise", "Random_state", "features", "Centers", "Epsilon", "Minpoints"]
+
+arguments, values = getopt.getopt(argumentList, options, long_options)
+
+for currentArgument, currentValue in arguments:
+
+    if currentArgument in ("-d", "--Dataset"):
+        Dataset = currentValue
 
 
+    elif currentArgument in ("-M", "--Mode"):
+        Mode = currentValue
+            
+
+    elif currentArgument in ("-n", "--Number_Data"):
+        Number_Data = currentValue
+
+    elif currentArgument in ("-N", "--Noise"):
+        Noise = currentValue
+
+    elif currentArgument in ("-r", "--Random_state"):
+        Random_state = currentValue
+            
+    elif currentArgument in ("-f", "--features"):
+        features = currentValue
+
+    elif currentArgument in ("-c", "--Centers"):
+        Centers = currentValue
+
+    elif currentArgument in ("-e", "--Epsilon"):
+        Epsilon = currentValue
+    
+    elif currentArgument in ("-m", "--Minpoints"):
+        Minpoints = currentValue
+
+Obj = {
+
+    "data" : Dataset,
+    "mode_grid" : Mode,
+    "n_samples" : Number_Data,
+    "noise" : Noise,
+    "random_state" : Random_state,
+    "features" : features,
+    "centers" : Centers,
+    "Eps" : Epsilon,
+    "Minpts" : Minpoints,
+}
+
+json_object = json.dumps(Obj, indent = 9)
+with open("sample.json", "w") as outfile:
+    outfile.write(json_object)
 # --------------------------------------------------------------------------------------------------
-m = DataSet.moons1m()
+with open('sample.json', 'r') as openfile:
+  
+    # Reading from json file
+    json_object = json.load(openfile)
+  
+print(json_object)
+print(type(json_object))
+q=json_object["data"]
+print (f"json_object data : {q} ")
+m = DataSet.q()
 True_label = m[1]
 m = m[0].Data
 
