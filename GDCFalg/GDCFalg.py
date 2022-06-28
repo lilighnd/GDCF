@@ -35,7 +35,19 @@ from itertools import cycle, islice
 import getopt, sys
 import json
 # --------------------------------------read data--------------------------------------------------
-Grids,gridData,dists,corepoints,coregrids,grid,hgb,g,gprim,Forest,Alltime,r1,rdb=0
+Grids=[]
+gridData=[]
+dists=[]
+corepoints=[]
+coregrids=[]
+grid=0
+hgb=[]
+g=[]
+gprim=[]
+Forest=[]
+Alltime=0
+r1=0
+rdb=0
 save_obj = {
         "grid" : Grids,
         "datagrid" : gridData,
