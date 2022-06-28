@@ -154,7 +154,7 @@ json_object = json.dumps(Obj, indent = 9)
 with open("/content/drive/MyDrive/Colab Notebooks/inputobject.json", "w") as outfile:
     outfile.write(json_object)
 # --------------------------------------------------------------------------------------------------
-with open('sample.json', 'r') as openfile:
+with open('/content/drive/MyDrive/Colab Notebooks/inputobject.json', 'r') as openfile:
   
     # Reading from json file
     json_object = json.load(openfile)
