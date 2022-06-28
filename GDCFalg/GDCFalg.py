@@ -59,7 +59,7 @@ import json
 #    n_samples=n_samples, cluster_std=[1.0, 2.5, 0.5], random_state=random_state
 # )
 Dataset = "moons"
-Mode = 1
+Mode = int(1)
 Number_Data = 38000
 Noise = 0.05
 Random_state = 42
