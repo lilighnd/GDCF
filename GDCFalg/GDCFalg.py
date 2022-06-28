@@ -310,9 +310,12 @@ if modeGrid == int(1):
     parts=make_Hex(Data,Eps)
     Grids,gridData=parts.GridHex()
 #-*-*-*-*-*-*-*-*-Json-*-*-*-*-*-*-*-*-*-*-*-
-    save_object = json.dumps(s_obj,indent=13)
+    save_object = json.dumps(s_obj["grid"],indent=13)
     with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outfile:
         outfile.write(save_object)
+
+
+
 
     print("run grid")
 
