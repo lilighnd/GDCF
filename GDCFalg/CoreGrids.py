@@ -15,8 +15,18 @@ class CoreGrids:
         print(self.m)
 
     def distances(self,Point):
+        with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
+  
+        # # Reading from json file
+            save_object = json.load(openfile)
+
         
         dist = distance.cdist([Point], self.m, 'euclidean')
+
+        save_object["dintances"] = dist
+        save_object = json.dumps(save_object)
+        with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outfile:
+            outfile.write(save_object)
         return dist
 
 

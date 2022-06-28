@@ -315,28 +315,27 @@ if modeGrid == int(1):
     print("Hex mode")
     parts=make_Hex(Data,Eps)
     Grids,gridData=parts.GridHex()
-    print(f"type griddata : {type(gridData)}")
 #-*-*-*-*-*-*-*-*-Json-*-*-*-*-*-*-*-*-*-*-*-
-    # with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
-  
-    #     # Reading from json file
-    #     save_object = json.load(openfile)
-
-    # s_obj["grid"] = Grids
-    # save_object = json.dumps(s_obj)
-    # with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outfile:
-    #         outfile.write(save_object)
-    
-
     with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
   
         # Reading from json file
         save_object = json.load(openfile)
 
-    s_obj["datagrid"] = gridData
+    s_obj["grid"] = Grids
     save_object = json.dumps(s_obj)
     with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outfile:
             outfile.write(save_object)
+    
+
+    # with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
+  
+    #     # Reading from json file
+    #     save_object = json.load(openfile)
+
+    # s_obj["datagrid"] = gridData
+    # save_object = json.dumps(s_obj)
+    # with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outfile:
+    #         outfile.write(save_object)
     
 
     print("run grid")
