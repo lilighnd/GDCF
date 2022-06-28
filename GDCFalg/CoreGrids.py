@@ -23,7 +23,7 @@ class CoreGrids:
             save_object = json.load(openfile)
 
         save_object["dintances"] = dist
-        # save_object = json.dumps(save_object)
+        save_object = json.dumps(save_object,indent = 1)
         with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outfile:
             outfile.write(save_object)
         return dist
