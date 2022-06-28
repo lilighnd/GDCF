@@ -2,7 +2,7 @@ import numpy as np
 from scipy.spatial import distance
 import pandas as pd
 from sklearn.cluster import DBSCAN
-
+import json
 
 class CoreGrids:
     def __init__(self, Grids, DataInGrids, data, Epsilon, Minpoints, m):
@@ -15,6 +15,7 @@ class CoreGrids:
         print(self.m)
 
     def distances(self,Point):
+        
         dist = distance.cdist([Point], self.m, 'euclidean')
         return dist
 

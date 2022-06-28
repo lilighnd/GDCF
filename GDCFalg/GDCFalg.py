@@ -65,6 +65,9 @@ s_obj = {
         "rand_indexdb" : rdb
 
 }
+save_object = json.dumps(s_obj, indent = 13)
+with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outfile:
+    outfile.write(save_object)
 # n_samples =1000000
 
 
