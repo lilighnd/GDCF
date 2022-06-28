@@ -58,8 +58,8 @@ import json
 # varied = datasets.make_blobs(
 #    n_samples=n_samples, cluster_std=[1.0, 2.5, 0.5], random_state=random_state
 # )
-Dataset = "moons"
-Mode = int(1)
+Dataset = "blob"
+Mode = 1
 Number_Data = 38000
 Noise = 0.05
 Random_state = 42
@@ -129,8 +129,7 @@ with open('sample.json', 'r') as openfile:
     # Reading from json file
     json_object = json.load(openfile)
   
-d=json_object["data"]
-print (f"json_object data : {d} ")
+
 m = DataSet.data()
 True_label = m[1]
 m = m[0].Data
@@ -263,8 +262,10 @@ print("load Data")
 
 
 # ----------------------------------Kinds of Grid--------------------------------------------------------
-MinPts = 3
-Eps = 0.07
+# MinPts = 3
+# Eps = 0.07
+Eps = float(json_object["Eps"])
+MinPts = int(json_object["Minpts"])
 G = []
 start_time = time.time()
 # ---------------Hex Grids-----------
@@ -280,7 +281,7 @@ if modeGrid == int(1):
 # -------------Square Grids----------
 if modeGrid == int(2):
     print("square mode")
-    parts = Make_Square(Data, Eps)
+    parts = Make_Square(Data,Eps)
     Grids, gridData = parts.GridHex()
     print("run grid")
 

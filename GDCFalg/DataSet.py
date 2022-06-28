@@ -127,11 +127,32 @@ class DataSet:
             # Reading from json file
             json_object = json.load(openfile)
 
+        D = json_object["data"]
         Numbers = int(json_object["n_samples"])
+        Noise = int(json_object["noise"])
+        R = int(json_object["random_state"])
+        f = int(json_object["features"])
+        c = int(json_object["centers"])
+
+
         True_label=[]
-        moons = datasets.make_moons(n_samples=Numbers,noise=0.05,random_state=42)
-        True_label = moons[1]
-        Data=moons[0] 
+        if D == "moon":
+            print("moons data")       
+            data = datasets.make_moons(n_samples=Numbers,noise=Noise,random_state=R)
+
+        if D == "blob":
+            print("blobs data")       
+            data = datasets.make_blobs(n_samples=Numbers, n_features = f, 
+                  centers = 3,cluster_std = 0,random_state=R)
+
+        if D == "circle":
+            print("circles data")       
+            data = datasets.make_circles(n_samples=Numbers, n_features = f, 
+                  centers = 3,cluster_std = 0,random_state=R)
+
+
+        True_label = data[1]
+        Data=data[0] 
         # X_train,X_test,Y_train,Y_test = train_test_split(moons,True_label,test_size=1,random_state=42)
         print(f"Data and labels :{Data,len(True_label)}")
         return cls(Data),True_label   
