@@ -306,20 +306,19 @@ start_time = time.time()
 # ---------------Hex Grids-----------
 modeGrid = int(json_object["mode_grid"])
 # Hexagonal
-print(type(modeGrid),type(int(1)))
+print(modeGrid,int(1))
 if modeGrid == int(1):
     print("Hex mode")
     parts=make_Hex(Data,Eps)
     Grids,gridData=parts.GridHex()
+
 #-*-*-*-*-*-*-*-*-Json-*-*-*-*-*-*-*-*-*-*-*-
+    
     save_object = json.dumps(s_obj["grid"],indent=13)
     with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outfile:
         outfile.write(save_object)
-
-
-
-
     print("run grid")
+
 
 # -------------Square Grids----------
 if modeGrid == int(2):
