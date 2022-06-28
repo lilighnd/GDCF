@@ -4,7 +4,7 @@ import os
 import csv
 from sklearn.model_selection import train_test_split
 from sklearn import cluster, datasets
-
+import json
 class DataSet:
     def __init__(self, data):
         self.Data = data
@@ -123,12 +123,17 @@ class DataSet:
 
     @classmethod
     def data(cls):
+        with open('sample.json', 'r') as openfile:
+            # Reading from json file
+            json_object = json.load(openfile)
+
+        Numbers = int(json_object["n_samples"])
         True_label=[]
-        moons = datasets.make_moons(n_samples=1000,noise=0.05,random_state=42)
+        moons = datasets.make_moons(n_samples=Numbers,noise=0.05,random_state=42)
         True_label = moons[1]
         Data=moons[0] 
         # X_train,X_test,Y_train,Y_test = train_test_split(moons,True_label,test_size=1,random_state=42)
-        print(f"Data and labels :{Data,True_label}")
+        print(f"Data and labels :{Data,len(True_label)}")
         return cls(Data),True_label   
         # return cls(X_test),Y_test   
     @classmethod

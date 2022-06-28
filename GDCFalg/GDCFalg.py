@@ -129,8 +129,6 @@ with open('sample.json', 'r') as openfile:
     # Reading from json file
     json_object = json.load(openfile)
   
-print(json_object)
-print(type(json_object))
 d=json_object["data"]
 print (f"json_object data : {d} ")
 m = DataSet.data()
@@ -277,6 +275,7 @@ if modeGrid == int(1):
     print("Hex mode")
     parts=make_Hex(Data,Eps)
     Grids,gridData=parts.GridHex()
+    print("run grid")
 
 # -------------Square Grids----------
 if modeGrid == int(2):
