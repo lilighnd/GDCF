@@ -35,8 +35,21 @@ from itertools import cycle, islice
 import getopt, sys
 import json
 # --------------------------------------read data--------------------------------------------------
+Grids,gridData,dists,corepoints,coregrids,grid,hgb,g,gprim,Forest,Alltime,r1,rdb=0
 save_obj = {
-
+        "grid" : Grids,
+        "datagrid" : gridData,
+        "dintances" : dists,
+        "coreobjects" : corepoints,
+        "coregrids" : coregrids,
+        "count_grid" : grid,
+        "hgbmatrix" : hgb,
+        "count_g" : g,
+        "count_gprim" : gprim,
+        "forest" : Forest,
+        "alltime" : Alltime,
+        "rand_index" : r1,
+        "rand_indexdb" : rdb
 
 }
 # n_samples =1000000
@@ -125,7 +138,7 @@ Obj = {
 }
 
 json_object = json.dumps(Obj, indent = 9)
-with open("sample.json", "w") as outfile:
+with open("/content/drive/MyDrive/Colab Notebooks/inputobject.json", "w") as outfile:
     outfile.write(json_object)
 # --------------------------------------------------------------------------------------------------
 with open('sample.json', 'r') as openfile:
@@ -163,12 +176,15 @@ m = m[0].Data
 
 # True_label = moons[1]
 # m=moons[0]
+
 Data= [[] for i in range(len(m[0]))]
 for dim in range(len(m[0])):
     for i in range(len(m)):
         Data[dim].append(m[i][dim])
-print(f"Data : {Data,len(Data),len(Data[0])}")
-print("load Data")
+
+
+# print(f"Data : {Data,len(Data),len(Data[0])}")
+# print("load Data")
 
 # minx=-(min(Data[0]))
 # miny=-(min(Data[1]))
