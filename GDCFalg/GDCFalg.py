@@ -48,7 +48,7 @@ Forest=[]
 Alltime=0
 r1=0
 rdb=0
-save_obj = {
+s_obj = {
         "grid" : Grids,
         "datagrid" : gridData,
         "dintances" : dists,
@@ -309,6 +309,11 @@ if modeGrid == int(1):
     print("Hex mode")
     parts=make_Hex(Data,Eps)
     Grids,gridData=parts.GridHex()
+#-*-*-*-*-*-*-*-*-Json-*-*-*-*-*-*-*-*-*-*-*-
+    save_object = json.dumps(Obj)
+    with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outfile:
+        outfile.write(save_object["grid"])
+
     print("run grid")
 
 # -------------Square Grids----------
