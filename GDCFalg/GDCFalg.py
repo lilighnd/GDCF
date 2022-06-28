@@ -273,13 +273,13 @@ start_time = time.time()
 modeGrid = json_object["mode_grid"]
 print(f'modeGrid : {type(modeGrid)}')
 # Hexagonal
-if modeGrid == 1:
+if modeGrid == int(1):
     print("Hex mode")
     parts=make_Hex(Data,Eps)
     Grids,gridData=parts.GridHex()
 
 # -------------Square Grids----------
-if modeGrid == 2:
+if modeGrid == int(2):
     print("Hex mode")
     parts = Make_Square(Data, Eps)
     Grids, gridData = parts.GridHex()
