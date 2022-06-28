@@ -133,7 +133,7 @@ print(json_object)
 print(type(json_object))
 d=json_object["data"]
 print (f"json_object data : {d} ")
-m = DataSet.d()
+m = DataSet.data()
 True_label = m[1]
 m = m[0].Data
 
@@ -270,14 +270,19 @@ Eps = 0.07
 G = []
 start_time = time.time()
 # ---------------Hex Grids-----------
+modeGrid=json_object["Mode"]
 # Hexagonal
-# parts=make_Hex(Data,Eps)
-# Grids,gridData=parts.GridHex()
+if modeGrid == "make_Hex":
+    print("Hex mode")
+    parts=make_Hex(Data,Eps)
+    Grids,gridData=parts.GridHex()
 
 # -------------Square Grids----------
-parts = Make_Square(Data, Eps)
-Grids, gridData = parts.GridHex()
-print("run grid")
+else:
+    print("Hex mode")
+    parts = Make_Square(Data, Eps)
+    Grids, gridData = parts.GridHex()
+    print("run grid")
 
 # -----------------------Recalling Saved Cores-------------------
 #path = '/content/drive/MyDrive/Colab Notebooks/CoreGrids.csv'

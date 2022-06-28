@@ -122,7 +122,7 @@ class DataSet:
         # return cls(data),True_label
 
     @classmethod
-    def d(cls):
+    def data(cls):
         True_label=[]
         moons = datasets.make_moons(n_samples=1000,noise=0.05,random_state=42)
         True_label = moons[1]
