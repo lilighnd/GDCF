@@ -36,8 +36,8 @@ import getopt, sys
 import json
 # from numpyencoder import NumpyEncoder
 # --------------------------------------read data--------------------------------------------------
-Grids=[]
-gridData=[]
+grids=[]
+gridsData=[]
 dists=[]
 corepoints=[]
 coregrids=[]
@@ -50,8 +50,8 @@ Alltime=0
 r1=0
 rdb=0
 s_obj = {
-        "grid" : Grids,
-        "datagrid" : gridData,
+        "grid" : grids,
+        "datagrid" : gridsData,
         "dintances" : dists,
         "coreobjects" : corepoints,
         "coregrids" : coregrids,
