@@ -35,6 +35,10 @@ from itertools import cycle, islice
 import getopt, sys
 import json
 # --------------------------------------read data--------------------------------------------------
+save_obj = {
+
+
+}
 # n_samples =1000000
 
 
@@ -163,6 +167,7 @@ Data= [[] for i in range(len(m[0]))]
 for dim in range(len(m[0])):
     for i in range(len(m)):
         Data[dim].append(m[i][dim])
+print(f"Data : {Data,len(Data),len(Data[0])}")
 print("load Data")
 
 # minx=-(min(Data[0]))
