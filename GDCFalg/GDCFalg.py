@@ -271,7 +271,7 @@ G = []
 start_time = time.time()
 # ---------------Hex Grids-----------
 modeGrid = int(json_object["mode_grid"])
-print(f'modeGrid : {type(modeGrid,modeGrid)}')
+print(f'modeGrid : {type(modeGrid),modeGrid}')
 # Hexagonal
 if modeGrid == int(1):
     print("Hex mode")
