@@ -278,7 +278,7 @@ if modeGrid == "make_Hex":
     Grids,gridData=parts.GridHex()
 
 # -------------Square Grids----------
-else:
+if modeGrid == "make_Square":
     print("Hex mode")
     parts = Make_Square(Data, Eps)
     Grids, gridData = parts.GridHex()
