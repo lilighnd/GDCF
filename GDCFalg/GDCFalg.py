@@ -314,12 +314,14 @@ if modeGrid == int(1):
     Grids,gridData=parts.GridHex()
 
 #-*-*-*-*-*-*-*-*-Json-*-*-*-*-*-*-*-*-*-*-*-
+    
     s_obj["grid"] = Grids
-    # save_object = json.dumps(s_obj["grid"],indent=13)
-
+    save_object = json.dumps(s_obj["grid"],indent=1)
+    with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outfile:
+            outfile.write(save_object)
     
     s_obj["datagrid"] = gridData
-    save_object = json.dumps(s_obj,indent=13)
+    save_object = json.dumps(s_obj["datagrid"],indent=1)
     with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outfile:
         outfile.write(save_object)
 
