@@ -306,7 +306,7 @@ start_time = time.time()
 # ---------------Hex Grids-----------
 modeGrid = int(json_object["mode_grid"])
 # Hexagonal
-print(f"mode : {Mode}")
+print(type(modeGrid),type(int(1)))
 if modeGrid == int(1):
     print("Hex mode")
     parts=make_Hex(Data,Eps)
