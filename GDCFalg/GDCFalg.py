@@ -149,6 +149,7 @@ Obj = {
     "Minpts" : Minpoints,
 }
 
+print(f"mode : {Mode}")
 json_object = json.dumps(Obj, indent = 9)
 with open("/content/drive/MyDrive/Colab Notebooks/inputobject.json", "w") as outfile:
     outfile.write(json_object)
@@ -158,6 +159,7 @@ with open('sample.json', 'r') as openfile:
     # Reading from json file
     json_object = json.load(openfile)
   
+print(f"mode : {Mode}")
 
 m = DataSet.data()
 True_label = m[1]
@@ -303,9 +305,8 @@ G = []
 start_time = time.time()
 # ---------------Hex Grids-----------
 modeGrid = int(json_object["mode_grid"])
-print(f'modeGrid : {type(modeGrid),modeGrid}')
 # Hexagonal
-print(modeGrid)
+print(f"mode : {Mode}")
 if modeGrid == int(1):
     print("Hex mode")
     parts=make_Hex(Data,Eps)
