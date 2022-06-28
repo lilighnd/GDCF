@@ -322,8 +322,8 @@ if modeGrid == int(1):
         # Reading from json file
         save_object = json.load(openfile)
 
-    s_obj["grid"] = Grids
-    s_obj["datagrid"] = gridData
+    save_object["grid"] = Grids
+    save_object["datagrid"] = gridData
     save_object = json.dumps(s_obj)
     with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outfile:
             outfile.write(save_object)
