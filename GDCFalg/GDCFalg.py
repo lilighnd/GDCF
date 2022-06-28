@@ -323,12 +323,14 @@ if modeGrid == int(1):
         save_object = json.load(openfile)
 
     s_obj["grid"] = Grids
-    s_obj["datagrid"] = gridData
     save_object = json.dumps(s_obj)
     with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outfile:
             outfile.write(save_object)
     
-    
+    s_obj["datagrid"] = gridData
+    save_object = json.dumps(s_obj)
+    with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outfile:
+            outfile.write(save_object)
 
     print("run grid")
 
