@@ -62,7 +62,7 @@ class GDCF:
         h=1
         h2=1
         offset = -1
-        for gi,g in enumerate(Q,starts=(offset+1)):
+        for gi,g in enumerate(Q,start=(offset+1)):
 
             #read
             with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
@@ -105,7 +105,7 @@ class GDCF:
 
 
             offset2=-1
-            for gprim_count,gprim in enumerate(g[1],starts=(offset2+1)):
+            for gprim_count,gprim in enumerate(g[1],start=(offset2+1)):
 
                 #read
                 with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
