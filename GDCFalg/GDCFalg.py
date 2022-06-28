@@ -131,9 +131,9 @@ with open('sample.json', 'r') as openfile:
   
 print(json_object)
 print(type(json_object))
-data=json_object["data"]
-print (f"json_object data : {data} ")
-m = DataSet.data()
+d=json_object["data"]
+print (f"json_object data : {d} ")
+m = DataSet.d()
 True_label = m[1]
 m = m[0].Data
 
