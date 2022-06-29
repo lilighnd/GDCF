@@ -35,12 +35,17 @@ class make_Hex():
         d1=[]
         d2=[]
         for i in range(numGridY):
+            print(f"i and numgridy : {i,numGridY}")#-------
             if i != 0:
                 point=temp[1]
+                print(f"point : {point}")#-------
+
                 flg=True
             for j in range(numGridX):
+                print(f"j and numgridx : {j,numGridX}")#-------
                 hex1 = self.ahex(point)
                 n1 = self.hexn(point)
+                print(f"hex1 and n1 : {hex1,n1}")#-------
                 
                 #------for plot----------
                 for k in range(len(hex1)):
@@ -58,15 +63,20 @@ class make_Hex():
                 inner_data = poly.contains_points(self.Data)
                 inner_data, = np.where(inner_data)
                 DataInGrid.append(list(inner_data))
+                print(f"DataInGrid and inner_data : {DataInGrid,inner_data}")#-------
 
                 if flg:
+                    print(f"flag true and point=n1[0] : {point}")#-------
                     point=n1[0]
                 else:
+                    print(f"flag false and point=n1[-1] : {point}")#-------
                     point=n1[-1]
                 flg=not flg
                 numG.append([j,i])
                 if inner_data!=[] and len(numG[-1])==2:#Determine Not Empty Grids
                     numG[-1].append("Not Empty Grid")
+                print(f"numG : {numG}")#-------
+
                 #print(inner_data)
 
   
