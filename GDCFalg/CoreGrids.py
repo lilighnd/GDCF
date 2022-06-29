@@ -12,7 +12,7 @@ class CoreGrids:
         self.Eps = Epsilon
         self.MinPts = Minpoints
         self.m = m
-        print(self.m)
+        # print(self.m)
 
     def distances(self,Point):
         dist = distance.cdist([Point], self.m, 'euclidean')
