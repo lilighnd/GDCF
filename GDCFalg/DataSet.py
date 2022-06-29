@@ -147,7 +147,7 @@ class DataSet:
 
         if D == "circle":
             print("circles data")       
-            data = datasets.make_circles(n_samples=Numbers,noise=Noise,random_state=R,factor=0.8)
+            data = datasets.make_circles(n_samples=Numbers,noise=Noise,random_state=R,factor=0.5)
 
 
         True_label = data[1]
