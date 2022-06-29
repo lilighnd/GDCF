@@ -59,9 +59,8 @@ class make_Hex():
                 #    n1hx.append(self.ahex(n1[i]))
                 #n1hx = np.array(n1hx)
                 poly = path.Path(hex1)
-
-                inner_data = poly.contains_points(self.Data)
-                inner_data, = np.where(inner_data)
+                inner_d = poly.contains_points(self.Data)
+                inner_data = np.where(inner_d)
                 DataInGrid.append(list(inner_data))
                 print(f"DataInGrid and inner_data : {inner_data}")#-------
 
@@ -118,8 +117,8 @@ class make_Hex():
     def ahex(self,p):
         h = [[p[0] + self.Eps/2,p[1]]]
         for i in range(5):
-            x = h[i][0] + self.Eps/2*np.cos((2+i)*np.pi/3)
-            y = h[i][1] + self.Eps/2*np.sin((2+i)*np.pi/3)
+            x = h[i][0] + (self.Eps/2*(np.cos((2+i)*np.pi/3)))
+            y = h[i][1] + (self.Eps/2*(np.sin((2+i)*np.pi/3)))
             h.append(np.round([x,y],2))
         return np.array(h)
     ##------------------------------
