@@ -62,6 +62,7 @@ class make_Hex():
                 inner_d = poly.contains_points(self.Data)
                 inner_data = np.where(inner_d)
                 DataInGrid.append(list(inner_data))
+                print(f"self.Data : {self.Data}")#-------
                 print(f"DataInGrid and inner_data : {inner_data}")#-------
 
                 if flg:
