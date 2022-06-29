@@ -123,7 +123,7 @@ class DataSet:
 
     @classmethod
     def data(cls):
-        with open('sample.json', 'r') as openfile:
+        with open('/content/drive/MyDrive/Colab Notebooks/inputobject.json', 'r') as openfile:
             # Reading from json file
             json_object = json.load(openfile)
 
