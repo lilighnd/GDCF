@@ -59,10 +59,10 @@ class make_Hex():
                 #    n1hx.append(self.ahex(n1[i]))
                 #n1hx = np.array(n1hx)
                 poly = path.Path(hex1)
-                inner_d = poly.contains_points(self.Data)
+                inner_d = poly.contains_points(self.Data[0])
                 inner_data = np.where(inner_d)
                 DataInGrid.append(list(inner_data))
-                print(f"self.Data : {poly.contains_points(np.array(self.Data[0]))}")#-------
+                print(f"self.Data : {inner_d}")#-------
                 print(f"DataInGrid and inner_data : {inner_data}")#-------
 
                 if flg:
