@@ -58,7 +58,7 @@ class GDCF:
                     Q = list(sorted(Neighbours, reverse=True, key=sort))
 
         # ----------------------------GDFC-------------------------------------------------------
-        print(f"Q(Core Grids) : {Q}")
+        # print(f"Q(Core Grids) : {Q}")
         X = 1
         Forest = [[None]]
         A = []
@@ -96,7 +96,7 @@ class GDCF:
             g = [g, G]  # LDF
             A = [g[0]]
 
-            print(f"g from Q : {g}")
+            # print(f"g from Q : {g}")
 
             if any(g[0] in sublist for sublist in Forest) == False:  # نباشد P عضو جنگل  g
                 Tree = [X, g[0]]

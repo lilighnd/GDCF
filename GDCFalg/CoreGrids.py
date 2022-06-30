@@ -4,6 +4,8 @@ import pandas as pd
 from sklearn.cluster import DBSCAN
 import json
 import time
+
+
 class CoreGrids:
     def __init__(self, Grids, DataInGrids, data, Epsilon, Minpoints, m):
         self.Grids = Grids
@@ -14,26 +16,29 @@ class CoreGrids:
         self.m = m
         # print(self.m)
 
-    def distances(self,Point):
+    def distances(self, Point):
         dist = distance.cdist([Point], self.m, 'euclidean')
         return dist
 
-
     def Find_CoreObject(self):
-        start_time_coreobject=time.time()
+        start_time_coreobject = time.time()
         Core_Objects = []
         for pointOfData in range(len(self.m)):
             dists = self.distances(self.m[pointOfData])
-            count = 0
-            for SecodPointOfData in range(len(self.m)):
-                if dists[0][SecodPointOfData] <= self.Eps:
-                    count += 1
-            if count >= self.MinPts:
+            print(f"type dists : {type(dists)}")
+            if (dists <= self.Eps).sum() >= self.MinPts:
                 Core_Objects.append(pointOfData)
+                continue
+
+            # count = 0
+            # for SecodPointOfData in range(len(self.m)):
+            #     if dists[0][SecodPointOfData] <= self.Eps:
+            #         count += 1
+            # if count >= self.MinPts:
+            #     Core_Objects.append(pointOfData)
+        print(f"core obj : {Core_Objects}")
         print(f"time_coreobject={time.time() - start_time_coreobject}")
         return Core_Objects
-
-
 
     def Find_CoreGrids(self):
         # np.savetxt("/content/drive/MyDrive/Colab Notebooks/distanceblobs.csv",
@@ -48,15 +53,11 @@ class CoreGrids:
         #path = f'..\\GDCFalg\\distanceblobs.csv'
         #df = pd.read_csv(path)
         #dists = df.values.tolist()
-        CorePoints =self.Find_CoreObject()
+        CorePoints = self.Find_CoreObject()
         # print(f"Core points : {CorePoints}")
         # print(f"all Grids : {self.Grids}")
 
-        
-        
-
-
-        print("Core grid is running")#####
+        print("Core grid is running")
         Core_Grids = []
         # Core Grids
         start_time_coregrid = time.time()
@@ -66,17 +67,16 @@ class CoreGrids:
                 Core_Grids.append(self.Grids[grid])
                 NotAdd = False
                 continue
-            
+
             for Point_grid in self.PointsInGrids[grid]:
                 if Point_grid in CorePoints:
                     Core_Grids.append(self.Grids[grid])
                     NotAdd = False
                     break
-            
+
             if NotAdd == True:
                 Core_Grids.append([])
                 print("empty core grid")
-
 
             # for j in range(len(self.PointsInGrids[i])):
             #     Count = 0
@@ -99,8 +99,7 @@ class CoreGrids:
         #   delimiter =",",
         #   fmt ='% s')
         print(f"time_coregrid={time.time() - start_time_coregrid}")
-        return Core_Grids,CorePoints
-
+        return Core_Grids, CorePoints
 
     # def distances(self, Point):
     #     # "Point" is point that checked all distances for another points
