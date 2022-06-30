@@ -37,6 +37,8 @@ class make_Hex():
         d1=[]
         d2=[]
         for i in range(numGridY):
+            print(f"point : {point}")#-------
+            print(f"data : {np.array(self.Data)}")#-------
             print(f"i and numgridy : {i,numGridY}")#-------
             if i != 0:
                 point=temp[1]
@@ -59,6 +61,7 @@ class make_Hex():
                 #n1hx = []
                 #for i in range(len(n1)):
                 #    n1hx.append(self.ahex(n1[i]))
+
                 #n1hx = np.array(n1hx)
                 poly = path.Path(hex1)
                 inner_d = poly.contains_points(np.array(self.Data))
