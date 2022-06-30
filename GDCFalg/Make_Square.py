@@ -38,7 +38,7 @@ class Make_Square():
             if i != 0:
                 point=temp[2]
                 flg=True
-                
+
             for j in range(numGridX):
                 hex1 = self.ahex(point)
                 n1 = self.hexn(point)
@@ -62,11 +62,11 @@ class Make_Square():
                 DataInGrid.append(inner_data[0])
                 # print(DataInGrid)
 
-                #if flg:
-                point=n1[0]
-                #else:
-                #    point=n1[2]
-                #flg=not flg
+                if flg:
+                    point=n1[0]
+                else:
+                    point=n1[2]
+                flg=not flg
                 numG.append([j,i])
                 #if inner_data!=[] and len(numG[-1])==2:#Determine Not Empty Grids
                 if len(inner_data)!=0 and len(numG[-1])==2:#Determine Not Empty Grids
