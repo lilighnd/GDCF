@@ -77,8 +77,8 @@ class GDCF:
                 openfile.close()
 
 
-            G1=NeighbourGridQuery(g,self.dimention,self.HGBLst)#LDF
-            G=G1.NeighbourGrid(NonEmptyGrids)#LDF
+            # G1=NeighbourGridQuery(g,self.dimention,self.HGBLst)#LDF
+            # G=G1.NeighbourGrid(NonEmptyGrids)#LDF
 
             #read
             with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
@@ -92,7 +92,7 @@ class GDCF:
                 Saveobj = json.dump(save_object,openfile)
                 openfile.close()
 
-            g=[g,G]#LDF
+            # g=[g,G]#LDF
             A=[g[0]]
 
 
