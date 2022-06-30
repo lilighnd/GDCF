@@ -25,7 +25,6 @@ class CoreGrids:
         Core_Objects = []
         for pointOfData in range(len(self.m)):
             dists = self.distances(self.m[pointOfData])
-            print(f"type dists : {type(dists)}")
             if (dists <= self.Eps).sum() >= self.MinPts:
                 Core_Objects.append(pointOfData)
                 continue
