@@ -70,13 +70,13 @@ class make_Hex():
                 print(f"inner_d : {inner_d}")#-------
                 print(f"DataInGrid and inner_data : {inner_data}")#-------
 
-                if flg:
-                    print(f"flag true and point=n1[0] : {point}")#-------
-                    point=n1[0]
-                else:
-                    print(f"flag false and point=n1[-1] : {point}")#-------
-                    point=n1[-1]
-                flg=not flg
+                # if flg:
+                print(f"flag true and point=n1[0] : {point}")#-------
+                point=n1[0]
+                # else:
+                #     print(f"flag false and point=n1[-1] : {point}")#-------
+                #     point=n1[-1]
+                # flg=not flg
                 numG.append([j,i])
                 if inner_data!=[] and len(numG[-1])==2:#Determine Not Empty Grids
                     numG[-1].append("Not Empty Grid")
