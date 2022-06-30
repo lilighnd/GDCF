@@ -43,8 +43,8 @@ class make_Hex():
             if i != 0:
                 point=temp[1]
                 print(f"point : {point}")#-------
-
                 flg=True
+
             for j in range(numGridX):
                 print(f"j and numgridx : {j,numGridX}")#-------
                 hex1 = self.ahex(point)
@@ -64,19 +64,19 @@ class make_Hex():
 
                 #n1hx = np.array(n1hx)
                 poly = path.Path(hex1)
-                inner_d = poly.contains_points(np.array(self.Data))
+                inner_d = poly.contains_points(self.Data)
                 inner_data = np.where(inner_d)
                 DataInGrid.append(inner_data[0])
                 print(f"inner_d : {inner_d}")#-------
                 print(f"DataInGrid and inner_data : {inner_data}")#-------
 
-                if flg:
-                    print(f"flag true and point=n1[0] : {point}")#-------
-                    point=n1[0]
-                else:
-                    print(f"flag false and point=n1[-1] : {point}")#-------
-                    point=n1[-1]
-                flg=not flg
+                # if flg:
+                print(f"flag true and point=n1[0] : {point}")#-------
+                point=n1[0]
+                # else:
+                print(f"flag false and point=n1[-1] : {point}")#-------
+                #     point=n1[-1]
+                # flg=not flg
                 numG.append([j,i])
                 if inner_data!=[] and len(numG[-1])==2:#Determine Not Empty Grids
                     numG[-1].append("Not Empty Grid")

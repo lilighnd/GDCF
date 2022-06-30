@@ -38,6 +38,7 @@ class Make_Square():
             if i != 0:
                 point=temp[2]
                 flg=True
+                
             for j in range(numGridX):
                 hex1 = self.ahex(point)
                 n1 = self.hexn(point)
