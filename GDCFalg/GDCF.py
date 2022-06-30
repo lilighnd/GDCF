@@ -86,7 +86,7 @@ class GDCF:
                 save_object = json.load(openfile)
                 openfile.close()
             #update
-            save_object['neighbour'] = G
+            # save_object['neighbour'] = G
             #write
             with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'w') as openfile:
                 Saveobj = json.dump(save_object,openfile)
