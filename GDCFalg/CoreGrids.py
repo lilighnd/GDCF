@@ -3,7 +3,7 @@ from scipy.spatial import distance
 import pandas as pd
 from sklearn.cluster import DBSCAN
 import json
-
+import time
 class CoreGrids:
     def __init__(self, Grids, DataInGrids, data, Epsilon, Minpoints, m):
         self.Grids = Grids
@@ -20,6 +20,7 @@ class CoreGrids:
 
 
     def Find_CoreObject(self):
+        start_time_coreobject=time.time()
         Core_Objects = []
         for pointOfData in range(len(self.m)):
             dists = self.distances(self.m[pointOfData])
@@ -29,6 +30,7 @@ class CoreGrids:
                     count += 1
             if count >= self.MinPts:
                 Core_Objects.append(pointOfData)
+        print(f"time_coreobject={time.time() - start_time_coreobject}")
         return Core_Objects
 
 
@@ -57,6 +59,7 @@ class CoreGrids:
         print("Core grid is running")#####
         Core_Grids = []
         # Core Grids
+        start_time_coregrid = time.time()
         for grid in range(len(self.Grids)):
             NotAdd = True
             if len(self.PointsInGrids[grid]) >= self.MinPts:
@@ -95,6 +98,7 @@ class CoreGrids:
         #   Core_Objects,
         #   delimiter =",",
         #   fmt ='% s')
+        print(f"time_coregrid={time.time() - start_time_coregrid}")
         return Core_Grids,CorePoints
 
 

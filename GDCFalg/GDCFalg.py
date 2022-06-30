@@ -307,6 +307,7 @@ start_time = time.time()
 # ---------------Hex Grids-----------
 modeGrid = int(json_object["mode_grid"])
 # Hexagonal
+start_time_grid = time.time()
 print(modeGrid,int(1))
 if modeGrid == int(1):
     print("Hex mode")
@@ -335,7 +336,7 @@ if modeGrid == int(2):
     parts = Make_Square(Data,Eps)
     Grids, gridData = parts.GridHex()
     print("run grid")
-
+print(f"time_grid = {time.time() - start_time_grid}")
 # -----------------------Recalling Saved Cores-------------------
 #path = '/content/drive/MyDrive/Colab Notebooks/CoreGrids.csv'
 #df = pd.read_csv(path)
@@ -366,15 +367,18 @@ print("run core")
 
 
 # ----------------------------------------HGB--------------------------------------------------------------
+start_time_hgb=time.time()
 HGBmatrix = HGB(Grids, 2)
 B = HGBmatrix.BuildHGB()
 print("run HGB")
+print(f"time_hgb = {time.time() - start_time_hgb}")
 
 # _______________________________________GDCF________________________________________________________________-
-
+start_time_gdcf=time.time()
 gdcf = GDCF(CoreGrid, CoreObject, 2, B, MinPts, Eps)
 ClusterForest = gdcf.BuildGDCF("LDF", gridData, m, Grids)
 print("run GDCF")
+print(f"time_gdcf = {time.time() - start_time_gdcf}")
 
 
 Pred_label = []
