@@ -66,7 +66,7 @@ class make_Hex():
                 poly = path.Path(hex1)
                 inner_d = poly.contains_points(np.array(self.Data))
                 inner_data = np.where(inner_d)
-                DataInGrid.append(list(inner_data))
+                DataInGrid.append(inner_data)
                 print(f"inner_d : {inner_d}")#-------
                 print(f"DataInGrid and inner_data : {inner_data}")#-------
 
