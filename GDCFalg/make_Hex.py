@@ -23,6 +23,8 @@ class make_Hex():
         flg=True
         numG=[]
         point = np.array([minX,minY])
+        print(f"point : {point}")#-------
+        print(f"data : {np.array(self.Data)}")#-------
         #numGridX = int(np.ceil((maxX-minX)/(3*self.Eps)))*2  # ==> 5
         numGridX =int(np.ceil(((maxX-minX)/(3*self.Eps/2)))*2)  # ==> 5
         #numGridY = int(np.ceil((maxY-minY)/(2*self.Eps)))  # ==> 4
@@ -58,7 +60,6 @@ class make_Hex():
                 #for i in range(len(n1)):
                 #    n1hx.append(self.ahex(n1[i]))
                 #n1hx = np.array(n1hx)
-                print(f"data[0] : {np.array(self.Data[0])}")#-------
                 poly = path.Path(hex1)
                 inner_d = poly.contains_points(np.array(self.Data))
                 inner_data = np.where(inner_d)
