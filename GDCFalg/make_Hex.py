@@ -23,33 +23,27 @@ class make_Hex():
         flg=True
         numG=[]
         point = np.array([minX,minY])
-        print(f"point : {point}")#-------
-        print(f"data : {np.array(self.Data)}")#-------
-        #numGridX = int(np.ceil((maxX-minX)/(3*self.Eps)))*2  # ==> 5
+        # print(f"point : {point}")#-------
+        # print(f"data : {np.array(self.Data)}")#-------
         numGridX =int(np.ceil(((maxX-minX)/(3*self.Eps/2)))*2)  # ==> 5
-        #numGridY = int(np.ceil((maxY-minY)/(2*self.Eps)))  # ==> 4
         numGridY = int(np.ceil((maxY-minY)/((0.87*self.Eps/2)*2)))+1  # ==> 4
         GX=int(numGridX * numGridY)
-        #self.Eps=2*self.Eps
-        #for j in range(numGridY):
-        #    for i in range(numGridX):
-        #        numG.append([((i+1)+(j*numGridX)),i,j])
         d1=[]
         d2=[]
         for i in range(numGridY):
-            print(f"point : {point}")#-------
-            print(f"data : {np.array(self.Data)}")#-------
-            print(f"i and numgridy : {i,numGridY}")#-------
+            # print(f"point : {point}")#-------
+            # print(f"data : {np.array(self.Data)}")#-------
+            # print(f"i and numgridy : {i,numGridY}")#-------
             if i != 0:
                 point=temp[1]
-                print(f"point : {point}")#-------
+                # print(f"point : {point}")#-------
                 flg=True
 
             for j in range(numGridX):
-                print(f"j and numgridx : {j,numGridX}")#-------
+                # print(f"j and numgridx : {j,numGridX}")#-------
                 hex1 = self.ahex(point)
                 n1 = self.hexn(point)
-                print(f"hex1 and n1 : {hex1,n1}")#-------
+                # print(f"hex1 and n1 : {hex1,n1}")#-------
                 
                 #------for plot----------
                 for k in range(len(hex1)):
@@ -67,20 +61,20 @@ class make_Hex():
                 inner_d = poly.contains_points(self.Data)
                 inner_data = np.where(inner_d)
                 DataInGrid.append(inner_data[0])
-                print(f"inner_d : {inner_d}")#-------
-                print(f"DataInGrid and inner_data : {inner_data}")#-------
+                # print(f"inner_d : {inner_d}")#-------
+                # print(f"DataInGrid and inner_data : {inner_data}")#-------
 
                 if flg:
-                    print(f"flag true and point=n1[0] : {point}")#-------
+                    # print(f"flag true and point=n1[0] : {point}")#-------
                     point=n1[0]
                 else:
-                    print(f"flag false and point=n1[-1] : {point}")#-------
+                    # print(f"flag false and point=n1[-1] : {point}")#-------
                     point=n1[-1]
                 flg=not flg
                 numG.append([j,i])
                 if inner_data!=[] and len(numG[-1])==2:#Determine Not Empty Grids
                     numG[-1].append("Not Empty Grid")
-        print(f"numG : {numG}")#-------
+        # print(f"numG : {numG}")#-------
 
                 #print(inner_data)
 
