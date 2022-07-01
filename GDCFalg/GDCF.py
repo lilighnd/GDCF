@@ -126,12 +126,12 @@ class GDCF:
                 if Root_g == Root_gprim:
                     continue
                 
-                # if g in self.Core_G and gprim in self.Core_G:
-                if mergability(self, indx_g, indx_gprim, DataGrids, Data) == True:
-                    if any(gprim in sublist for sublist in Forest) == False:
-                        Forest[Root_g].append(gprim)  # new
-                    else:
-                        A.append(gprim)
+                if g in self.Core_G and gprim in self.Core_G:
+                    if mergability(self, indx_g, indx_gprim, DataGrids, Data) == True:
+                        if any(gprim in sublist for sublist in Forest) == False:
+                            Forest[Root_g].append(gprim)  # new
+                        else:
+                            A.append(gprim)
 
 
 # ***********set parents of all roots of cluster numbers in set A tolrc(A)***********************************
