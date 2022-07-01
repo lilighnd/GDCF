@@ -78,7 +78,7 @@ class GDCF:
                 Saveobj = json.dump(save_object, openfile)
                 openfile.close()
 
-            G1 = NeighbourGridQuery(g, self.dimention, self.HGBLst)  # LDF
+            """G1 = NeighbourGridQuery(g, self.dimention, self.HGBLst)  # LDF
             G = G1.NeighbourGrid(NonEmptyGrids)  # LDF
 
             # read
@@ -93,7 +93,7 @@ class GDCF:
                 Saveobj = json.dump(save_object, openfile)
                 openfile.close()
 
-            g = [g, G]  # LDF
+            g = [g, G]  # LDF"""
             A = [g[0]]
 
             # print(f"g from Q : {g}")
