@@ -12,7 +12,7 @@ class HGB():
             for j in range(len(self.Grids)):
                 if self.Grids[j][0]>Max[0]:
                     Max[0]=self.Grids[j][0]
-                if self.S[j][1]>Max[1]:
+                if self.Grids[j][1]>Max[1]:
                     Max[1]=self.Grids[j][1]
             #b=np.zeros(((self.S[-1][i]+1),len(self.S)))
             b=np.zeros((Max[i]+1,len(self.Grids)))
