@@ -125,12 +125,13 @@ class GDCF:
                 indx_gprim = NonEmptyGrids.index(gprim)
                 if Root_g == Root_gprim:
                     continue
-
-                elif mergability(self, indx_g, indx_gprim, DataGrids, Data) == True:
-                    if any(gprim in sublist for sublist in Forest) == False:
-                        Forest[Root_g].append(gprim)  # new
-                    else:
-                        A.append(gprim)
+                
+                if DataGrids[indx_g] in self.Core_G and DataGrids[indx_gprim] in self.Core_G:
+                    if mergability(self, indx_g, indx_gprim, DataGrids, Data) == True:
+                        if any(gprim in sublist for sublist in Forest) == False:
+                            Forest[Root_g].append(gprim)  # new
+                        else:
+                            A.append(gprim)
 
 
 # ***********set parents of all roots of cluster numbers in set A tolrc(A)***********************************
@@ -242,7 +243,6 @@ class GDCF:
 
 def mergability(self, ind_g, ind_gprim, DataGrids, Data):
     # m=[[],[]]
-
     for data in range(len(DataGrids[ind_g])):
         for dataNeighbourGrid in range(len(DataGrids[ind_gprim])):
             dist = distance.euclidean(
