@@ -125,8 +125,8 @@ class GDCF:
                 indx_gprim = NonEmptyGrids.index(gprim)
                 if Root_g == Root_gprim:
                     continue
-                print(f"[indx_g] : {indx_g}")
-                if DataGrids[indx_g] in self.Core_G and DataGrids[indx_gprim] in self.Core_G:
+                
+                if g in self.Core_G and gprim in self.Core_G:
                     if mergability(self, indx_g, indx_gprim, DataGrids, Data) == True:
                         if any(gprim in sublist for sublist in Forest) == False:
                             Forest[Root_g].append(gprim)  # new
