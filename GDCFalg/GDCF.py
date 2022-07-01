@@ -80,7 +80,6 @@ class GDCF:
 
             G1 = NeighbourGridQuery(g, self.dimention, self.HGBLst)  # LDF
             G = G1.NeighbourGrid(NonEmptyGrids)  # LDF
-
             # read
             with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
                 # Reading from json file
@@ -95,6 +94,7 @@ class GDCF:
 
             g = [g, G]  # LDF"""
             A = [g[0]]
+            print(f"grid and neighbours : {g}")
 
             # print(f"g from Q : {g}")
 
