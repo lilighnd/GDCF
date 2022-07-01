@@ -24,7 +24,7 @@ class HGB():
                     pos=g[i]
                     B[i][pos][k]=1
             k+=1
-        print(f"hgb : {B[0]}")
+        print(f"hgb : {B[0][0]}")
         return B
                     
 
