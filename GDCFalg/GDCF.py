@@ -94,7 +94,7 @@ class GDCF:
 
             g = [g, G]  # LDF"""
             A = [g[0]]
-            print(f"grid and neighbours : {g}")
+            # print(f"grid and neighbours : {g}")
 
             # print(f"g from Q : {g}")
 
