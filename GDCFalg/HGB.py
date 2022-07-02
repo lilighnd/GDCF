@@ -24,19 +24,7 @@ class HGB():
                     pos=g[i]
                     B[i][pos][k]=1
             k+=1
-        print(f"hgb : {B[0][4]}")
-        # print(f"hgb : {B[0][4][1]}")
-        # print(f"hgb : {B[0][4][2]}")
-        # print(f"hgb : {B[0][4][3]}")
-        # print(f"hgb : {B[0][4][4]}")
-        # print(f"hgb : {B[0][4][5]}")
-        # print(f"hgb : {B[0][4][6]}")
-        # print(f"hgb : {B[0][4][7]}")
-        # print(f"hgb : {B[0][4][8]}")
-        # print(f"hgb : {B[0][4][9]}")
-        # print(f"hgb : {B[0][4][10]}")
-        # print(f"hgb : {B[0][4][11]}")
-        # print(f"hgb : {B[0][4][12]}")
+        # print(f"hgb : {B[0][4]}")
         return B
                     
 
