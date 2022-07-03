@@ -34,9 +34,10 @@ class NeighbourHex():
             x = self.g[0] - 2
             y = self.g[1] - 2
             # g = x * self.numGx + y
-            indx = Grids.index([x, y, 'Not Empty Grid'])
-            print(f"indx and grid: {indx,[x, y, 'Not Empty Grid']}")
-            if indx != None and indx <= len(tmp1):
+            if [x, y, 'Not Empty Grid'] in Grids:
+                indx = Grids.index([x, y, 'Not Empty Grid'])
+                print(f"indx and grid: {indx,[x, y, 'Not Empty Grid']}")
+            # if indx != None and indx <= len(tmp1):
             # print(f"Grids : {Grids,type(Grids),len(Grids)}")
                 print("truuuuue")
                 tmp1[indx] = 0 
