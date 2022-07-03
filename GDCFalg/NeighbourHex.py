@@ -28,36 +28,43 @@ class NeighbourHex():
             tmp1 = ANDarray(tmp1, tmp2)
         i = 0
 
-        x = self.g[0] - 2
-        y = self.g[1] - 2
-        g = x * self.numGx + y
-        tmp1[g] = 0
-        print(f"NHex x,y : {x,y,g,tmp1[g] }")
+        if self.g[0] - 2 >= 0: 
+            x = self.g[0] - 2
+            y = self.g[1] - 2
+            g = x * self.numGx + y
+            if g <= len(tmp1):
+                tmp1[g] = 0
+            print(f"NHex x,y : {x,y,g,tmp1[g] }")
 
-        x = self.g[0] - 2
-        y = self.g[1] + 2
-        g = x * self.numGx + y
-        tmp1[g] = 0
+            x = self.g[0] - 2
+            y = self.g[1] + 2
+            g = x * self.numGx + y
+            if g <= len(tmp1):
+                tmp1[g] = 0
 
-        x = self.g[0] + 2
-        y = self.g[1] - 2
-        g = x * self.numGx + y
-        tmp1[g] = 0
+            x = self.g[0] + 2
+            y = self.g[1] - 2
+            g = x * self.numGx + y
+            if g <= len(tmp1):
+                tmp1[g] = 0
 
-        x = self.g[0] +2 
-        y = self.g[1] -1
-        g = x * self.numGx + y
-        tmp1[g] = 0
+            x = self.g[0] +2 
+            y = self.g[1] -1
+            g = x * self.numGx + y
+            if g <= len(tmp1):
+                tmp1[g] = 0
 
-        x = self.g[0] + 2
-        y = self.g[1] + 1
-        g = x * self.numGx + y
-        tmp1[g] = 0
+            x = self.g[0] + 2
+            y = self.g[1] + 1
+            g = x * self.numGx + y
+            if g <= len(tmp1):
+                tmp1[g] = 0
 
-        x = self.g[0] + 2
-        y = self.g[1] + 2
-        g = x * self.numGx + y
-        tmp1[g] = 0
+            x = self.g[0] + 2
+            y = self.g[1] + 2
+            g = x * self.numGx + y
+            if g <= len(tmp1):
+                tmp1[g] = 0
         # m=[Grids[i][0] for i in range(len(Grids))]#Number  of grids
         for j in range(0, n):
             # and 'g'+str(j+1)!=self.g[0]:#g is neighbour of self
