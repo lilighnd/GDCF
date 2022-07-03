@@ -168,7 +168,7 @@ True_label = m[1]
 m = m[0].Data
 
 print(f"type(data)1 : {type(m)}")
-m = np.random.RandomState(42).randn(30, 2)
+m = np.random.RandomState(42).randn(200, 2)
 print(f"type(data)2 : {type(m)}")
 print(f"data : {m}")
 # db = DBSCAN(eps=0.07, min_samples=5).fit(m)
