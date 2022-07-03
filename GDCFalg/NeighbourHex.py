@@ -11,6 +11,9 @@ class NeighbourHex():
         self.B = b  # HGB
     def NeighbourGrid(self, Grids):
         print("********************start NHEX******************")
+        print(Grids)
+        print(f"tmp1 : {len(tmp1[0])}")
+        print(f"tmp1 : {tmp1[0]}")
         n = len(self.B[0][0])
         Q = []
         tmp1 = np.ones((1, n))
