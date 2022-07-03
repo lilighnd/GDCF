@@ -14,8 +14,8 @@ class NeighbourHex():
         n = len(self.B[0][0])
         Q = []
         tmp1 = np.ones((1, n))
-        print(f"tmp1 : {len(self.g)}")
-        print(f"tmp1 : {len(tmp1[0])}")
+        # print(f"tmp1 : {len(self.g)}")
+        # print(f"tmp1 : {len(tmp1[0])}")
         for i in range(self.d):
             tmp2 = np.zeros((1, n))
             L1 = self.g[i]-int(np.ceil(math.sqrt(self.d)))
@@ -34,9 +34,12 @@ class NeighbourHex():
             x = self.g[0] - 2
             y = self.g[1] - 2
             # g = x * self.numGx + y
-            # if g <= len(tmp1):
-            print(f"Grids : {Grids,type(Grids),len(Grids)}")
-            # tmp1[g] = 0
+            indx = Grids.index([x, y, 'Not Empty Grid'])
+            print(f"indx and grid: {indx,[x, y, 'Not Empty Grid']}")
+            if indx != None and indx <= len(tmp1):
+            # print(f"Grids : {Grids,type(Grids),len(Grids)}")
+                print("truuuuue")
+                tmp1[indx] = 0 
             # print(f"NHex x,y : {x,y,self.numGx,g,tmp1 }")
 
             x = self.g[0] - 2
