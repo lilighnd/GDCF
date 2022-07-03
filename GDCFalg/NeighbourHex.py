@@ -39,8 +39,9 @@ class NeighbourHex():
                 print(f"indx and grid: {indx,[x, y, 'Not Empty Grid']}")
             # if indx != None and indx <= len(tmp1):
             # print(f"Grids : {Grids,type(Grids),len(Grids)}")
-                print("truuuuue")
-                tmp1[indx] = 0 
+                print(f"tmp1 start: {tmp1[0][indx]}")
+                tmp1[0][indx] = 0 
+                print(f"tmp1 end: {tmp1[0][indx]}")
             # print(f"NHex x,y : {x,y,self.numGx,g,tmp1 }")
 
             x = self.g[0] - 2
