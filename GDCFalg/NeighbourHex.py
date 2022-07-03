@@ -29,7 +29,7 @@ class NeighbourHex():
             tmp1 = ANDarray(tmp1, tmp2)
         i = 0
 
-        
+
         x = self.g[0] - 2
         y = self.g[1] - 2
         if [x, y, 'Not Empty Grid'] in Grids:
@@ -38,7 +38,7 @@ class NeighbourHex():
             # print(f"indx and grid: {indx,[x, y, 'Not Empty Grid']}")
             # print(f"tmp1 start: {tmp1[0][indx]}")
             # print(f"tmp1 end: {tmp1[0][indx]}")
-
+        print(f"grids : {Grids}")
         x = self.g[0] - 2
         y = self.g[1] + 2
         if [x, y, 'Not Empty Grid'] in Grids:
