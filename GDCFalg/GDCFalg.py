@@ -313,7 +313,7 @@ print(modeGrid,int(1))
 if modeGrid == int(1):
     print("Hex mode")
     parts=make_Hex(Data,Eps)
-    Grids,gridData,numGx=parts.GridHex()
+    Grids,gridData=parts.GridHex()
 
     
 
@@ -376,7 +376,7 @@ print(f"time_hgb = {time.time() - start_time_hgb}")
 
 # _______________________________________GDCF________________________________________________________________-
 start_time_gdcf=time.time()
-gdcf = GDCF(CoreGrid, CoreObject, 2, B, MinPts, Eps, numGx)
+gdcf = GDCF(CoreGrid, CoreObject, 2, B, MinPts, Eps)
 ClusterForest = gdcf.BuildGDCF("LDF","Hex", gridData, m, Grids)
 print("run GDCF")
 print(f"time_gdcf = {time.time() - start_time_gdcf}")
