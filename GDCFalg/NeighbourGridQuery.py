@@ -11,6 +11,7 @@ class NeighbourGridQuery():
         n=len(self.B[0][0]) 
         Q=[]
         tmp1=np.ones((1,n))
+        print(f"tmp1 : {len(tmp1),tmp1[0],tmp1}")
         for i in range(self.d):
             tmp2=np.zeros((1,n))
             L1=self.g[i]-int(np.ceil(math.sqrt(self.d)))
