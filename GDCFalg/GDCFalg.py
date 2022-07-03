@@ -167,8 +167,10 @@ m = DataSet.data()
 True_label = m[1]
 m = m[0].Data
 
-
-
+print(f"type(data)1 : {type(m)}")
+m = np.random.randn(30, 2,Random_state=42)
+print(f"type(data)2 : {type(m)}")
+print(f"data : {m}")
 # db = DBSCAN(eps=0.07, min_samples=5).fit(m)
 # db.labels_ = list(np.float_(db.labels_))
 # R2=adjusted_rand_score(True_label, db.labels_)
