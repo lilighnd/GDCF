@@ -34,7 +34,7 @@ class NeighbourHex():
             g = x * self.numGx + y
             if g <= len(tmp1):
                 tmp1[g] = 0
-            print(f"NHex x,y : {x,y,g,tmp1 }")
+            print(f"NHex x,y : {x,y,self.numGx,g,tmp1 }")
 
             x = self.g[0] - 2
             y = self.g[1] + 2
