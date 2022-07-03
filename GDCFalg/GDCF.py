@@ -7,14 +7,13 @@ import time
 
 
 class GDCF:
-    def __init__(self, CoreGrids, coreobjects, dim, b, Minpts, Eps, numGx):
+    def __init__(self, CoreGrids, coreobjects, dim, b, Minpts, Eps):
         self.Core_G = CoreGrids
         self.dimention = dim
         self.HGBLst = b
         self.Minpts = Minpts
         self.Eps = Eps
         self.Core_Objects = coreobjects
-        self.numGx = numGx
     def BuildGDCF(self, mode,HS, DataGrids, Data, NonEmptyGrids):
         # -----------------------------------------LDF---------------------------------------
         if mode == "LDF":
