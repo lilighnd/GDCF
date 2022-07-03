@@ -36,7 +36,7 @@ class NeighbourHex():
             # g = x * self.numGx + y
             # if g <= len(tmp1):
             print(f"Grids : {Grids,type(Grids),len(Grids)}")
-            tmp1[g] = 0
+            # tmp1[g] = 0
             # print(f"NHex x,y : {x,y,self.numGx,g,tmp1 }")
 
             x = self.g[0] - 2
