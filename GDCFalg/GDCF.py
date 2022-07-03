@@ -85,7 +85,7 @@ class GDCF:
 
 
             if HS == "Hex":
-                G1 = NeighbourHex(g, self.dimention, self.HGBLst, self.numGx)  # LDF
+                G1 = NeighbourHex(g, self.dimention, self.HGBLst)  # LDF
                 G = G1.NeighbourGrid(NonEmptyGrids)  # LDF
 
 
