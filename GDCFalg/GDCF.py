@@ -1,4 +1,5 @@
 from NeighbourGridQuery import *
+from NeighbourHex import *
 from scipy.spatial import distance
 import random
 import json
@@ -6,15 +7,15 @@ import time
 
 
 class GDCF:
-    def __init__(self, CoreGrids, coreobjects, dim, b, Minpts, Eps):
+    def __init__(self, CoreGrids, coreobjects, dim, b, Minpts, Eps, numGx):
         self.Core_G = CoreGrids
         self.dimention = dim
         self.HGBLst = b
         self.Minpts = Minpts
         self.Eps = Eps
         self.Core_Objects = coreobjects
-
-    def BuildGDCF(self, mode, DataGrids, Data, NonEmptyGrids):
+        self.numGx = numGx
+    def BuildGDCF(self, mode,HS, DataGrids, Data, NonEmptyGrids):
         # -----------------------------------------LDF---------------------------------------
         if mode == "LDF":
             # L=[]
@@ -78,8 +79,16 @@ class GDCF:
                 Saveobj = json.dump(save_object, openfile)
                 openfile.close()
 
-            G1 = NeighbourGridQuery(g, self.dimention, self.HGBLst)  # LDF
-            G = G1.NeighbourGrid(NonEmptyGrids)  # LDF
+            if HS == "Square":
+                G1 = NeighbourGridQuery(g, self.dimention, self.HGBLst)  # LDF
+                G = G1.NeighbourGrid(NonEmptyGrids)  # LDF
+
+
+            if HS == "Hex":
+                G1 = NeighbourHex(g, self.dimention, self.HGBLst, self.numGx)  # LDF
+                G = G1.NeighbourGrid(NonEmptyGrids)  # LDF
+
+
             # read
             with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
                 # Reading from json file

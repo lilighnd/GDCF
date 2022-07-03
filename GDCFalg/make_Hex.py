@@ -109,7 +109,7 @@ class make_Hex():
             if DataInGrid[i]!=[]:
                 dim_Grids.append(numG[i])
                 NonEmptyGrid.append(DataInGrid[i])
-        return dim_Grids,NonEmptyGrid
+        return dim_Grids,NonEmptyGrid,numGridX
         #*****************************plt.show()
 
 
