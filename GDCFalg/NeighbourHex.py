@@ -9,7 +9,6 @@ class NeighbourHex():
         self.g = G
         self.d = dim
         self.B = b  # HGB
-        self.numGx = numGx
     def NeighbourGrid(self, Grids):
         n = len(self.B[0][0])
         Q = []
