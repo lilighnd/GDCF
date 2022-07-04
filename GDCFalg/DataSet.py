@@ -127,7 +127,7 @@ class DataSet:
     @classmethod
     def datablob(cls):
         True_label=[]
-        path = f'/content/drive/MyDrive/blobs.csv'
+        path = f'/content/drive/MyDrive/curet300n2D.csv'
         df = pd.read_csv(path)
         data = df.values.tolist()
 
