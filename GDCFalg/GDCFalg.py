@@ -165,23 +165,22 @@ with open('/content/drive/MyDrive/Colab Notebooks/inputobject.json', 'r') as ope
     # Reading from json file
     json_object = json.load(openfile)
   
-print(f"mode : {Mode}")
-
-m = DataSet.data()
-True_label = m[1]
-m = m[0].Data
-
+# print(f"mode : {Mode}")
+#----------------------moons,blobs,circle----------------------------------
+# m = DataSet.data()
+# True_label = m[1]
+# m = m[0].Data
+#----------------------generate random data without label for test---------
 # print(f"type(data)1 : {type(m)}")
 # m = np.random.RandomState(0).randn( int(json_object["n_samples"]), 2)
 # print(f"type(data)2 : {type(m)}")
 # print(f"data : {m[0]}")
 # print(f"data : {m[1]}")
 
+#------------------------------test data curet-----------------------------
 m = DataSet.datablob()
 True_label = m[1]
 m = m[0].Data
-
-
 print(f"data and labels : {m,True_label}")
 
 # ------Read Data another way---------
@@ -195,14 +194,16 @@ for dim in range(len(m[0])):
     for i in range(len(m)):
         Data[dim].append(m[i][dim])
 
+print(f"Data : {Data}")
+
+
+
 # np.savetxt('/content/drive/MyDrive/Colab Notebooks/data.csv',Data,delimiter=',')
 # print(f"Data : {Data,len(Data),len(Data[0])}")
 # print("load Data")
 
 # minx=-(min(Data[0]))
 # miny=-(min(Data[1]))
-
-
 
 
 #for i in range(len(Data[0])):Data[0][i]=Data[0][i]
