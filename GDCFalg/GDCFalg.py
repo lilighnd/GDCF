@@ -172,6 +172,7 @@ m = np.random.RandomState(0).randn( int(json_object["n_samples"]), 2)
 print(f"type(data)2 : {type(m)}")
 print(f"data : {m[0]}")
 print(f"data : {m[1]}")
+
 # db = DBSCAN(eps=0.07, min_samples=5).fit(m)
 # db.labels_ = list(np.float_(db.labels_))
 # R2=adjusted_rand_score(True_label, db.labels_)
@@ -201,7 +202,8 @@ for dim in range(len(m[0])):
     for i in range(len(m)):
         Data[dim].append(m[i][dim])
 
-
+print(f"data : {Data[0]}")
+print(f"data : {Data[1]}")
 # print(f"Data : {Data,len(Data),len(Data[0])}")
 # print("load Data")
 
