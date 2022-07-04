@@ -181,7 +181,8 @@ with open('/content/drive/MyDrive/Colab Notebooks/inputobject.json', 'r') as ope
 m = DataSet.datablob()
 True_label = m[1]
 m = m[0].Data
-print(f"data and labels : {m,True_label}")
+print(f"data : {type(m),len(m),m}")
+print(f"labels : {type(True_label),len(True_label),True_label}")
 
 # ------Read Data another way---------
 
@@ -189,12 +190,14 @@ print(f"data and labels : {m,True_label}")
 # True_label = moons[1]
 # m=moons[0]
 
-Data= [[] for i in range(len(m[0]))]
-for dim in range(len(m[0])):
-    for i in range(len(m)):
-        Data[dim].append(m[i][dim])
+# Data= [[] for i in range(len(m[0]))]
+# for dim in range(len(m[0])):
+#     for i in range(len(m)):
+#         Data[dim].append(m[i][dim])
 
-print(f"Data : {Data}")
+
+Data=np.transpose(np.array(m))
+print(f"Data : {type(Data),len(Data),Data}")
 
 
 
