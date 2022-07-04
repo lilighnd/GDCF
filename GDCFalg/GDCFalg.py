@@ -356,7 +356,8 @@ print(f"time_hgb = {time.time() - start_time_hgb}")
 # _______________________________________GDCF________________________________________________________________-
 start_time_gdcf=time.time()
 gdcf = GDCF(CoreGrid, CoreObject, 2, B, MinPts, Eps)
-ClusterForest = gdcf.BuildGDCF("LDF","Square", gridData, m, Grids)
+# ClusterForest = gdcf.BuildGDCF("LDF","Square", gridData, m, Grids)
+ClusterForest = gdcf.BuildGDCF("LDF","Hex", gridData, m, Grids)
 print("run GDCF")
 print(f"time_gdcf = {time.time() - start_time_gdcf}")
 
