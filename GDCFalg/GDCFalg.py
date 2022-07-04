@@ -202,8 +202,7 @@ for dim in range(len(m[0])):
     for i in range(len(m)):
         Data[dim].append(m[i][dim])
 
-print(f"data : {Data[0]}")
-print(f"data : {Data[1]}")
+np.savetxt("data.csv",Data,delimiter=' ')
 # print(f"Data : {Data,len(Data),len(Data[0])}")
 # print("load Data")
 
