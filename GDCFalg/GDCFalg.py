@@ -180,40 +180,20 @@ with open('/content/drive/MyDrive/Colab Notebooks/inputobject.json', 'r') as ope
 #------------------------------test data curet-----------------------------
 m = DataSet.datablob()
 True_label = m[1]
-m = m[0].Data
-print(f"data : {type(m),len(m),m}")
-print(f"labels : {type(True_label),len(True_label),True_label}")
-
+m = m[0].Data#type of m and True_labels is List
 # ------Read Data another way---------
 
 
 # True_label = moons[1]
 # m=moons[0]
 
-# Data= [[] for i in range(len(m[0]))]
-# for dim in range(len(m[0])):
-#     for i in range(len(m)):
-#         Data[dim].append(m[i][dim])
-
-
-Data=np.transpose(np.array(m))
-print(f"Data : {type(Data),len(Data),Data}")
+Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
 
 
 
 # np.savetxt('/content/drive/MyDrive/Colab Notebooks/data.csv',Data,delimiter=',')
 # print(f"Data : {Data,len(Data),len(Data[0])}")
 # print("load Data")
-
-# minx=-(min(Data[0]))
-# miny=-(min(Data[1]))
-
-
-#for i in range(len(Data[0])):Data[0][i]=Data[0][i]
-#for j in range(len(Data[1])):Data[1][j]=Data[1][j]
-
-#for i in range(len(m)):m[i][0]=m[i][0]
-#for j in range(len(m)):m[j][1]=m[j][1]
 
 
 # ---------for first preprocess dataset-----
@@ -300,8 +280,6 @@ print(f"Data : {type(Data),len(Data),Data}")
 
 
 # ----------------------------------Kinds of Grid--------------------------------------------------------
-# MinPts = 3
-# Eps = 0.07
 Eps = float(json_object["Eps"])
 MinPts = int(json_object["Minpts"])
 G = []
@@ -378,7 +356,7 @@ print(f"time_hgb = {time.time() - start_time_hgb}")
 # _______________________________________GDCF________________________________________________________________-
 start_time_gdcf=time.time()
 gdcf = GDCF(CoreGrid, CoreObject, 2, B, MinPts, Eps)
-ClusterForest = gdcf.BuildGDCF("LDF","Hex", gridData, m, Grids)
+ClusterForest = gdcf.BuildGDCF("LDF","Square", gridData, m, Grids)
 print("run GDCF")
 print(f"time_gdcf = {time.time() - start_time_gdcf}")
 
