@@ -173,6 +173,9 @@ print(f"type(data)2 : {type(m)}")
 print(f"data : {m[0]}")
 print(f"data : {m[1]}")
 
+m = DataSet.datablob()
+True_label = m[1]
+m = m[0].Data
 # db = DBSCAN(eps=0.07, min_samples=5).fit(m)
 # db.labels_ = list(np.float_(db.labels_))
 # R2=adjusted_rand_score(True_label, db.labels_)
@@ -202,7 +205,7 @@ for dim in range(len(m[0])):
     for i in range(len(m)):
         Data[dim].append(m[i][dim])
 
-np.savetxt('/content/drive/MyDrive/Colab Notebooks/data.csv',Data,delimiter=',')
+# np.savetxt('/content/drive/MyDrive/Colab Notebooks/data.csv',Data,delimiter=',')
 # print(f"Data : {Data,len(Data),len(Data[0])}")
 # print("load Data")
 

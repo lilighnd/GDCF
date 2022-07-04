@@ -121,6 +121,24 @@ class DataSet:
         return cls(X_test),Y_test
         # return cls(data),True_label
 
+
+
+        
+    @classmethod
+    def datablob(cls):
+        True_label=[]
+        path = f'/content/drive/MyDrive/Colab Notebooks/blobs.csv'
+        df = pd.read_csv(path)
+        data = df.values.tolist()
+
+        
+        for i in range(len(data)):
+            True_label.append(data[i][-1])
+            data[i] = data[i][0:2]
+            
+    
+        return cls(data),True_label
+
     @classmethod
     def data(cls):
         with open('/content/drive/MyDrive/Colab Notebooks/inputobject.json', 'r') as openfile:
