@@ -167,34 +167,20 @@ m = DataSet.data()
 True_label = m[1]
 m = m[0].Data
 
-print(f"type(data)1 : {type(m)}")
-m = np.random.RandomState(0).randn( int(json_object["n_samples"]), 2)
-print(f"type(data)2 : {type(m)}")
-print(f"data : {m[0]}")
-print(f"data : {m[1]}")
+# print(f"type(data)1 : {type(m)}")
+# m = np.random.RandomState(0).randn( int(json_object["n_samples"]), 2)
+# print(f"type(data)2 : {type(m)}")
+# print(f"data : {m[0]}")
+# print(f"data : {m[1]}")
 
 m = DataSet.datablob()
 True_label = m[1]
 m = m[0].Data
-# db = DBSCAN(eps=0.07, min_samples=5).fit(m)
-# db.labels_ = list(np.float_(db.labels_))
-# R2=adjusted_rand_score(True_label, db.labels_)
-# print(R2)
-# print(True_label)
-# print(db.labels_)
-# print("end db")
 
 
+print(f"data and labels : {m,True_label}")
 
-# print("load m")
 # ------Read Data another way---------
-#path = f'..\\GDCFalg\\blobsData.csv'
-#df = pd.read_csv(path)
-#blobs = df.values.tolist()
-# m=blobs
-#path = f'..\\GDCFalg\\blobsDataLabels.csv'
-#df = pd.read_csv(path)
-#True_label = df.values.tolist()
 
 
 # True_label = moons[1]
