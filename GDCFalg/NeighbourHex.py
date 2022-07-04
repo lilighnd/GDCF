@@ -40,7 +40,7 @@ class NeighbourHex():
         if [x, y, 'Not Empty Grid'] in Grids:
             indx = Grids.index([x, y, 'Not Empty Grid'])
             # print(f"tmp1 start: {tmp1[0][indx]}")
-            print(f"tmp1 start: {tmp1[0]}")
+            print(f"tmp1 start: {tmp2[0]}")
             tmp1[0][indx] = 0 
             # print(f"indx and grid: {indx,[x, y, 'Not Empty Grid']}")
             # print(f"tmp1 end: {tmp1[0][indx]}")
