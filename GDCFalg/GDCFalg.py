@@ -178,7 +178,7 @@ True_label = m[1]
 m = m[0].Data
 
 
-print(f"data and labels : {m,True_label}")
+print(f"data and labels : {len(m),True_label}")
 
 # ------Read Data another way---------
 
