@@ -8,6 +8,7 @@ class NeighbourGridQuery():
         self.d=dim
         self.B=b#HGB
     def NeighbourGrid(self,Grids):
+        print("-------------square grid neighbour------------")
         n=len(self.B[0][0]) 
         Q=[]
         tmp1=np.ones((1,n))
