@@ -11,12 +11,13 @@ class NeighbourHex():
         self.B = b  # HGB
     def NeighbourGrid(self, Grids):
         print("********************start NHEX******************")
-        print(Grids)
+        # print(Grids)
+    
         
         n = len(self.B[0][0])
         Q = []
         tmp1 = np.ones((1, n))
-        # print(f"tmp1 : {len(tmp1[0])}")
+        print(f"tmp1 : {len(tmp1[0])}")
         # print(f"tmp1 : {tmp1[0]}")
         for i in range(self.d):
             tmp2 = np.zeros((1, n))
@@ -40,11 +41,11 @@ class NeighbourHex():
         if [x, y, 'Not Empty Grid'] in Grids:
             indx = Grids.index([x, y, 'Not Empty Grid'])
             # print(f"tmp1 start: {tmp1[0][indx]}")
-            print(f"tmp1 start: {tmp2[0]}")
+            # print(f"tmp1 start: {tmp2[0]}")
             tmp1[0][indx] = 0 
             # print(f"indx and grid: {indx,[x, y, 'Not Empty Grid']}")
             # print(f"tmp1 end: {tmp1[0][indx]}")
-        print(f"grids : {Grids}")
+        # print(f"grids : {Grids}")
         x = self.g[0] - 2
         y = self.g[1] + 2
         if [x, y, 'Not Empty Grid'] in Grids:
