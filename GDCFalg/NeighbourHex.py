@@ -29,9 +29,11 @@ class NeighbourHex():
             if L2 >= len(self.B[i]):
                 L2 = len(self.B[i])-1
             for j in range(L1, L2+1):
-                tmp2 = ORarray(self.B[i][j][:], tmp2)
+                # tmp2 = ORarray(self.B[i][j][:], tmp2)
+                tmp2 = np.logical_or(self.B[i][j][:], tmp2)
+            # tmp1 = ANDarray(tmp1, tmp2)
+            tmp1 = np.logical_and(tmp1, tmp2)
 
-            tmp1 = ANDarray(tmp1, tmp2)
         i = 0
 
 
