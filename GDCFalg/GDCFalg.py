@@ -36,8 +36,8 @@ from itertools import cycle, islice
 import getopt, sys
 import json
 # from numpyencoder import NumpyEncoder
-# --------------------------------------read data--------------------------------------------------
-countg=0
+# --------------------------------------save code--------------------------------------------------
+'''countg=0
 grid=0
 a = None
 Neighbour = None
@@ -65,7 +65,9 @@ s_obj = {
 save_object = json.dumps(s_obj)
 
 with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outfile:
-    outfile.write(save_object)
+    outfile.write(save_object)'''
+
+#------------------------------------------------------------------------------------------
 # n_samples =1000000
 
 
@@ -89,6 +91,8 @@ with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outf
 # varied = datasets.make_blobs(
 #    n_samples=n_samples, cluster_std=[1.0, 2.5, 0.5], random_state=random_state
 # )
+
+
 Dataset = "blob"
 Mode = 2
 Number_Data = 38000
@@ -178,7 +182,7 @@ True_label = m[1]
 m = m[0].Data
 
 
-print(f"data and labels : {len(m),True_label}")
+print(f"data and labels : {m,True_label}")
 
 # ------Read Data another way---------
 
