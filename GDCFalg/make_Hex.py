@@ -23,6 +23,7 @@ class make_Hex():
         flg=True
         numG=[]
         point = np.array([minX,minY])
+        print(f"point : {point}")
         # print(f"point : {point}")#-------
         # print(f"data : {np.array(self.Data)}")#-------
         numGridX = int(np.ceil(((maxX-minX)/(3*self.Eps/2)))*2)  # ==> 5
