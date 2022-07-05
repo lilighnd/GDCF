@@ -25,7 +25,7 @@ class make_Hex():
         point = np.array([minX,minY])
         # print(f"point : {point}")#-------
         # print(f"data : {np.array(self.Data)}")#-------
-        numGridX =int(np.ceil(((maxX-minX)/(3*self.Eps/2)))*2)  # ==> 5
+        numGridX = int(np.ceil(((maxX-minX)/(3*self.Eps/2)))*2)  # ==> 5
         numGridY = int(np.ceil((maxY-minY)/((0.87*self.Eps/2)*2)))+1  # ==> 4
         GX=int(numGridX * numGridY)
         # print(f"all grid : {GX}")

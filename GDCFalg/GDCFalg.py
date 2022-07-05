@@ -413,6 +413,9 @@ db.labels_ = list(np.float_(db.labels_))
 
 
 # --------------------------------------Evaluation-----------------------------------------------------------
+print(True_label)
+print(Pred_label)
+print(db.labels_)
 print("End Run")
 alltime = time.time() - start_time
 
@@ -420,8 +423,7 @@ R1 = adjusted_rand_score(True_label, Pred_label)
 R2 = adjusted_rand_score(True_label, db.labels_)
 
 # print(True_label, Pred_label, db.labels_)
-print(True_label)
-print(Pred_label)
+
 print(R1, R2, alltime)
 
 M1 = adjusted_mutual_info_score(True_label, Pred_label)
