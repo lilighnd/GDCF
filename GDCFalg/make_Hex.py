@@ -44,7 +44,8 @@ class make_Hex():
                 # print(f"j and numgridx : {j,numGridX}")#-------
                 hex1 = self.ahex(point)
                 n1 = self.hexn(point)
-                # print(f"hex1 and n1 : {hex1,n1}")#-------
+                print(f"hex1 : {hex1}")#-------
+                print(f"n1 : {n1}")#-------
                 
                 #------for plot----------
                 for k in range(len(hex1)):
