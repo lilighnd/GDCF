@@ -24,6 +24,8 @@ class make_Hex():
         numG=[]
         point = np.array([minX,minY])
         print(f"point : {point}")
+        print(f"data : {self.Data}")
+
         # print(f"point : {point}")#-------
         # print(f"data : {np.array(self.Data)}")#-------
         numGridX = int(np.ceil(((maxX-minX)/(3*(self.Eps/2)))*2))  # ==> 5
@@ -67,7 +69,6 @@ class make_Hex():
                 DataInGrid.append(inner_data[0])
                 # print(f"inner_d : {inner_d}")#-------
                 print(f"DataInGrid : {DataInGrid}")#-------
-                print(f"DataInGrid : {self.Data[DataInGrid[0]],self.Data[DataInGrid[1]],self.Data[DataInGrid[2]],self.Data[DataInGrid[3]],self.Data[DataInGrid[4]],self.Data[DataInGrid[5]]}")#-------
 
 
                 if flg:
