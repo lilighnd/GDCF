@@ -67,6 +67,8 @@ class make_Hex():
                 DataInGrid.append(inner_data[0])
                 # print(f"inner_d : {inner_d}")#-------
                 print(f"DataInGrid : {DataInGrid}")#-------
+                print(f"DataInGrid : {self.Data[DataInGrid[0]],self.Data[DataInGrid[1]],self.Data[DataInGrid[2]],self.Data[DataInGrid[3]],self.Data[DataInGrid[4]],self.Data[DataInGrid[5]]}")#-------
+
 
                 if flg:
                     # print(f"flag true and point=n1[0] : {point}")#-------
