@@ -29,6 +29,7 @@ class make_Hex():
         numGridX = int(np.ceil(((maxX-minX)/(3*self.Eps/2)))*2)  # ==> 5
         numGridY = int(np.ceil((maxY-minY)/((0.87*self.Eps/2)*2)))+1  # ==> 4
         GX=int(numGridX * numGridY)
+        print(f"xgrid,ygrid,allgrid : {numGridX,numGridY,GX}")
         # print(f"all grid : {GX}")
         d1=[]
         d2=[]
