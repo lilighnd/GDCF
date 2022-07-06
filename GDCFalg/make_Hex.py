@@ -66,7 +66,7 @@ class make_Hex():
                 inner_data = np.where(inner_d)
                 DataInGrid.append(inner_data[0])
                 # print(f"inner_d : {inner_d}")#-------
-                # print(f"DataInGrid and inner_data : {inner_data}")#-------
+                print(f"DataInGrid : {DataInGrid}")#-------
 
                 if flg:
                     # print(f"flag true and point=n1[0] : {point}")#-------
@@ -76,6 +76,7 @@ class make_Hex():
                     point=n1[-1]
                 flg=not flg
                 numG.append([j,i])
+                print(f"point : {point}")       
                 if inner_data!=[] and len(numG[-1])==2:#Determine Not Empty Grids
                     numG[-1].append("Not Empty Grid")
         # print(f"numG : {numG}")#-------
