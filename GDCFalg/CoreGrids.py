@@ -21,6 +21,7 @@ class CoreGrids:
         return dist
 
     def Find_CoreObject(self):
+        print(m)
         start_time_coreobject = time.time()
         Core_Objects = []
         for pointOfData in range(len(self.m)):
