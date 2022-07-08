@@ -68,7 +68,7 @@ class make_Hex():
                 inner_data = np.where(inner_d)
                 DataInGrid.append(inner_data[0])
                 print(f"inner_d : {inner_d}")#-------
-                # print(f"DataInGrid : {DataInGrid}")#-------
+                print(f"DataInGrid : {DataInGrid}")#-------
 
 
                 if flg:
