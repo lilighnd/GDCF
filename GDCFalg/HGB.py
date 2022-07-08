@@ -3,6 +3,7 @@ class HGB():
     """HGB PROCCESS"""
     def __init__(self,s,dim):
         self.Grids=s
+        print(f"self.Grids : {self.Grids}")
         self.d=dim
     def BuildHGB(self):
         k=0
