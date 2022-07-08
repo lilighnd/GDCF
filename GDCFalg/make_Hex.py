@@ -109,7 +109,7 @@ class make_Hex():
         #plt.legend(loc='upper left');
         #plt.show()
 
-
+        print(f"inner data : {inner_data[2][0],inner_data[3][0]}")
         NonEmptyGrid=[]
         dim_Grids=[]
         for i in range(len(DataInGrid)):
