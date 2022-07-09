@@ -83,6 +83,7 @@ class make_Hex():
                 # Determine Not Empty Grids
                 if inner_data != [] and len(numG[-1]) == 2:
                     numG[-1].append("Not Empty Grid")
+                    print(f"length inner data : {len(inner_data)}")  # -------
                     print(f"numG(-1) : {numG[-1]}")  # -------
 
                 # print(inner_data)
