@@ -83,7 +83,6 @@ class make_Hex():
                 # Determine Not Empty Grids
                 if inner_data != [] and len(numG[-1]) == 2:
                     numG[-1].append("Not Empty Grid")
-                    print(f"length inner data : {len(inner_data)}")  # -------
                     print(f"numG(-1) : {numG[-1]}")  # -------
 
                 # print(inner_data)
@@ -121,10 +120,19 @@ class make_Hex():
         # *****************************plt.show()
 
     def ahex(self, p):
-        h = [[p[0] + self.Eps/2, p[1]]]
+        # h = [[p[0] + self.Eps/2, p[1]]]
+        # for i in range(5):
+        #     x = h[i][0] + (self.Eps/2*(np.cos((2+i)*np.pi/3)))
+        #     y = h[i][1] + (self.Eps/2*(np.sin((2+i)*np.pi/3)))
+        #     h.append(np.round([x, y], 2))
+        # return np.array(h)
+
+        h=[]
         for i in range(5):
-            x = h[i][0] + (self.Eps/2*(np.cos((2+i)*np.pi/3)))
-            y = h[i][1] + (self.Eps/2*(np.sin((2+i)*np.pi/3)))
+            angle_deg = 60 * i - 30
+            angle_rad = np.pi / 180 * angle_deg
+            x = p[0] + (self.Eps/2) * np.cos(angle_rad)
+            y = p[1] + (self.Eps/2) * np.sin(angle_rad)
             h.append(np.round([x, y], 2))
         return np.array(h)
     # ------------------------------
