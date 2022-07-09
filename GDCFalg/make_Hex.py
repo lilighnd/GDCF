@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import matplotlib.path as path
 import matplotlib.patches as patches
 from Plot import *
+import math
 # ==============================
 
 
@@ -139,14 +140,23 @@ class make_Hex():
     # ------------------------------
 
     def hexn(self, p):
-        h = [[p[0]+1.5*self.Eps/2,
-              np.round(p[1] + self.Eps/2*np.sin(np.pi/3), 2)]]
-        for i in range(5):
-            x = h[i][0] + (self.Eps/2*np.sqrt(3)) * \
-                np.cos((5*np.pi/6) + i*np.pi/3)
-            y = h[i][1] + (self.Eps/2*np.sqrt(3)) * \
-                np.sin((5*np.pi/6) + i*np.pi/3)
-            h.append(np.round([x, y], 2))
+        # h = [[p[0]+1.5*self.Eps/2,
+        #       np.round(p[1] + self.Eps/2*np.sin(np.pi/3), 2)]]
+        # for i in range(5):
+        #     x = h[i][0] + (self.Eps/2*np.sqrt(3)) * \
+        #         np.cos((5*np.pi/6) + i*np.pi/3)
+        #     y = h[i][1] + (self.Eps/2*np.sqrt(3)) * \
+        #         np.sin((5*np.pi/6) + i*np.pi/3)
+        #     h.append(np.round([x, y], 2))
+
+
+        for i in range(1,7):
+            angle_deg = 60 * i - 30
+            angle_rad = np.pi / 180 * angle_deg
+            x = p[0] + (math.sqrt(3)*self.Eps) * np.cos(angle_rad)
+            y = p[1] + (math.sqrt(3)*self.Eps) * np.sin(angle_rad)
+            # h.append(np.round([x, y], 2))
+            h.append([x, y])
         return(np.array(h))
 # ------------------------------
 
