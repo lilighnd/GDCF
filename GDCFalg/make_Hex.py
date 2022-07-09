@@ -52,7 +52,7 @@ class make_Hex():
                 hex1 = self.ahex(point)
                 n1 = self.hexn(point)
                 print(f"hex1 : {hex1}")  # -------
-                # print(f"n1 : {n1}")#-------
+                print(f"n1 : {n1}")#-------
 
                 # ------for plot----------
                 for k in range(len(hex1)):
