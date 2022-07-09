@@ -85,23 +85,6 @@ class NeighbourHex():
         return Q
 
 
-def ORarray(a, b):
-    for k in range(len(b[0])):
-        if b[0][k] == 1 or a[k] == 1:
-            b[0][k] = 1
-        elif b[0][k] == 0 and a[k] == 0:
-            b[0][k] = 0
-    return b
-
-
-def ANDarray(a, b):
-    for k in range(len(b[0])):
-        if b[0][k] == 1 and a[0][k] == 1:
-            b[0][k] = 1
-        elif b[0][k] == 0 or a[0][k] == 0:
-            b[0][k] = 0
-    return b
-
 
 def GetGridByID(id, Grids):
     if id:

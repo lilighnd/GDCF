@@ -99,6 +99,7 @@ class CoreGrids:
         #   delimiter =",",
         #   fmt ='% s')
         print(f"time_coregrid={time.time() - start_time_coregrid}")
+        print(f"coregrid={Core_Grids}")
         return Core_Grids, CorePoints
 
     # def distances(self, Point):
