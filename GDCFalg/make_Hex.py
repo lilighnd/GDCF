@@ -128,7 +128,7 @@ class make_Hex():
         # return np.array(h)
 
         h=[]
-        for i in range(1,6):
+        for i in range(1,7):
             angle_deg = 60 * i - 60
             angle_rad = np.pi / 180 * angle_deg
             x = p[0] + (self.Eps/2) * np.cos(angle_rad)
