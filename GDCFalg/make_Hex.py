@@ -149,7 +149,7 @@ class make_Hex():
         #         np.sin((5*np.pi/6) + i*np.pi/3)
         #     h.append(np.round([x, y], 2))
 
-
+        h=[]
         for i in range(1,7):
             angle_deg = 60 * i - 30
             angle_rad = np.pi / 180 * angle_deg
