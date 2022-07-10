@@ -88,7 +88,7 @@ class GDCF:
             if HS == "Hex":
                 G1 = NeighbourHex(g, self.dimention, self.HGBLst)  # LDF
                 G = G1.NeighbourGrid(NonEmptyGrids)  # LDF
-
+                print(f"Neighbor g : {G}{g}")
 
             # # read
             # with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
@@ -112,6 +112,7 @@ class GDCF:
                 Tree = [X, g[0]]
                 Forest.append(Tree)
                 X += 1
+                print(f"add new tree to Forest(g dont be in Forest) : {Forest}{g}")
 
             offset2 = -1
             for gprim in g[1]:
@@ -134,14 +135,18 @@ class GDCF:
                 indx_g = NonEmptyGrids.index(g[0])
                 indx_gprim = NonEmptyGrids.index(gprim)
                 if Root_g == Root_gprim:
+                    print(f"g , gprim are in Forest and have same root : {Forest}{g}{gprim}")
                     continue
                 
                 # if g in self.Core_G and gprim in self.Core_G:
                 if mergability(self, indx_g, indx_gprim, DataGrids, Data) == True:
                     if any(gprim in sublist for sublist in Forest) == False:
                         Forest[Root_g].append(gprim)  # new
+                        print(f"g , gprim are mergable and gprim add to forest : {Forest}{g}{gprim}")
                     else:
                         A.append(gprim)
+                        print(f"g , gprim are not mergable and gprim add to A : {A}{g}{gprim}")
+
 
 
 # ***********set parents of all roots of cluster numbers in set A tolrc(A)***********************************
