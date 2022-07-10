@@ -246,7 +246,7 @@ class GDCF:
             for j in range(len(Clusters[i])):
                 for k in range(self.dimention+1):
                     # self.Minpts
-                    if k == self.dimention and len(Clusters[i]) < 10:
+                    if k == self.dimention and len(Clusters[i]) < self.Minpts:
                         Cluster_Num[Clusters[i][j]][k] = -1
                     elif k == self.dimention:
                         Cluster_Num[Clusters[i][j]][k] = i+1
