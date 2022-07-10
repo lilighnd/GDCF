@@ -115,7 +115,7 @@ class make_Hex():
         NonEmptyGrid = []
         dim_Grids = []
         for i in range(len(DataInGrid)):
-            if DataInGrid[i] != []:
+            if len(DataInGrid[i]) != 0:
                 dim_Grids.append(numG[i])
                 NonEmptyGrid.append(DataInGrid[i])
         print(f"dim_Grids,NonEmptygrids : {dim_Grids,NonEmptyGrid}")
