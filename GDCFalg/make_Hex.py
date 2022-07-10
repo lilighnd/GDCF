@@ -82,14 +82,14 @@ class make_Hex():
                 flg = not flg
                 numG.append([i, j])
                 # Determine Not Empty Grids
-                if inner_data[0] != [] and len(numG[-1]) == 2:
+                if DataInGrid[0] != [] and len(numG[-1]) == 2:
                     numG[-1].append("Not Empty Grid")
                     print(f"numG(-1) : {numG[-1]}")  # -------
 
                 # print(inner_data)
 
         #fig = plt.figure()
-        #ax = fig.add_subplot(1, 1, 1)
+        #ax = fig.add_subplot(1, 1, 1)v
         # data=[d1,d2]
 
         # plot0=Plot(self.d,1)
