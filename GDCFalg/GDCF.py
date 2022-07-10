@@ -253,7 +253,7 @@ class GDCF:
                         Cluster_Num[Clusters[i][j]][k] = i+1
                     else:
                         Cluster_Num[Clusters[i][j]][k] = Data[Clusters[i][j]][k]
-
+        print(f"Cluster_Num : {Cluster_Num}")
         return Cluster_Num
         print("m")
 
