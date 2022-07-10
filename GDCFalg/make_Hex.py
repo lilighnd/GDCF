@@ -81,9 +81,9 @@ class make_Hex():
                     point = n1[-1]
                 flg = not flg
                 numG.append([i, j])
-                print(f"lenght DataInGrid[0] : {len(DataInGrid[0])}")  # -------
+                print(f"lenght DataInGrid[-1] : {len(DataInGrid[-1])}")  # -------
                 # Determine Not Empty Grids
-                if DataInGrid[-1] != [] and len(numG[-1]) == 2:
+                if len(DataInGrid[-1]) != 0 and len(numG[-1]) == 2:
                     numG[-1].append("Not Empty Grid")
                     print(f"numG(-1) : {numG[-1]}")  # -------
 
