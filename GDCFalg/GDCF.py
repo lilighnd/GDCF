@@ -112,10 +112,11 @@ class GDCF:
                 Tree = [X, g[0]]
                 Forest.append(Tree)
                 X += 1
-                print(f"add new tree to Forest(g dont be in Forest) : {Forest}{g}")
+                print(f"add new tree to Forest(g dont be in Forest) : {Forest}")
 
             offset2 = -1
             for gprim in g[1]:
+                print(f"grid and neighbours : {gprim}")
             # for gprim_count, gprim in enumerate(g[1], start=(offset2+1)):
                 # # read
                 # with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
@@ -142,10 +143,10 @@ class GDCF:
                 if mergability(self, indx_g, indx_gprim, DataGrids, Data) == True:
                     if any(gprim in sublist for sublist in Forest) == False:
                         Forest[Root_g].append(gprim)  # new
-                        print(f"g , gprim are mergable and gprim add to forest : {Forest}{g}{gprim}")
+                        print(f"g , gprim are mergable and gprim add to forest : {Forest}")
                     else:
                         A.append(gprim)
-                        print(f"g , gprim are not mergable and gprim add to A : {A}{g}{gprim}")
+                        print(f"g , gprim are not mergable and gprim add to A : {A}")
 
 
 
