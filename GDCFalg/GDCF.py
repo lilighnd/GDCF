@@ -135,7 +135,7 @@ class GDCF:
                 indx_g = NonEmptyGrids.index(g[0])
                 indx_gprim = NonEmptyGrids.index(gprim)
                 if Root_g == Root_gprim:
-                    print(f"g , gprim are in Forest and have same root : {Forest}{g}{gprim}")
+                    print(f"g , gprim root : {Root_g}{Root_gprim}")
                     continue
                 
                 # if g in self.Core_G and gprim in self.Core_G:
