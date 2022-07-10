@@ -241,6 +241,7 @@ class GDCF:
                     for h in range(len(DataGrids[indx])):
                         Clusters[c].append(DataGrids[indx][h])
                 c += 1
+        print(f"Clusters : {Clusters}")
         Cluster_Num = np.zeros([len(Data), self.dimention+1])
         for i in range(len(Clusters)):
             for j in range(len(Clusters[i])):
@@ -251,8 +252,7 @@ class GDCF:
                     elif k == self.dimention:
                         Cluster_Num[Clusters[i][j]][k] = i+1
                     else:
-                        Cluster_Num[Clusters[i][j]
-                                    ][k] = Data[Clusters[i][j]][k]
+                        Cluster_Num[Clusters[i][j]][k] = Data[Clusters[i][j]][k]
 
         return Cluster_Num
         print("m")
