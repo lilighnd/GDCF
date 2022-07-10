@@ -104,7 +104,7 @@ class GDCF:
 
             g = [g, G]  # LDF"""
             A = [g[0]]
-            print(f"grid and neighbours : {g}")
+            print(f"g : {g}")
 
             # print(f"g from Q : {g}")
 
@@ -116,7 +116,7 @@ class GDCF:
 
             offset2 = -1
             for gprim in g[1]:
-                print(f"grid and neighbours : {gprim}")
+                print(f"gprim : {gprim}")
             # for gprim_count, gprim in enumerate(g[1], start=(offset2+1)):
                 # # read
                 # with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
@@ -213,6 +213,7 @@ class GDCF:
                 grid[2] = 'Border Points'
             else:
                 Noise.append(grid)
+        print(f"Noise : {Noise}")
                 # i=NonEmptyGrids.index(grid)
                 # for n in DataGrids[i]:
                 #    Noise.append(n)
