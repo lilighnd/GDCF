@@ -130,22 +130,57 @@ class Make_Square():
         return np.array(h)
     ##------------------------------
     def hexn(self,p):
-        h=[[] for _ in range(8)]
-        for i in range(1,5):
-            angle_deg = 90 * i - 90
-            angle_rad = np.pi / 180 * angle_deg
-            x = p[0] + (np.sqrt(2)/2*self.Eps) * np.cos(angle_rad)
-            y = p[1] + (np.sqrt(2)/2*self.Eps) * np.sin(angle_rad)
-            # h.append(np.round([x, y], 2))
-            h[2*i-2].append([x, y]) 
+        h=[]
+        x = p[0] + self.Eps/np.sqrt(2)
+        y = p[1] 
+        h.append([x, y])
 
-        for i in range(1,5):
-            angle_deg = 90 * i - 45
-            angle_rad = np.pi / 180 * angle_deg
-            x = p[0] + self.Eps * np.cos(angle_rad)
-            y = p[1] + self.Eps * np.sin(angle_rad)
-            # h.append(np.round([x, y], 2))
-            h[2*i-1].append([x, y])    
+        x = p[0] + self.Eps/np.sqrt(2)
+        y = p[1] + self.Eps/np.sqrt(2)
+        h.append([x, y])
+        
+        x = p[0] 
+        y = p[1] + self.Eps/np.sqrt(2)
+        h.append([x, y])
+        
+        x = p[0] - self.Eps/np.sqrt(2)
+        y = p[1] + self.Eps/np.sqrt(2)
+        h.append([x, y])
+        
+        x = p[0] - self.Eps/np.sqrt(2)
+        y = p[1]
+        h.append([x, y])
+        
+        x = p[0] - self.Eps/np.sqrt(2)
+        y = p[1] - self.Eps/np.sqrt(2)
+        h.append([x, y])
+        
+        x = p[0] 
+        y = p[1] - self.Eps/np.sqrt(2)
+        h.append([x, y])
+        
+        x = p[0] + self.Eps/np.sqrt(2)
+        y = p[1] - self.Eps/np.sqrt(2)
+        h.append([x, y])
+        
+       
+       
+        # h=[[] for x in range(8)]
+        # for i in range(1,5):
+        #     angle_deg = 90 * i - 90
+        #     angle_rad = np.pi / 180 * angle_deg
+        #     x = p[0] + (np.sqrt(2)/2*self.Eps) * np.cos(angle_rad)
+        #     y = p[1] + (np.sqrt(2)/2*self.Eps) * np.sin(angle_rad)
+        #     # h.append(np.round([x, y], 2))
+        #     h[2*i-2].append([x, y]) 
+
+        # for i in range(1,5):
+        #     angle_deg = 90 * i - 45
+        #     angle_rad = np.pi / 180 * angle_deg
+        #     x = p[0] + self.Eps * np.cos(angle_rad)
+        #     y = p[1] + self.Eps * np.sin(angle_rad)
+        #     # h.append(np.round([x, y], 2))
+        #     h[2*i-1].append([x, y])    
 
 
 
