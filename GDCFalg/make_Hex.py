@@ -164,30 +164,30 @@ class make_Hex():
 
 
 
-        # h=[]
-        # x = p[0] + 0.75*self.Eps
-        # y = p[1] + 0.433*self.Eps
-        # h.append([x, y])
+        h=[]
+        x = p[0] + 0.75*self.Eps
+        y = p[1] + (np.sqrt(3))/4*self.Eps
+        h.append([x, y])
 
-        # x = p[0] 
-        # y = p[1] + 0.866*self.Eps
-        # h.append([x, y])
+        x = p[0] 
+        y = p[1] + (np.sqrt(3))/2*self.Eps
+        h.append([x, y])
         
-        # x = p[0] - 0.75*self.Eps
-        # y = p[1] - 0.433*self.Eps
-        # h.append([x, y])
+        x = p[0] - 0.75*self.Eps
+        y = p[1] - (np.sqrt(3))/4*self.Eps
+        h.append([x, y])
         
-        # x = p[0] - 0.75*self.Eps
-        # y = p[1] - 0.433*self.Eps
-        # h.append([x, y])
+        x = p[0] - 0.75*self.Eps
+        y = p[1] - (np.sqrt(3))/4*self.Eps
+        h.append([x, y])
         
-        # x = p[0] 
-        # y = p[1] - 0.866*self.Eps
-        # h.append([x, y])
+        x = p[0] 
+        y = p[1] - (np.sqrt(3))/2*self.Eps
+        h.append([x, y])
         
-        # x = p[0] + 0.75*self.Eps
-        # y = p[1] + 0.433*self.Eps
-        # h.append([x, y])
+        x = p[0] + 0.75*self.Eps
+        y = p[1] + (np.sqrt(3))/4*self.Eps
+        h.append([x, y])
         
         
         
