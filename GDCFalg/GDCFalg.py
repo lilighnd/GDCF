@@ -424,7 +424,7 @@ R2 = adjusted_rand_score(True_label, db.labels_)
 
 # print(True_label, Pred_label, db.labels_)
 
-print(R1, R2, alltime)
+print(R1, R2, f"alltime:{alltime}")
 
 M1 = adjusted_mutual_info_score(True_label, Pred_label)
 M2 = adjusted_mutual_info_score(True_label, db.labels_)
