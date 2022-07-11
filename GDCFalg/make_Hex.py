@@ -153,14 +153,14 @@ class make_Hex():
 
 
 
-        h=[]
-        for i in range(1,7):
-            angle_deg = 60 * i - 30
-            angle_rad = np.pi / 180 * angle_deg
-            x = p[0] + (math.sqrt(3)/2*self.Eps) * np.cos(angle_rad)
-            y = p[1] + (math.sqrt(3)/2*self.Eps) * np.sin(angle_rad)
-            # h.append(np.round([x, y], 2))
-            h.append([x, y])
+        # h=[]
+        # for i in range(1,7):
+        #     angle_deg = 60 * i - 30
+        #     angle_rad = np.pi / 180 * angle_deg
+        #     x = p[0] + (math.sqrt(3)/2*self.Eps) * np.cos(angle_rad)
+        #     y = p[1] + (math.sqrt(3)/2*self.Eps) * np.sin(angle_rad)
+        #     # h.append(np.round([x, y], 2))
+        #     h.append([x, y])
 
 
 
@@ -174,7 +174,7 @@ class make_Hex():
         h.append([x, y])
         
         x = p[0] - 0.75*self.Eps
-        y = p[1] - (np.sqrt(3))/4*self.Eps
+        y = p[1] + (np.sqrt(3))/4*self.Eps
         h.append([x, y])
         
         x = p[0] - 0.75*self.Eps
@@ -186,7 +186,7 @@ class make_Hex():
         h.append([x, y])
         
         x = p[0] + 0.75*self.Eps
-        y = p[1] + (np.sqrt(3))/4*self.Eps
+        y = p[1] - (np.sqrt(3))/4*self.Eps
         h.append([x, y])
         
         
