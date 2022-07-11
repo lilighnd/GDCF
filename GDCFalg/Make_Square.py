@@ -112,16 +112,49 @@ class Make_Square():
 
     
     def ahex(self,p):
-        #h = [[p[0] + (self.Eps/2)*np.cos(np.pi/4),p[1]+ (self.Eps/2)*np.sin(np.pi/4)]]#Eps/2sqrt2
-        h = [[round(p[0] + self.Eps/2 *np.cos(np.pi/4),2)
-             ,round(p[1] + self.Eps/2 *np.cos(np.pi/4),2)]]
-        for i in range(3):
-            x = h[i][0] + (self.Eps/np.sqrt(2))*(np.cos((i*(np.pi/2)) + np.pi))
-            y = h[i][1] + (self.Eps/np.sqrt(2))*(np.sin((i*(np.pi/2)) + np.pi))
-            h.append(np.round([x,y],2))
+        # h = [[round(p[0] + self.Eps/2 *np.cos(np.pi/4),2)
+        #      ,round(p[1] + self.Eps/2 *np.cos(np.pi/4),2)]]
+        # for i in range(3):
+        #     x = h[i][0] + (self.Eps/np.sqrt(2))*(np.cos((i*(np.pi/2)) + np.pi))
+        #     y = h[i][1] + (self.Eps/np.sqrt(2))*(np.sin((i*(np.pi/2)) + np.pi))
+        h=[]
+        for i in range(1,7):
+            angle_deg = 90 * i - 45
+            angle_rad = np.pi / 180 * angle_deg
+            x = p[0] + (self.Eps/2) * np.cos(angle_rad)
+            y = p[1] + (self.Eps/2) * np.sin(angle_rad)
+            # h.append(np.round([x, y], 2))
+            h.append([x, y])
+        #     h.append(np.round([x,y],2))
         return np.array(h)
     ##------------------------------
     def hexn(self,p):
+        h=[[] for _ in range(8)]
+        for i in range(1,5):
+            angle_deg = 90 * i - 90
+            angle_rad = np.pi / 180 * angle_deg
+            x = p[0] + (np.sqrt(2)/2*self.Eps) * np.cos(angle_rad)
+            y = p[1] + (np.sqrt(2)/2*self.Eps) * np.sin(angle_rad)
+            # h.append(np.round([x, y], 2))
+            h[2*i-2].append([x, y]) 
+
+        for i in range(1,5):
+            angle_deg = 90 * i - 45
+            angle_rad = np.pi / 180 * angle_deg
+            x = p[0] + self.Eps * np.cos(angle_rad)
+            y = p[1] + self.Eps * np.sin(angle_rad)
+            # h.append(np.round([x, y], 2))
+            h[2*i-1].append([x, y])    
+
+
+
+
+
+
+
+
+
+
         #h = [[p[0]+(self.Eps/(np.sqrt(2))*np.cos(0)),p[1]+(self.Eps/(np.sqrt(2))*np.sin(0))]]
         #x = h[0][0]+(self.Eps/(np.sqrt(2))*np.cos(0))
         #y = h[0][1]+(self.Eps/(np.sqrt(2))*np.sin(np.pi/2))
@@ -137,24 +170,26 @@ class Make_Square():
         #    y = h[i][1] + (self.Eps/(np.sqrt(2))*np.sin(np.pi/2+(np.pi/2*i)))
         #    h.append(np.round([x,y],2))
 
-        #First Neighbour Center
-        h = [[round((p[0] + self.Eps/(np.sqrt(2))*np.cos(0)),2)
-             ,round((p[1] + self.Eps/(np.sqrt(2))*np.sin(0)),2)]]
 
-        #Second Neighbour Center
-        x = h[0][0] + (self.Eps/(np.sqrt(2))*np.cos(np.pi/2))
-        y = h[0][1] + (self.Eps/(np.sqrt(2))*np.sin(np.pi/2))
-        h.append(np.round([x,y],2))
-        k=1
-        for i in range(3):
-            #for j in range(2):
-            x = h[i+k][0] + (self.Eps/(np.sqrt(2))*np.cos(np.pi+((np.pi/2)*i)))
-            y = h[i+k][1] + (self.Eps/(np.sqrt(2))*np.sin(np.pi+((np.pi/2)*i)))
-            h.append(np.round([x,y],2))
-            k+=1
-            x = h[i+k][0] + (self.Eps/(np.sqrt(2))*np.cos(np.pi+((np.pi/2)*i)))
-            y = h[i+k][1] + (self.Eps/(np.sqrt(2))*np.sin(np.pi+((np.pi/2)*i)))
-            h.append(np.round([x,y],2))
+
+        # #First Neighbour Center
+        # h = [[round((p[0] + self.Eps/(np.sqrt(2))*np.cos(0)),2)
+        #      ,round((p[1] + self.Eps/(np.sqrt(2))*np.sin(0)),2)]]
+
+        # #Second Neighbour Center
+        # x = h[0][0] + (self.Eps/(np.sqrt(2))*np.cos(np.pi/2))
+        # y = h[0][1] + (self.Eps/(np.sqrt(2))*np.sin(np.pi/2))
+        # h.append(np.round([x,y],2))
+        # k=1
+        # for i in range(3):
+        #     #for j in range(2):
+        #     x = h[i+k][0] + (self.Eps/(np.sqrt(2))*np.cos(np.pi+((np.pi/2)*i)))
+        #     y = h[i+k][1] + (self.Eps/(np.sqrt(2))*np.sin(np.pi+((np.pi/2)*i)))
+        #     h.append(np.round([x,y],2))
+        #     k+=1
+        #     x = h[i+k][0] + (self.Eps/(np.sqrt(2))*np.cos(np.pi+((np.pi/2)*i)))
+        #     y = h[i+k][1] + (self.Eps/(np.sqrt(2))*np.sin(np.pi+((np.pi/2)*i)))
+        #     h.append(np.round([x,y],2))
             
         return(np.array(h))
 ##------------------------------
