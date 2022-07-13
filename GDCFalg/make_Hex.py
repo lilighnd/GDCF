@@ -34,7 +34,7 @@ class make_Hex():
         numGridX = int(np.ceil(((maxX-minX)/(3*(self.Eps/2)))*2))  # ==> 5
         numGridY = int(np.ceil((maxY-minY)/(0.866*self.Eps)))  # ==> 4
         GX = int(numGridX * numGridY)
-        print(f"xgrid,ygrid,allgrid : {numGridX,numGridY,GX}")
+        # print(f"xgrid,ygrid,allgrid : {numGridX,numGridY,GX}")nnn
         # print(f"all grid : {GX}")
         d1 = []
         d2 = []
@@ -51,8 +51,8 @@ class make_Hex():
                 # print(f"j and numgridx : {j,numGridX}")#-------
                 hex1 = self.ahex(point)
                 n1 = self.hexn(point)
-                print(f"hex1 : {hex1}")  # -------
-                print(f"n1 : {n1}")#-------
+                # print(f"hex1 : {hex1}")  # -------nnn
+                # print(f"n1 : {n1}")#-------nnn
 
                 # ------for plot----------
                 for k in range(len(hex1)):
@@ -70,8 +70,8 @@ class make_Hex():
                 inner_d = poly.contains_points(self.Data)
                 inner_data = np.where(inner_d)
                 DataInGrid.append(inner_data[0])
-                print(f"inner_d : {inner_d}")  # -------
-                print(f"DataInGrid : {DataInGrid}")  # -------
+                # print(f"inner_d : {inner_d}")  # -------nnn
+                # print(f"DataInGrid : {DataInGrid}")  # -------nnn
 
                 if flg:
                     # print(f"flag true and point=n1[0] : {point}")#-------
@@ -81,12 +81,12 @@ class make_Hex():
                     point = n1[-1]
                 flg = not flg
                 numG.append([i, j])
-                print(f"lenght DataInGrid[-1] : {len(DataInGrid[-1])}")  # -------
+                # print(f"lenght DataInGrid[-1] : {len(DataInGrid[-1])}")  # -------nnn
                 # Determine Not Empty Grids
                 # if len(DataInGrid[-1]) != 0 and len(numG[-1]) == 2:
                 if len(DataInGrid[-1]) != 0:
                     numG[-1].append("Not Empty Grid")
-                    print(f"numG : {numG}")  # -------
+                    # print(f"numG : {numG}")  # -------nnn
 
                 # print(inner_data)
 
@@ -118,7 +118,7 @@ class make_Hex():
             if len(DataInGrid[i]) != 0:
                 dim_Grids.append(numG[i])
                 NonEmptyGrid.append(DataInGrid[i])
-        print(f"dim_Grids,NonEmptygrids : {dim_Grids,NonEmptyGrid}")
+        # print(f"dim_Grids,NonEmptygrids : {dim_Grids,NonEmptyGrid}")nnn
         return dim_Grids, NonEmptyGrid
         # *****************************plt.show()
 

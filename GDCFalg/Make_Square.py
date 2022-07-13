@@ -118,7 +118,6 @@ class Make_Square():
         #     x = h[i][0] + (self.Eps/np.sqrt(2))*(np.cos((i*(np.pi/2)) + np.pi))
         #     y = h[i][1] + (self.Eps/np.sqrt(2))*(np.sin((i*(np.pi/2)) + np.pi))
         h=[]
-        print(f"pppppppp : {p}")
         for i in range(1,7):
             angle_deg = 90 * i - 45
             angle_rad = np.pi / 180 * angle_deg

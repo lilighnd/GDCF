@@ -27,7 +27,7 @@ class GDCF:
             #     Q.append(self.Core_Grids[L[j][1]])
             L = []
             Q = []
-            print(f"lenght datagris : {len(DataGrids)}")
+            # print(f"lenght datagris : {len(DataGrids)}")nnn
             # print(f"lenght self.Core_Grids : {len(self.Core_G)}")
             for g, grid in enumerate(self.Core_G):
                 if grid != []:
@@ -36,7 +36,7 @@ class GDCF:
             L = sorted(L)
             for j in range(len(L)):
                 Q.append(self.Core_G[L[j][1]])
-                print(f"order ccore grids Q : {Q}")
+                # print(f"order ccore grids Q : {Q}")nnn
 
         # ----------------------------------Random-------------------------------------------
         if mode == "Random":
@@ -88,7 +88,7 @@ class GDCF:
             if HS == "Hex":
                 G1 = NeighbourHex(g, self.dimention, self.HGBLst)  # LDF
                 G = G1.NeighbourGrid(NonEmptyGrids)  # LDF
-                print(f"Neighbor g : {G}{g}")
+                # print(f"Neighbor g : {G}{g}")nnn
 
             # # read
             # with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
@@ -104,7 +104,7 @@ class GDCF:
 
             g = [g, G]  # LDF"""
             A = [g[0]]
-            print(f"g : {g}")
+            # print(f"g : {g}")nnn
 
             # print(f"g from Q : {g}")
 
@@ -116,7 +116,7 @@ class GDCF:
 
             offset2 = -1
             for gprim in g[1]:
-                print(f"gprim : {gprim}")
+                # print(f"gprim : {gprim}")nnn
             # for gprim_count, gprim in enumerate(g[1], start=(offset2+1)):
                 # # read
                 # with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
@@ -136,17 +136,17 @@ class GDCF:
                 indx_g = NonEmptyGrids.index(g[0])
                 indx_gprim = NonEmptyGrids.index(gprim)
                 if Root_g == Root_gprim:
-                    print(f"g , gprim root : {Root_g}{Root_gprim}")
+                    # print(f"g , gprim root : {Root_g}{Root_gprim}")nnn
                     continue
                 
                 # if g in self.Core_G and gprim in self.Core_G:
                 if mergability(self, indx_g, indx_gprim, DataGrids, Data) == True:
                     if any(gprim in sublist for sublist in Forest) == False:
                         Forest[Root_g].append(gprim)  # new
-                        print(f"g , gprim are mergable and gprim add to forest : {Forest}")
+                        # print(f"g , gprim are mergable and gprim add to forest : {Forest}")nnn
                     else:
                         A.append(gprim)
-                        print(f"g , gprim are not mergable and gprim add to A : {A}")
+                        # print(f"g , gprim are not mergable and gprim add to A : {A}")nnn
 
 
 
@@ -213,7 +213,7 @@ class GDCF:
                 grid[2] = 'Border Points'
             else:
                 Noise.append(grid)
-        print(f"Noise : {Noise}")
+        # print(f"Noise : {Noise}")nnn
                 # i=NonEmptyGrids.index(grid)
                 # for n in DataGrids[i]:
                 #    Noise.append(n)
@@ -241,7 +241,7 @@ class GDCF:
                     for h in range(len(DataGrids[indx])):
                         Clusters[c].append(DataGrids[indx][h])
                 c += 1
-        print(f"Clusters : {Clusters}")
+        # print(f"Clusters : {Clusters}")nnn
         Cluster_Num = np.zeros([len(Data), self.dimention+1])
         for i in range(len(Clusters)):
             for j in range(len(Clusters[i])):
@@ -253,7 +253,7 @@ class GDCF:
                         Cluster_Num[Clusters[i][j]][k] = i+1
                     else:
                         Cluster_Num[Clusters[i][j]][k] = Data[Clusters[i][j]][k]
-        print(f"Cluster_Num : {Cluster_Num}")
+        # print(f"Cluster_Num : {Cluster_Num}")nnn
         return Cluster_Num
         print("m")
 

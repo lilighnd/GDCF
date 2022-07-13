@@ -21,7 +21,7 @@ class CoreGrids:
         return dist
 
     def Find_CoreObject(self):
-        print(self.m)
+        # print(self.m)
         start_time_coreobject = time.time()
         Core_Objects = []
         for pointOfData in range(len(self.m)):
@@ -36,8 +36,8 @@ class CoreGrids:
             #         count += 1
             # if count >= self.MinPts:
             #     Core_Objects.append(pointOfData)
-        print(f"core obj : {Core_Objects}")
-        print(f"time_coreobject={time.time() - start_time_coreobject}")
+        # print(f"core obj : {Core_Objects}")nnn
+        # print(f"time_coreobject={time.time() - start_time_coreobject}")nnn
         return Core_Objects
 
     def Find_CoreGrids(self):
@@ -76,7 +76,7 @@ class CoreGrids:
 
             if NotAdd == True:
                 Core_Grids.append([])
-                print("empty core grid")
+                # print("empty core grid")nnn
 
             # for j in range(len(self.PointsInGrids[i])):
             #     Count = 0
@@ -97,9 +97,9 @@ class CoreGrids:
         # np.savetxt("/content/drive/MyDrive/Colab Notebooks/CoreObjects.csv",
         #   Core_Objects,
         #   delimiter =",",
-        #   fmt ='% s')
-        print(f"time_coregrid={time.time() - start_time_coregrid}")
-        print(f"coregrid={Core_Grids}")
+        # #   fmt ='% s')
+        # print(f"time_coregrid={time.time() - start_time_coregrid}")nnn
+        # print(f"coregrid={Core_Grids}")nnn
         return Core_Grids, CorePoints
 
     # def distances(self, Point):
