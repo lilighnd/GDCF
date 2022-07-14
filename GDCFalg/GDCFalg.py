@@ -369,8 +369,8 @@ for i in range(len(ClusterForest)):
     Pred_label.append(ClusterForest[i][-1])
     
 alltime = time.time() - start_time
-print(alltime)
-
+R1 = adjusted_rand_score(True_label, Pred_label)
+print(f"R1,alltime : {R1,alltime}")
 
 
 db = DBSCAN(eps=Eps, min_samples=MinPts).fit(m)
@@ -417,7 +417,6 @@ db.labels_ = list(np.float_(db.labels_))
 # print(Pred_label)
 # print(db.labels_)
 print("End Run")
-alltime = time.time() - start_time
 
 R1 = adjusted_rand_score(True_label, Pred_label)
 R2 = adjusted_rand_score(True_label, db.labels_)
