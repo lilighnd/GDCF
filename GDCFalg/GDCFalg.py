@@ -413,9 +413,9 @@ db.labels_ = list(np.float_(db.labels_))
 
 
 # --------------------------------------Evaluation-----------------------------------------------------------
-print(True_label)
-print(Pred_label)
-print(db.labels_)
+# print(True_label)
+# print(Pred_label)
+# print(db.labels_)
 print("End Run")
 alltime = time.time() - start_time
 
