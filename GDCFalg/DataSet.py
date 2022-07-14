@@ -26,7 +26,7 @@ class DataSet:
 
 
     @classmethod
-    def data(cls):
+    def datad1(cls):
         path = f'..\DataSet\data1.csv'
         df = pd.read_csv(path)
         tmpdata = df.values.tolist()
