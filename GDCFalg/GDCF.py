@@ -112,7 +112,7 @@ class GDCF:
                 Tree = [X, g[0]]
                 Forest.append(Tree)
                 X += 1
-                print(f"add new tree to Forest(g dont be in Forest) : {Forest}")
+                # print(f"add new tree to Forest(g dont be in Forest) : {Forest}")nnn
 
             offset2 = -1
             for gprim in g[1]:

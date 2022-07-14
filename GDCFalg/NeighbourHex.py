@@ -10,7 +10,7 @@ class NeighbourHex():
         self.d = dim
         self.B = b  # HGB
     def NeighbourGrid(self, Grids):
-        print("********************start NHEX******************")
+        # print("********************start NHEX******************")
         # print(Grids)
     
         
