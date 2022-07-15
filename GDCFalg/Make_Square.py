@@ -117,15 +117,36 @@ class Make_Square():
         # for i in range(3):
         #     x = h[i][0] + (self.Eps/np.sqrt(2))*(np.cos((i*(np.pi/2)) + np.pi))
         #     y = h[i][1] + (self.Eps/np.sqrt(2))*(np.sin((i*(np.pi/2)) + np.pi))
+
+
+        # h=[]
+        # for i in range(1,7):
+        #     angle_deg = 90 * i - 45
+        #     angle_rad = np.pi / 180 * angle_deg
+        #     x = p[0] + (self.Eps/2) * np.cos(angle_rad)
+        #     y = p[1] + (self.Eps/2) * np.sin(angle_rad)
+        #     # h.append(np.round([x, y], 2))
+        #     h.append([x, y])
+        # #     h.append(np.round([x,y],2))
+
+
+
         h=[]
-        for i in range(1,7):
-            angle_deg = 90 * i - 45
-            angle_rad = np.pi / 180 * angle_deg
-            x = p[0] + (self.Eps/2) * np.cos(angle_rad)
-            y = p[1] + (self.Eps/2) * np.sin(angle_rad)
-            # h.append(np.round([x, y], 2))
-            h.append([x, y])
-        #     h.append(np.round([x,y],2))
+        x = p[0] + self.Eps/(2*np.sqrt(2))
+        y = p[1] + self.Eps/(2*np.sqrt(2))
+        h.append([x, y])
+
+        x = p[0] - self.Eps/(2*np.sqrt(2))
+        y = p[1] + self.Eps/(2*np.sqrt(2))
+        h.append([x, y])
+        
+        x = p[0] - self.Eps/(2*np.sqrt(2))
+        y = p[1] - self.Eps/(2*np.sqrt(2))
+        h.append([x, y])
+        
+        x = p[0] + self.Eps/(2*np.sqrt(2))
+        y = p[1] - self.Eps/(2*np.sqrt(2))
+        h.append([x, y])
         return np.array(h)
     ##------------------------------
     def hexn(self,p):
