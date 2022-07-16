@@ -16,7 +16,9 @@ class GDCF:
         self.Core_Objects = coreobjects
     def BuildGDCF(self, mode,HS, DataGrids, Data, NonEmptyGrids):
         # -----------------------------------------LDF---------------------------------------
+
         if mode == "LDF":
+            print("ldf")
             # L=[]
             # Q=[]
             # for i in range(len(self.Core_Grids)):
@@ -40,6 +42,7 @@ class GDCF:
 
         # ----------------------------------Random-------------------------------------------
         if mode == "Random":
+            print("random")
             L = []
             Q = []
             for i in range(len(self.Core_G)):
@@ -50,6 +53,7 @@ class GDCF:
 
         # ---------------------------------LNN-------------------------------------------------
         if mode == "LNN":
+            print("lnn")
             Neighbours = []
             for g in self.Core_G:
                 if g != []:
@@ -79,16 +83,18 @@ class GDCF:
             # with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'w') as openfile:
             #     Saveobj = json.dump(save_object, openfile)
             #     openfile.close()
+            if mode == "LDF" or mode == "Random":
+                if HS == "Square":
+                    G1 = NeighbourGridQuery(g, self.dimention, self.HGBLst)  # LDF
+                    G = G1.NeighbourGrid(NonEmptyGrids)  # LDF
 
-            if HS == "Square":
-                G1 = NeighbourGridQuery(g, self.dimention, self.HGBLst)  # LDF
-                G = G1.NeighbourGrid(NonEmptyGrids)  # LDF
 
-
-            if HS == "Hex":
-                G1 = NeighbourHex(g, self.dimention, self.HGBLst)  # LDF
-                G = G1.NeighbourGrid(NonEmptyGrids)  # LDF
-                # print(f"Neighbor g : {G}{g}")nnn
+                if HS == "Hex":
+                    G1 = NeighbourHex(g, self.dimention, self.HGBLst)  # LDF
+                    G = G1.NeighbourGrid(NonEmptyGrids)  # LDF
+                    # print(f"Neighbor g : {G}{g}")nnn
+                
+                g = [g, G]  # LDF"""
 
             # # read
             # with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
@@ -102,12 +108,7 @@ class GDCF:
             #     Saveobj = json.dump(save_object, openfile)
             #     openfile.close()
 
-            g = [g, G]  # LDF"""
             A = [g[0]]
-            # print(f"g : {g}")nnn
-
-            # print(f"g from Q : {g}")
-
             if any(g[0] in sublist for sublist in Forest) == False:  # نباشد P عضو جنگل  g
                 Tree = [X, g[0]]
                 Forest.append(Tree)

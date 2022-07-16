@@ -104,11 +104,12 @@ Epsilon = 0.07
 Minpoints = 3
 argumentList = sys.argv[1:]
 i = 0
+SortGrids = "LDF"
 # Options
-options = "d:M:n:N:r:f:c:e:m:i:"
+options = "d:M:n:N:r:f:c:e:m:i:s:"
  
 # Long options
-long_options = ["Dataset", "Mode", "Number_Data", "Noise", "Random_state", "features", "Centers", "Epsilon", "Minpoints"]
+long_options = ["Dataset", "Mode", "Number_Data", "Noise", "Random_state", "features", "Centers", "Epsilon", "Minpoints","i","SortGrids"]
 
 arguments, values = getopt.getopt(argumentList, options, long_options)
 
@@ -148,6 +149,9 @@ for currentArgument, currentValue in arguments:
     elif currentArgument in ("-i", "--i"):
         i = currentValue
 
+    elif currentArgument in ("-s", "--SortGrids"):
+        SortGrids = currentValue
+
 Obj = {
 
     "data" : Dataset,
@@ -159,7 +163,8 @@ Obj = {
     "centers" : Centers,
     "Eps" : Epsilon,
     "Minpts" : Minpoints,
-    "i" : i
+    "i" : i,
+    "sort_grids" : SortGrids
 }
 
 print(f"mode : {Mode}")
@@ -364,9 +369,9 @@ print(f"time_hgb = {time.time() - start_time_hgb}")
 start_time_gdcf=time.time()
 gdcf = GDCF(CoreGrid, CoreObject, 2, B, MinPts, Eps)
 if modeGrid == int(1):
-    ClusterForest = gdcf.BuildGDCF("LDF","Hex", gridData, m, Grids)
+    ClusterForest = gdcf.BuildGDCF(json_object["sort_grids"],"Hex", gridData, m, Grids)
 if modeGrid == int(2):
-    ClusterForest = gdcf.BuildGDCF("LDF","Square", gridData, m, Grids)
+    ClusterForest = gdcf.BuildGDCF(json_object["sort_grids"],"Square", gridData, m, Grids)
 print("run GDCF")
 print(f"time_gdcf = {time.time() - start_time_gdcf}")
 
