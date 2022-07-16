@@ -383,15 +383,13 @@ print(f"R1,alltime : {R1,alltime}")
 
 #----------------------------------------xlsxwriter------------------------------------------
 # Create a workbook and add a worksheet.
-workbook = xlsxwriter.Workbook('testmoon60000.xlsx')
+
+workbook = xlsxwriter.Workbook('/content/drive/MyDrive/Colab Notebooks/testmoon60000.xlsx')
 worksheet = workbook.add_worksheet()
+
 
 # Some data we want to write to the worksheet.
 expenses = (
-    # ['Rent', 1000],
-    # ['Gas',   100],
-    # ['Food',  300],
-    # ['Gym',    50],
     ['Eps' , float(json_object["Eps"])],
     ['Rand index' , R1],
     ['Time' , alltime],
@@ -407,11 +405,6 @@ for item, cost in (expenses):
     worksheet.write(row, col, cost)
     worksheet.write(row + 1, col, cost)
     worksheet.write(row + 2, col, cost)
-    # col += 1
-
-# Write a total using a formula.
-# worksheet.write(row, 0, 'Total')
-# worksheet.write(row, 1, '=SUM(B1:B4)')
 
 workbook.close()
 #----------------------------------------------------------------------------------------------------------
