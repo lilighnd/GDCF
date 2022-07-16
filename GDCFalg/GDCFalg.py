@@ -383,7 +383,7 @@ print(f"R1,alltime : {R1,alltime}")
 
 
 #----------------------------------------xlsxwriter------------------------------------------
-# namefile = str(json_object["data"]) + str(json_object["n_samples"]) + ".xls"
+namefile = str(json_object["data"]) + str(json_object["n_samples"]) + ".xls"
 
 ls = []
 ls.append(json_object["Eps"])
@@ -391,15 +391,23 @@ ls.append(R1)
 ls.append(alltime)
 df = pd.DataFrame(ls) 
 
-excel_name = f'/content/drive/MyDrive/Colab Notebooks/testimoon.xls'
+excel_name = f'/content/drive/MyDrive/Colab Notebooks/namefile'
 df_source = None
 if os.path.exists(excel_name):
+    print("os.path.exists(excel_name)")
     df_source = pd.DataFrame(pd.read_excel(excel_name))
+    print("os if is ok")
 if df_source is not None:
+    print("df_source is not None")
     df_source[json_object["i"]]=ls
     df_dest = df_source
+    print("df_source if is ok")
+
 else:
+    print("not exist")
     df_dest = df
+    print("ok if not exist")
+
 
 df_dest.to_excel(excel_name,index=False)
 #----------------------------------------------------------------------------------------------------------
