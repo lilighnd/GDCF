@@ -392,7 +392,7 @@ for i in range(2):
     ls.append(alltime)
 df = pd.DataFrame(ls) 
 
-excel_name = '/content/drive/MyDrive/Colab Notebooks/namefile'
+excel_name = f'/content/drive/MyDrive/Colab Notebooks/namefile'
 df_source = None
 if os.path.exists(excel_name):
     df_source = pd.DataFrame(pd.read_excel(excel_name))
