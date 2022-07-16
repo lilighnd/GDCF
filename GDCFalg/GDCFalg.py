@@ -397,7 +397,7 @@ expenses = (
 
 # Start from the first cell. Rows and columns are zero indexed.
 row = 0
-col = json_object["i"]
+col = int(json_object["i"])
 
 # Iterate over the data and write it out row by row.
 for item, cost in (expenses):
