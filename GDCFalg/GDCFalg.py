@@ -139,6 +139,8 @@ for currentArgument, currentValue in arguments:
 
     elif currentArgument in ("-e", "--Epsilon"):
         Epsilon = currentValue
+        print(Epsilon)
+        print(type(Epsilon))
     
     elif currentArgument in ("-m", "--Minpoints"):
         Minpoints = currentValue
@@ -285,8 +287,7 @@ Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
 
 
 # ----------------------------------Kinds of Grid--------------------------------------------------------
-eps = float(json_object["Eps"])
-print(type(eps))
+Eps = float(json_object["Eps"])
 MinPts = int(json_object["Minpts"])
 G = []
 start_time = time.time()
@@ -297,7 +298,7 @@ start_time_grid = time.time()
 print(modeGrid,int(1))
 if modeGrid == int(1):
     print("Hex mode")
-    parts=make_Hex(Data,eps)
+    parts=make_Hex(Data,Eps)
     Grids,gridData=parts.GridHex()
 
     
@@ -319,7 +320,7 @@ if modeGrid == int(1):
 # -------------Square Grids----------
 if modeGrid == int(2):
     print("square mode")
-    parts = Make_Square(Data,eps)
+    parts = Make_Square(Data,Eps)
     Grids, gridData = parts.GridHex()
     print("run grid")
 print(f"time_grid = {time.time() - start_time_grid}")
@@ -340,7 +341,7 @@ print(f"time_grid = {time.time() - start_time_grid}")
 #df = pd.read_csv(path)
 #CoreObject = df.values.tolist()
 
-core = CoreGrids(Grids, gridData, Data, eps, MinPts, m)
+core = CoreGrids(Grids, gridData, Data, Eps, MinPts, m)
 CoreGrid, CoreObject = core.Find_CoreGrids()
 print("run core")
 
@@ -361,7 +362,7 @@ print(f"time_hgb = {time.time() - start_time_hgb}")
 
 # _______________________________________GDCF________________________________________________________________-
 start_time_gdcf=time.time()
-gdcf = GDCF(CoreGrid, CoreObject, 2, B, MinPts, eps)
+gdcf = GDCF(CoreGrid, CoreObject, 2, B, MinPts, Eps)
 if modeGrid == int(1):
     ClusterForest = gdcf.BuildGDCF("LDF","Hex", gridData, m, Grids)
 if modeGrid == int(2):
@@ -415,7 +416,7 @@ for item, cost in (expenses):
 workbook.close()
 #----------------------------------------------------------------------------------------------------------
 
-db = DBSCAN(eps=eps, min_samples=MinPts).fit(m)
+db = DBSCAN(eps=Eps, min_samples=MinPts).fit(m)
 db.labels_ = list(np.float_(db.labels_))
 #plt.subplot(1, 3, 1)
 # Getting unique labels
