@@ -34,7 +34,8 @@ from sklearn import cluster, datasets
 from sklearn.preprocessing import StandardScaler
 from itertools import cycle, islice
 import getopt, sys
-import json
+import pandas as pd
+import os
 # from numpyencoder import NumpyEncoder
 # --------------------------------------save code--------------------------------------------------
 '''countg=0
@@ -382,31 +383,26 @@ print(f"R1,alltime : {R1,alltime}")
 
 
 #----------------------------------------xlsxwriter------------------------------------------
-# Create a workbook and add a worksheet.
+namefile = str(json_object["data"]) + str(json_object["n_samples"]) + ".xls"
 
-workbook = xlsxwriter.Workbook('/content/drive/MyDrive/Colab Notebooks/testmoon60000.xlsx')
-worksheet = workbook.add_worksheet()
+ls = []
+for i in range(2):
+    ls.append(json_object["Eps"])
+    ls.append(R1)
+    ls.append(alltime)
+df = pd.DataFrame(ls) 
 
+excel_name = '/content/drive/MyDrive/Colab Notebooks/namefile'
+df_source = None
+if os.path.exists(excel_name):
+    df_source = pd.DataFrame(pd.read_excel(excel_name))
+if df_source is not None:
+    df_source[json_object["i"]]=ls
+    df_dest = df_source
+else:
+    df_dest = df
 
-# Some data we want to write to the worksheet.
-expenses = (
-    ['Eps' , float(json_object["Eps"])],
-    ['Rand index' , R1],
-    ['Time' , alltime],
-)
-
-# Start from the first cell. Rows and columns are zero indexed.
-row = 0
-col = int(json_object["i"])
-
-# Iterate over the data and write it out row by row.
-for item, cost in (expenses):
-    # worksheet.write(row, col,     item)
-    worksheet.write(row, col, cost)
-    worksheet.write(row + 1, col, cost)
-    worksheet.write(row + 2, col, cost)
-
-workbook.close()
+df_dest.to_excel(excel_name,index=False)
 #----------------------------------------------------------------------------------------------------------
 
 db = DBSCAN(eps=Eps, min_samples=MinPts).fit(m)
