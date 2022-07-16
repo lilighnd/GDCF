@@ -386,10 +386,9 @@ print(f"R1,alltime : {R1,alltime}")
 # namefile = str(json_object["data"]) + str(json_object["n_samples"]) + ".xls"
 
 ls = []
-for i in range(2):
-    ls.append(json_object["Eps"])
-    ls.append(R1)
-    ls.append(alltime)
+ls.append(json_object["Eps"])
+ls.append(R1)
+ls.append(alltime)
 df = pd.DataFrame(ls) 
 
 excel_name = f'/content/drive/MyDrive/Colab Notebooks/testimoon.xls'
