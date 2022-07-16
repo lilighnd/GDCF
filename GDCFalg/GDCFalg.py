@@ -379,7 +379,7 @@ print(f"R1,alltime : {R1,alltime}")
 
 
 
-
+#----------------------------------------xlsxwriter------------------------------------------
 # Create a workbook and add a worksheet.
 workbook = xlsxwriter.Workbook('testmoon60000.xlsx')
 worksheet = workbook.add_worksheet()
@@ -390,7 +390,7 @@ expenses = (
     # ['Gas',   100],
     # ['Food',  300],
     # ['Gym',    50],
-    ['Eps' , json_object["Eps"]],
+    ['Eps' , float(json_object["Eps"])],
     ['Rand index' , R1],
     ['Time' , alltime],
 )
@@ -412,7 +412,7 @@ for item, cost in (expenses):
 # worksheet.write(row, 1, '=SUM(B1:B4)')
 
 workbook.close()
-
+#----------------------------------------------------------------------------------------------------------
 
 db = DBSCAN(eps=Eps, min_samples=MinPts).fit(m)
 db.labels_ = list(np.float_(db.labels_))
