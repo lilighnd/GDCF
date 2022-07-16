@@ -414,8 +414,11 @@ else:
 df_dest.to_excel(excel_name,index=False)
 #----------------------------------------------------------------------------------------------------------
 print("Save excel")
-db = DBSCAN(eps=Eps, min_samples=MinPts).fit(m)
-db.labels_ = list(np.float_(db.labels_))
+# db = DBSCAN(eps=Eps, min_samples=MinPts).fit(m)
+# db.labels_ = list(np.float_(db.labels_))
+
+
+
 #plt.subplot(1, 3, 1)
 # Getting unique labels
 # label=list(map(int,Pred_label))
@@ -459,50 +462,48 @@ db.labels_ = list(np.float_(db.labels_))
 # print(db.labels_)
 print("End Run")
 
-R1 = adjusted_rand_score(True_label, Pred_label)
-R2 = adjusted_rand_score(True_label, db.labels_)
+# R1 = adjusted_rand_score(True_label, Pred_label)
+# R2 = adjusted_rand_score(True_label, db.labels_)
 
-# print(True_label, Pred_label, db.labels_)
+# print(R1, R2, f"alltime:{alltime}")
 
-print(R1, R2, f"alltime:{alltime}")
+# M1 = adjusted_mutual_info_score(True_label, Pred_label)
+# M2 = adjusted_mutual_info_score(True_label, db.labels_)
 
-M1 = adjusted_mutual_info_score(True_label, Pred_label)
-M2 = adjusted_mutual_info_score(True_label, db.labels_)
+# Calinski_Harabasz1 = calinski_harabasz_score(m, Pred_label)
+# Calinski_Harabasz1 = calinski_harabasz_score(m, db.labels_)
 
-Calinski_Harabasz1 = calinski_harabasz_score(m, Pred_label)
-Calinski_Harabasz1 = calinski_harabasz_score(m, db.labels_)
+# FM1 = metrics.fowlkes_mallows_score(True_label, Pred_label)
+# FM1 = metrics.fowlkes_mallows_score(True_label, db.labels_)
 
-FM1 = metrics.fowlkes_mallows_score(True_label, Pred_label)
-FM1 = metrics.fowlkes_mallows_score(True_label, db.labels_)
+# S1 = metrics.silhouette_score(m, Pred_label)
+# S2 = metrics.silhouette_score(m, db.labels_)
 
-S1 = metrics.silhouette_score(m, Pred_label)
-S2 = metrics.silhouette_score(m, db.labels_)
+# ss1 = metrics.silhouette_samples(m, Pred_label)
+# ss2 = metrics.silhouette_samples(m, db.labels_)
 
-ss1 = metrics.silhouette_samples(m, Pred_label)
-ss2 = metrics.silhouette_samples(m, db.labels_)
-
-db1 = metrics.davies_bouldin_score(m, Pred_label)
-db2 = metrics.davies_bouldin_score(m, db.labels_)
+# db1 = metrics.davies_bouldin_score(m, Pred_label)
+# db2 = metrics.davies_bouldin_score(m, db.labels_)
 
 
-per1 = metrics.precision_score(True_label, Pred_label, average='weighted')
-per2 = metrics.precision_score(
-    True_label, db.labels_, average='weighted')  # error
+# per1 = metrics.precision_score(True_label, Pred_label, average='weighted')
+# per2 = metrics.precision_score(
+#     True_label, db.labels_, average='weighted')  # error
 
 
-v1 = metrics.v_measure_score(True_label, Pred_label)
-v1 = metrics.v_measure_score(True_label, db.labels_)
+# v1 = metrics.v_measure_score(True_label, Pred_label)
+# v1 = metrics.v_measure_score(True_label, db.labels_)
 
-pu = Evaluation(True_label, Pred_label)
-pu1 = pu.purity_score()
-p = Evaluation(True_label, db.labels_)
-pu2 = p.purity_score()
-
-
-f1 = metrics.f1_score(True_label, Pred_label, average='weighted')
-f2 = metrics.f1_score(True_label, db.labels_, average='weighted')
-alltime = time.time() - start_time
-# p=Plot(D,0)
+# pu = Evaluation(True_label, Pred_label)
+# pu1 = pu.purity_score()
+# p = Evaluation(True_label, db.labels_)
+# pu2 = p.purity_score()
 
 
-print(alltime)
+# f1 = metrics.f1_score(True_label, Pred_label, average='weighted')
+# f2 = metrics.f1_score(True_label, db.labels_, average='weighted')
+# alltime = time.time() - start_time
+# # p=Plot(D,0)
+
+
+# print(alltime)
