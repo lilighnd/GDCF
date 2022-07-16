@@ -23,7 +23,6 @@ from sklearn.metrics import adjusted_mutual_info_score
 from sklearn.metrics import calinski_harabasz_score
 from sklearn import metrics
 
-import xlsxwriter
 import time
 import warnings
 
