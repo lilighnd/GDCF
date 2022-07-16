@@ -387,7 +387,7 @@ print(f"R1,alltime : {R1,alltime}")
 
 
 #----------------------------------------xlsxwriter------------------------------------------
-namefile = str(json_object["data"]) + str(json_object["n_samples"]) + str(json_object["sort_grids"])
+namefile = str(json_object["data"]) + str(json_object["n_samples"]) + str(json_object["sort_grids"]) + str(json_object["mode_grid"])
 
 ls = []
 ls.append(json_object["Eps"])
