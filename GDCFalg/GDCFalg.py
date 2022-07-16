@@ -392,11 +392,13 @@ ls.append(alltime)
 df = pd.DataFrame(ls) 
 
 excel_name = f'/content/drive/MyDrive/Colab Notebooks/namefile'
+print(excel_name)
 df_source = None
 if os.path.exists(excel_name):
     print("os.path.exists(excel_name)")
     df_source = pd.DataFrame(pd.read_excel(excel_name))
     print("os if is ok")
+
 if df_source is not None:
     print("df_source is not None")
     df_source[json_object["i"]]=ls
