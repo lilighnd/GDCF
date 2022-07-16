@@ -23,7 +23,7 @@ from sklearn.metrics import adjusted_mutual_info_score
 from sklearn.metrics import calinski_harabasz_score
 from sklearn import metrics
 
-
+import xlsxwriter
 import time
 import warnings
 
@@ -103,8 +103,9 @@ Centers = 3
 Epsilon = 0.07
 Minpoints = 3
 argumentList = sys.argv[1:]
+i = 0
 # Options
-options = "d:M:n:N:r:f:c:e:m:"
+options = "d:M:n:N:r:f:c:e:m:i:"
  
 # Long options
 long_options = ["Dataset", "Mode", "Number_Data", "Noise", "Random_state", "features", "Centers", "Epsilon", "Minpoints"]
@@ -142,6 +143,9 @@ for currentArgument, currentValue in arguments:
     elif currentArgument in ("-m", "--Minpoints"):
         Minpoints = currentValue
 
+    elif currentArgument in ("-i", "--i"):
+        i = currentValue
+
 Obj = {
 
     "data" : Dataset,
@@ -153,6 +157,7 @@ Obj = {
     "centers" : Centers,
     "Eps" : Epsilon,
     "Minpts" : Minpoints,
+    "i" : i
 }
 
 print(f"mode : {Mode}")
@@ -371,6 +376,42 @@ for i in range(len(ClusterForest)):
 alltime = time.time() - start_time
 R1 = adjusted_rand_score(True_label, Pred_label)
 print(f"R1,alltime : {R1,alltime}")
+
+
+
+
+# Create a workbook and add a worksheet.
+workbook = xlsxwriter.Workbook('testmoon60000.xlsx')
+worksheet = workbook.add_worksheet()
+
+# Some data we want to write to the worksheet.
+expenses = (
+    # ['Rent', 1000],
+    # ['Gas',   100],
+    # ['Food',  300],
+    # ['Gym',    50],
+    ['Eps' , json_object["Eps"]],
+    ['Rand index' , R1],
+    ['Time' , alltime],
+)
+
+# Start from the first cell. Rows and columns are zero indexed.
+row = 0
+col = json_object["i"]
+
+# Iterate over the data and write it out row by row.
+for item, cost in (expenses):
+    # worksheet.write(row, col,     item)
+    worksheet.write(row, col, cost)
+    worksheet.write(row + 1, col, cost)
+    worksheet.write(row + 2, col, cost)
+    # col += 1
+
+# Write a total using a formula.
+# worksheet.write(row, 0, 'Total')
+# worksheet.write(row, 1, '=SUM(B1:B4)')
+
+workbook.close()
 
 
 db = DBSCAN(eps=Eps, min_samples=MinPts).fit(m)
