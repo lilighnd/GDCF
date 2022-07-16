@@ -404,7 +404,7 @@ else:
 
 df_dest.to_excel(excel_name,index=False)
 #----------------------------------------------------------------------------------------------------------
-
+print("Save excel")
 db = DBSCAN(eps=Eps, min_samples=MinPts).fit(m)
 db.labels_ = list(np.float_(db.labels_))
 #plt.subplot(1, 3, 1)
