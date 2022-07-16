@@ -286,6 +286,7 @@ Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
 
 # ----------------------------------Kinds of Grid--------------------------------------------------------
 eps = float(json_object["Eps"])
+print(type(eps))
 MinPts = int(json_object["Minpts"])
 G = []
 start_time = time.time()
