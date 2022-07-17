@@ -158,7 +158,7 @@ class DataSet:
         if D == "moon":
             print("moons data")       
             data = datasets.make_moons(n_samples=Numbers,noise=Noise,random_state=R)
-            d=data.tolist()
+            d=data[0].tolist()
             with xlsxwriter.Workbook('/content/drive/MyDrive/ddd.xlsx') as workbook:
                 worksheet=workbook.add_worksheet()
 
