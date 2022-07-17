@@ -158,10 +158,11 @@ class DataSet:
         if D == "moon":
             print("moons data")       
             data = datasets.make_moons(n_samples=Numbers,noise=Noise,random_state=R)
+            d=data.tolist()
             with xlsxwriter.Workbook('/content/drive/MyDrive/ddd.xlsx') as workbook:
                 worksheet=workbook.add_worksheet()
 
-                for row_num,data in enumerate(data):
+                for row_num,data in enumerate(d):
                     worksheet.write_row(row_num,0,data)
 
         if D == "blob":
