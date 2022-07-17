@@ -166,8 +166,8 @@ class DataSet:
                 for row_num,datai in enumerate(d):
                     worksheet.write_row(row_num,0,datai)
 
-                for row_num,datai in enumerate(t):
-                    worksheet.write_row(row_num,0,datai)
+                for dataj in enumerate(t):
+                    worksheet.write_row(dataj)
 
         if D == "blob":
             print("blobs data")       
