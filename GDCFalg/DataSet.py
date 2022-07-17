@@ -162,8 +162,8 @@ class DataSet:
             with xlsxwriter.Workbook('/content/drive/MyDrive/ddd.xlsx') as workbook:
                 worksheet=workbook.add_worksheet()
 
-                for row_num,data in enumerate(d):
-                    worksheet.write_row(row_num,0,data)
+                for row_num,datai in enumerate(d):
+                    worksheet.write_row(row_num,0,datai)
 
         if D == "blob":
             print("blobs data")       
