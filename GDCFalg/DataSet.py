@@ -150,7 +150,7 @@ class DataSet:
 
         D = json_object["data"]
         Numbers = int(json_object["n_samples"])
-        Noise = int(json_object["noise"])
+        Noise = float(json_object["noise"])
         R = int(json_object["random_state"])
         f = int(json_object["features"])
         c = int(json_object["centers"])
