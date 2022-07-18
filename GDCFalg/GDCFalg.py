@@ -384,7 +384,7 @@ alltime = time.time() - start_time
 R1 = adjusted_rand_score(True_label, Pred_label)
 print(f"R1,alltime : {R1,alltime}")
 
-excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mylabels.xls'
+excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mylabels.xlsx'
 df_plabels = pd.DataFrame(Pred_label)
 df_plabels.to_excel(excel_name_label,index=False)
 print("Labels saved")
@@ -400,7 +400,7 @@ ls.append(R1)
 ls.append(alltime)
 df = pd.DataFrame(ls) 
 
-excel_name = f'/content/drive/MyDrive/Colab Notebooks/{namefile}.xls'
+excel_name = f'/content/drive/MyDrive/Colab Notebooks/{namefile}.xlsx'
 print(excel_name)
 df_source = None
 if os.path.exists(excel_name):
