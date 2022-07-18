@@ -164,13 +164,18 @@ class DataSet:
             ls=[]
             d0=list(data[0])
             d1=list(data[1])
-            for i in range(len(data[0])):
-                ls.append(d0[i][0])
-                ls.append(d0[i][1])
-                ls.append(d1[i])
-            print(ls)
-            df = pd.DataFrame(ls)
-            df.to_excel(excel_name,index=False)
+
+            ds=pd.DataFrame(list(zip(d0,d1)),columns =['a', 'b'])
+            ds.to_excel(excel_name,index=False)
+
+
+            # for i in range(len(data[0])):
+            #     ls.append(d0[i][0])
+            #     ls.append(d0[i][1])
+            #     ls.append(d1[i])
+            # print(ls)
+            # df = pd.DataFrame(ls)
+            # df.to_excel(excel_name,index=False)
 
         if D == "blob":
             print("blobs data")       
