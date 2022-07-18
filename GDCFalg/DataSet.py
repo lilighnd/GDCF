@@ -165,7 +165,7 @@ class DataSet:
             df1=pd.DataFrame(data[0],columns=['Name', 'M-cap'])
             df2=pd.DataFrame(data[1],columns=['l'])
             dfs = [df1,df2]
-            df = pd.concat(dfs)
+            df = pd.concat(dfs,axis=1, join='inner')
             df.to_excel(excel_name,index=False)
 
 
