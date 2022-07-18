@@ -160,7 +160,7 @@ class DataSet:
         if D == "moon":
             print("moons data")       
             data = datasets.make_moons(n_samples=Numbers,noise=Noise,random_state=R)
-            print(f"data , type:{data,data[0][0],type(data),type(data[0])}")
+            print(f"data , type:{data,data[0][2],type(data),type(data[0])}")
         
 
         if D == "blob":
