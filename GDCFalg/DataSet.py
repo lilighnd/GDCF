@@ -164,10 +164,13 @@ class DataSet:
             ls=[]
             d0=list(data[0])
             d1=list(data[1])
-            print(d0[0])
+            
 
-            ds=pd.DataFrame(d0[0],d1,columns =['a', 'b','c'])
-            ds.to_excel(excel_name,index=False)
+            df1=pd.DataFrame(d0)
+            df2=pd.DataFrame(d1)
+            dfs = [df1,df2]
+            df = pd.concat(dfs)
+            df.to_excel(excel_name,index=False)
 
 
             # for i in range(len(data[0])):
