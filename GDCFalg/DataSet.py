@@ -166,6 +166,7 @@ class DataSet:
             d1=list(data[1])
 
             ds=pd.DataFrame(list(zip(d0,d1)),columns =['a', 'b','c'])
+            print(type(d0[0]))
             ds.to_excel(excel_name,index=False)
 
 
