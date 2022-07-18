@@ -96,7 +96,7 @@ with open("/content/drive/MyDrive/Colab Notebooks/saveobject.json", "w") as outf
 Dataset = "blob"
 Mode = 2
 Number_Data = 38000
-Noise = 0.05
+Noise = 0
 Random_state = 42
 features = 2
 Centers = 3
