@@ -163,8 +163,8 @@ class DataSet:
             print(f"data , type:{data,data[0][2],type(data),type(data[0])}")
             excel_name = f'/content/drive/MyDrive/Colab Notebooks/mydata.xls'
             ls=[]
-            ls.append(data[0])
-            ls.append(data[1])
+            ls.append(list(data[0]))
+            ls.append(list(data[1]))
             df = pd.DataFrame(ls)
             df.to_excel(excel_name,index=False)
 
