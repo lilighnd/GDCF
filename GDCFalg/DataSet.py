@@ -161,7 +161,12 @@ class DataSet:
             print("moons data")       
             data = datasets.make_moons(n_samples=Numbers,noise=Noise,random_state=R)
             print(f"data , type:{data,data[0][2],type(data),type(data[0])}")
-        
+            excel_name = f'/content/drive/MyDrive/Colab Notebooks/mydata.xls'
+            ls=[]
+            ls.append(data[0])
+            ls.append(data[1])
+            df = pd.DataFrame(ls)
+            df.to_excel(excel_name,index=False)
 
         if D == "blob":
             print("blobs data")       
