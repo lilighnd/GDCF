@@ -164,7 +164,7 @@ class DataSet:
             ls=[]
             d0=list(data[0])
             d1=list(data[1])
-            print(type(d0[0]))
+            print(d0[0])
 
             ds=pd.DataFrame(d0[0],d1,columns =['a', 'b','c'])
             ds.to_excel(excel_name,index=False)
