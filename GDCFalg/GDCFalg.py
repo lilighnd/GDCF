@@ -384,6 +384,11 @@ alltime = time.time() - start_time
 R1 = adjusted_rand_score(True_label, Pred_label)
 print(f"R1,alltime : {R1,alltime}")
 
+excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mylabels.xls'
+df_plabels = pd.DataFrame(Pred_label)
+df_plabels.to_excel(excel_name_label,index=False)
+print("Labels saved")
+
 
 
 #----------------------------------------xlsxwriter------------------------------------------

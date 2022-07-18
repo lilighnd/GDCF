@@ -162,11 +162,13 @@ class DataSet:
             data = datasets.make_moons(n_samples=Numbers,noise=Noise,random_state=R)
             excel_name = f'/content/drive/MyDrive/Colab Notebooks/mydata.xls'
 
+            print(data[0][65536])
             df1=pd.DataFrame(data[0],columns=['Name', 'M-cap'])
             df2=pd.DataFrame(data[1],columns=['l'])
             dfs = [df1,df2]
             df = pd.concat(dfs,axis=1, join='inner')
             df.to_excel(excel_name,index=False)
+
 
 
             # for i in range(len(data[0])):
