@@ -162,12 +162,12 @@ class DataSet:
             data = datasets.make_moons(n_samples=Numbers,noise=Noise,random_state=R)
             excel_name = f'/content/drive/MyDrive/Colab Notebooks/mydata.xls'
             ls=[]
-            data[0]=list(data[0])
-            data[1]=list(data[1])
+            d0=list(data[0])
+            d1=list(data[1])
             for i in range(len(data[0])):
-                ls.append(data[0][i][0])
-                ls.append(data[0][i][1])
-                ls.append(data[1][i])
+                ls.append(d0[i][0])
+                ls.append(d0[i][1])
+                ls.append(d1[i])
             print(ls)
             df = pd.DataFrame(ls)
             df.to_excel(excel_name,index=False)
