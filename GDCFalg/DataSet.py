@@ -5,8 +5,9 @@ import csv
 from sklearn.model_selection import train_test_split
 from sklearn import cluster, datasets
 import json
-import xlsxwriter
+# import xlsxwriter
 import numpy as np
+import pandas as pd
 class DataSet:
     def __init__(self, data):
         self.Data = data
@@ -159,15 +160,7 @@ class DataSet:
         if D == "moon":
             print("moons data")       
             data = datasets.make_moons(n_samples=Numbers,noise=Noise,random_state=R)
-            da=np.asarray(data)
-            dat=da.transpose()
-            d=dat.tolist()
-            with xlsxwriter.Workbook('/content/drive/MyDrive/ddd.xlsx') as workbook:
-                worksheet=workbook.add_worksheet()
-
-                for row_num,datai in enumerate(d):
-                    worksheet.write_row(row_num,0,datai)
-
+            print(f"data , type:{data[0],data[0][0],type(data),type(data[0])}")
         
 
         if D == "blob":
