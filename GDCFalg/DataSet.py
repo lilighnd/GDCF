@@ -160,7 +160,7 @@ class DataSet:
         if D == "moon":
             print("moons data")       
             data = datasets.make_moons(n_samples=Numbers,noise=Noise,random_state=R)
-            excel_name = f'/content/drive/MyDrive/Colab Notebooks/mydata.xlsx'
+            excel_name = f'/content/drive/MyDrive/Colab Notebooks/mydata{Noise}.xlsx'
 
             df1=pd.DataFrame(data[0],columns=['Name', 'M-cap'])
             df2=pd.DataFrame(data[1],columns=['l'])
