@@ -190,32 +190,27 @@ with open('/content/drive/MyDrive/Colab Notebooks/inputobject.json', 'r') as ope
 # print(f"data : {m[1]}")
 
 #------------------------------test data curet-----------------------------
-print("start upload dataset")
-df = pd.DataFrame(pd.read_excel(f'/content/drive/MyDrive/Colab Notebooks/datawithnoise.xlsx'))
-print(df)
-print(type(df))
-records = df.to_numpy()
-result = list(records)
-True_label=[]
-m=[]
-for i in range(len(result)):
-    True_label.append(result[i][2])
-    m.append([result[i][0],result[i][1]])
+# print("start upload dataset")
+# df = pd.DataFrame(pd.read_excel(f'/content/drive/MyDrive/Colab Notebooks/datawithnoise.xlsx'))
+# print(df)
+# print(type(df))
+# records = df.to_numpy()
+# result = list(records)
+# True_label=[]
+# m=[]
+# for i in range(len(result)):
+#     True_label.append(result[i][2])
+#     m.append([result[i][0],result[i][1]])
 
-print(f"m :{m}")
-print(True_label)
-
-
-Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
-print(f"Data :{Data}")
-
-
-
-
-# m = DataSet.data()
-# True_label = m[1]
-# m = m[0].Data#type of m and True_labels is List
+# print(f"m :{m}")
+# print(True_label)
 # Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
+# print(f"Data :{Data}")
+
+m = DataSet.data()
+True_label = m[1]
+m = m[0].Data#type of m and True_labels is List
+Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
 
 # ------Read Data another way---------
 
