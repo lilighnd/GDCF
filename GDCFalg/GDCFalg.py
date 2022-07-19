@@ -194,7 +194,11 @@ print("start upload dataset")
 m = pd.DataFrame(pd.read_excel(f'/content/drive/MyDrive/Colab Notebooks/datawithnoise.xlsx'))
 print(m)
 print(type(m))
-
+d=[]
+True_label=[]
+for i in range(len(m)):
+    d.append[m[i][0],m[i][1]]
+    True_label.append(m[i][2])
 
 
 # m = DataSet.data()
