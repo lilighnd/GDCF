@@ -197,8 +197,8 @@ m = pd.DataFrame(pd.read_excel(f'/content/drive/MyDrive/Colab Notebooks/datawith
 
 
 m = DataSet.data()
-print(m)
-print(type(m))
+print(m[0])
+print(type(m[0]))
 True_label = m[1]
 m = m[0].Data#type of m and True_labels is List
 Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
