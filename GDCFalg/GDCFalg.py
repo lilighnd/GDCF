@@ -192,17 +192,15 @@ with open('/content/drive/MyDrive/Colab Notebooks/inputobject.json', 'r') as ope
 #------------------------------test data curet-----------------------------
 print("start upload dataset")
 m = pd.DataFrame(pd.read_excel(f'/content/drive/MyDrive/Colab Notebooks/datawithnoise.xlsx'))
-m=np.transpose(np.array(m))#type of Data is array and Data is transpose of 
+# print(m)
+
+
+
+m = DataSet.data()
 print(m)
-d=[]
-d.append(m[0])#type of m and True_labels is List
-d.append(m[1])#type of m and True_labels is List
-True_label = m[2]
-
-
-# m = DataSet.data()
-# True_label = m[1]
-# m = m[0].Data#type of m and True_labels is List
+print(type(m))
+True_label = m[1]
+m = m[0].Data#type of m and True_labels is List
 Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
 
 # ------Read Data another way---------
