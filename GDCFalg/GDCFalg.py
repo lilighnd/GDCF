@@ -190,8 +190,9 @@ with open('/content/drive/MyDrive/Colab Notebooks/inputobject.json', 'r') as ope
 # print(f"data : {m[1]}")
 
 #------------------------------test data curet-----------------------------
+print("start upload dataset")
 m = pd.DataFrame(pd.read_excel(f'/content/drive/MyDrive/Colab Notebooks/datawithnoise.xlsx'))
-
+print(m)
 # m = DataSet.data()
 True_label = m[1]
 m = m[0].Data#type of m and True_labels is List
