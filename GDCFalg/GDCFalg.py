@@ -198,15 +198,16 @@ records = df.to_numpy()
 result = list(records)
 print(f"result :{result}")
 print(type(result))
+True_label=[]
+m=[]
+for i in range(len(result)):
+    True_label.append(result[i][2])
+    m.append([result[i][0],result[i][1]])
+
 Data=np.transpose(np.array(result))#type of Data is array and Data is transpose of m
 print(f"Data :{Data}")
 
 
-d=[]
-True_label=[]
-for i in range(len(m)):
-    d.append[m[i][0],m[i][1]]
-    True_label.append(m[i][2])
 
 
 # m = DataSet.data()
