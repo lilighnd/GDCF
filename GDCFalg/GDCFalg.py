@@ -206,7 +206,7 @@ print(f"m :{m}")
 print(True_label)
 
 
-Data=np.transpose(np.array(result))#type of Data is array and Data is transpose of m
+Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
 print(f"Data :{Data}")
 
 
