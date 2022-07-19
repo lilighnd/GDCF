@@ -196,10 +196,10 @@ print(df)
 print(type(df))
 records = df.to_numpy()
 result = list(records)
-print(result[0])
+print(f"result :{result[0]}")
 print(type(result[0]))
 Data=np.transpose(np.array(result))#type of Data is array and Data is transpose of m
-print(Data)
+print(f"Data :{Data}")
 
 
 d=[]
