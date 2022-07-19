@@ -194,7 +194,7 @@ print("start upload dataset")
 m = pd.DataFrame(pd.read_excel(f'/content/drive/MyDrive/Colab Notebooks/datawithnoise.xlsx'))
 print(m)
 m=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
-m = m[0].Data#type of m and True_labels is List
+m = m[0]#type of m and True_labels is List
 True_label = m[1]
 
 
