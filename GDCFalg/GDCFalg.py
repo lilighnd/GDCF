@@ -195,7 +195,6 @@ df = pd.DataFrame(pd.read_excel(f'/content/drive/MyDrive/Colab Notebooks/datawit
 print(df)
 print(type(df))
 records = df.to_records(index=False)
-records = df.to_numpy(index=False)
 result = list(records)
 print(result[0])
 print(type(result[0]))
