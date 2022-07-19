@@ -192,8 +192,8 @@ with open('/content/drive/MyDrive/Colab Notebooks/inputobject.json', 'r') as ope
 #------------------------------test data curet-----------------------------
 print("start upload dataset")
 m = pd.DataFrame(pd.read_excel(f'/content/drive/MyDrive/Colab Notebooks/datawithnoise.xlsx'))
-print(m[0].Data)
-print(type(m[0].Data))
+print(m[0])
+print(type(m[0]))
 
 
 
