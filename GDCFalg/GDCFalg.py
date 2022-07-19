@@ -191,9 +191,13 @@ with open('/content/drive/MyDrive/Colab Notebooks/inputobject.json', 'r') as ope
 
 #------------------------------test data curet-----------------------------
 print("start upload dataset")
-m = pd.DataFrame(pd.read_excel(f'/content/drive/MyDrive/Colab Notebooks/datawithnoise.xlsx'))
-print(m)
-print(type(m))
+df = pd.DataFrame(pd.read_excel(f'/content/drive/MyDrive/Colab Notebooks/datawithnoise.xlsx'))
+print(df)
+print(type(df))
+records = df.to_records(index=False)
+result = list(records)
+print(result)
+print(type(result))
 d=[]
 True_label=[]
 for i in range(len(m)):
