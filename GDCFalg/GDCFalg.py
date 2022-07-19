@@ -196,13 +196,15 @@ print(df)
 print(type(df))
 records = df.to_numpy()
 result = list(records)
-print(f"result :{result}")
-print(type(result))
 True_label=[]
 m=[]
 for i in range(len(result)):
     True_label.append(result[i][2])
     m.append([result[i][0],result[i][1]])
+
+print(f"m :{m}")
+print(True_label)
+
 
 Data=np.transpose(np.array(result))#type of Data is array and Data is transpose of m
 print(f"Data :{Data}")
