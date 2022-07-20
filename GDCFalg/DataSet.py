@@ -160,23 +160,16 @@ class DataSet:
         if D == "moon":
             print("moons data")       
             data = datasets.make_moons(n_samples=Numbers,noise=Noise,random_state=R)
-            excel_name = f'/content/drive/MyDrive/Colab Notebooks/mydata.xlsx'
+            # excel_name = f'/content/drive/MyDrive/Colab Notebooks/mydata.xlsx'
 
-            df1=pd.DataFrame(data[0],columns=['Name', 'M-cap'])
-            df2=pd.DataFrame(data[1],columns=['l'])
-            dfs = [df1,df2]
-            df = pd.concat(dfs,axis=1, join='inner')
-            df.to_excel(excel_name,index=False)
-
-
-
-            # for i in range(len(data[0])):
-            #     ls.append(d0[i][0])
-            #     ls.append(d0[i][1])
-            #     ls.append(d1[i])
-            # print(ls)
-            # df = pd.DataFrame(ls)
+            # df1=pd.DataFrame(data[0],columns=['Name', 'M-cap'])
+            # df2=pd.DataFrame(data[1],columns=['l'])
+            # dfs = [df1,df2]
+            # df = pd.concat(dfs,axis=1, join='inner')
             # df.to_excel(excel_name,index=False)
+
+
+
 
         if D == "blob":
             print("blobs data")       
