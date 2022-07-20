@@ -402,7 +402,7 @@ alltime = time.time() - start_time
 R1 = adjusted_rand_score(True_label, Pred_label)
 print(f"R1,alltime : {R1,alltime}")
 
-excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mylabels.xlsx'
+'''excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mylabels.xlsx'
 df_plabels = pd.DataFrame(Pred_label)
 df_plabels.to_excel(excel_name_label,index=False)
 print("Labels saved")
@@ -440,7 +440,7 @@ else:
 
 df_dest.to_excel(excel_name,index=False)
 #----------------------------------------------------------------------------------------------------------
-print("Save excel")
+print("Save excel")'''
 # db = DBSCAN(eps=Eps, min_samples=MinPts).fit(m)
 # db.labels_ = list(np.float_(db.labels_))
 
