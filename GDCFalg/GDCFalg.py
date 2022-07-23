@@ -422,17 +422,18 @@ for i in range(len(ClusterForest)):
     
 alltime = time.time() - start_time
 R1 = adjusted_rand_score(True_label, Pred_label)
-print(f"R1,alltime : {R1,alltime}")
+f1 = metrics.f1_score(True_label, Pred_label, average='weighted')
+print(f"R1,alltime : {R1,f1,alltime}")
 
 excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mylabels.xlsx'
 df_plabels = pd.DataFrame(Pred_label)
 df_plabels.to_excel(excel_name_label,index=False)
 print("Labels saved")
 
-
+# f2 = metrics.f1_score(True_label, db.labels_, average='weighted')
 
 #----------------------------------------xlsxwriter------------------------------------------
-# namefile = str(json_object["data"]) + str(json_object["n_samples"]) + str(json_object["sort_grids"]) + str(json_object["mode_grid"])
+'''# namefile = str(json_object["data"]) + str(json_object["n_samples"]) + str(json_object["sort_grids"]) + str(json_object["mode_grid"])
 namefile="newexcel"
 ls = []
 # ls.append(json_object["Eps"])
@@ -463,7 +464,7 @@ else:
 
 df_dest.to_excel(excel_name,index=False)
 #----------------------------------------------------------------------------------------------------------
-print("Save excel")
+print("Save excel")'''
 # db = DBSCAN(eps=Eps, min_samples=MinPts).fit(m)
 # db.labels_ = list(np.float_(db.labels_))
 
