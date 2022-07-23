@@ -422,7 +422,7 @@ for i in range(len(ClusterForest)):
     
 alltime = time.time() - start_time
 R1 = adjusted_rand_score(True_label, Pred_label)
-f1 = metrics.f1_score(True_label, Pred_label, average='weighted')
+f1 = metrics.f1_score(True_label, Pred_label)
 print(f"R1,alltime : {R1,f1,alltime}")
 
 excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mylabels.xlsx'
