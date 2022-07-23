@@ -432,8 +432,8 @@ print("Labels saved")
 
 
 #----------------------------------------xlsxwriter------------------------------------------
-namefile = str(json_object["data"]) + str(json_object["n_samples"]) + str(json_object["sort_grids"]) + str(json_object["mode_grid"])
-
+# namefile = str(json_object["data"]) + str(json_object["n_samples"]) + str(json_object["sort_grids"]) + str(json_object["mode_grid"])
+namefile="newexcel"
 ls = []
 # ls.append(json_object["Eps"])
 ls.append(json_object["n_samples"])
