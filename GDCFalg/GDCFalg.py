@@ -491,7 +491,7 @@ if os.path.exists(excel_name):
 
 if df_source is not None:
     print("df_source is not None")
-    df_source[json_object["i"]]=ls
+    df_source[json_object]["i"]=ls
     df_dest = df_source
     print("df_source if is ok")
 
