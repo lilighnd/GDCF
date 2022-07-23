@@ -207,6 +207,28 @@ with open('/content/drive/MyDrive/Colab Notebooks/inputobject.json', 'r') as ope
 # Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
 # print(f"Data :{Data}")
 
+
+# Experiment 1
+
+# for n in [ 2000,  5000 ]:
+#     Evaluate(n)
+
+# def Evaluate(n):
+#     db = CreateDatabase(n)
+#     data = datasets.make_moons(n_samples=n,noise=Noise,random_state=R)
+#     result =  RunMethod(db)  # recall , precisiion, ...
+#     SaveResult(result)
+
+# file
+# n =20000, precision = 0.34 , recall = 0.99, ...
+
+# Experiment 1
+
+
+
+
+
+dim = 2
 m = DataSet.data()
 True_label = m[1]
 m = m[0].Data#type of m and True_labels is List
@@ -378,7 +400,7 @@ print("run core")
 
 # ----------------------------------------HGB--------------------------------------------------------------
 start_time_hgb=time.time()
-HGBmatrix = HGB(Grids, 2)
+HGBmatrix = HGB(Grids, dim)
 B = HGBmatrix.BuildHGB()
 print("run HGB")
 print(f"time_hgb = {time.time() - start_time_hgb}")
@@ -402,7 +424,7 @@ alltime = time.time() - start_time
 R1 = adjusted_rand_score(True_label, Pred_label)
 print(f"R1,alltime : {R1,alltime}")
 
-'''excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mylabels.xlsx'
+excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mylabels.xlsx'
 df_plabels = pd.DataFrame(Pred_label)
 df_plabels.to_excel(excel_name_label,index=False)
 print("Labels saved")
@@ -413,7 +435,8 @@ print("Labels saved")
 namefile = str(json_object["data"]) + str(json_object["n_samples"]) + str(json_object["sort_grids"]) + str(json_object["mode_grid"])
 
 ls = []
-ls.append(json_object["Eps"])
+# ls.append(json_object["Eps"])
+ls.append(json_object["n_samples"])
 ls.append(R1)
 ls.append(alltime)
 df = pd.DataFrame(ls) 
@@ -440,7 +463,7 @@ else:
 
 df_dest.to_excel(excel_name,index=False)
 #----------------------------------------------------------------------------------------------------------
-print("Save excel")'''
+print("Save excel")
 # db = DBSCAN(eps=Eps, min_samples=MinPts).fit(m)
 # db.labels_ = list(np.float_(db.labels_))
 

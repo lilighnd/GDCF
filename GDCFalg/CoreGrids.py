@@ -18,6 +18,7 @@ class CoreGrids:
 
     def distances(self, Point):
         dist = distance.cdist([Point], self.m, 'euclidean')
+        # print(f"dist : {dist}")
         return dist
 
     def Find_CoreObject(self):
