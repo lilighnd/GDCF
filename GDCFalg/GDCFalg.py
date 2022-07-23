@@ -443,12 +443,11 @@ print("Labels saved")
 
 # f2 = metrics.f1_score(True_label, db.labels_, average='weighted')
 
-#----------------------------------------xlsxwriter------------------------------------------
-namefile = str(json_object["data"]) + str(json_object["n_samples"]) + str(json_object["sort_grids"]) + str(json_object["mode_grid"])
-# namefile="newexcel"
+#----------------------------------------file for find best Eps,cols=90;rows=eps,R1------------------------------------------
+'''namefile = str(json_object["data"]) + str(json_object["n_samples"]) + str(json_object["sort_grids"]) + str(json_object["mode_grid"])
+
 ls = []
 ls.append(json_object["Eps"])
-# ls.append(json_object["n_samples"])
 ls.append(f1)
 ls.append(alltime)
 df = pd.DataFrame(ls) 
@@ -474,7 +473,35 @@ else:
 
 
 df_dest.to_excel(excel_name,index=False)
-#----------------------------------------------------------------------------------------------------------
+print("Save excel")'''
+
+#----------------------------------------file for presentaion results------------------------------------------------------------------
+ls = []
+ls.append(json_object["Eps"])
+ls.append(f1)
+ls.append(alltime)
+df = pd.DataFrame(ls) 
+excel_name = f'/content/drive/MyDrive/Colab Notebooks/resultfile.xlsx'
+print(excel_name)
+df_source = None
+if os.path.exists(excel_name):
+    print("os.path.exists(excel_name)")
+    df_source = pd.DataFrame(pd.read_excel(excel_name))
+    print("os if is ok")
+
+if df_source is not None:
+    print("df_source is not None")
+    df_source[json_object]["i"]=ls
+    df_dest = df_source
+    print("df_source if is ok")
+
+else:
+    print("not exist")
+    df_dest = df
+    print("ok if not exist")
+
+
+df_dest.to_excel(excel_name,index=False)
 print("Save excel")
 # db = DBSCAN(eps=Eps, min_samples=MinPts).fit(m)
 # db.labels_ = list(np.float_(db.labels_))
