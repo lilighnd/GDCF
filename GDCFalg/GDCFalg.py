@@ -476,11 +476,14 @@ df_dest.to_excel(excel_name,index=False)
 print("Save excel")'''
 
 #----------------------------------------file for presentaion results------------------------------------------------------------------
-ls = []
-ls.append(json_object["Eps"])
-ls.append(f1)
-ls.append(alltime)
-df = pd.DataFrame(ls) 
+cols=['num','mode','time']
+df = pd.DataFrame(columns=cols, index=range(10))
+
+# ls = []
+# ls.append(json_object["Eps"])
+# ls.append(f1)
+# ls.append(alltime)
+# df = pd.DataFrame(ls) 
 excel_name = f'/content/drive/MyDrive/Colab Notebooks/resultfile.xlsx'
 print(excel_name)
 df_source = None
@@ -491,8 +494,11 @@ if os.path.exists(excel_name):
 
 if df_source is not None:
     print("df_source is not None")
-    df_source[json_object["i"]]=ls
-    df_dest = df_source
+    # df_source[json_object["i"]]=ls
+    # df_dest = df_source
+    df.loc[json_object["i"]].num = 4
+    df.loc[json_object["i"]].mode = 5
+    df.loc[json_object["i"]].to_timestamp = 6
     print("df_source if is ok")
 
 else:
