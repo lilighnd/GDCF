@@ -176,7 +176,13 @@ with open('/content/drive/MyDrive/Colab Notebooks/inputobject.json', 'r') as ope
   
     # Reading from json file
     json_object = json.load(openfile)
-  
+
+
+
+
+
+
+
 # print(f"mode : {Mode}")
 #----------------------moons,blobs,circle----------------------------------
 # m = DataSet.data()
@@ -332,6 +338,11 @@ print(m[0])
 
 
 # ----------------------------------Kinds of Grid--------------------------------------------------------
+print(json_object["data"]) 
+print(json_object["mode_grid"]) 
+print(json_object["n_samples"]) 
+print(json_object["random_state"]) 
+print(json_object["i"]) 
 Eps = float(json_object["Eps"])
 MinPts = int(json_object["Minpts"])
 G = []
@@ -422,7 +433,7 @@ for i in range(len(ClusterForest)):
     
 alltime = time.time() - start_time
 R1 = adjusted_rand_score(True_label, Pred_label)
-f1 = metrics.f1_score(True_label, Pred_label,average='weighted')
+f1 = metrics.f1_score(True_label, Pred_label,average='micro')
 print(f"R1,alltime : {R1,f1,alltime}")
 
 excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mylabels.xlsx'
