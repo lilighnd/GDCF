@@ -433,16 +433,16 @@ print("Labels saved")
 # f2 = metrics.f1_score(True_label, db.labels_, average='weighted')
 
 #----------------------------------------xlsxwriter------------------------------------------
-'''# namefile = str(json_object["data"]) + str(json_object["n_samples"]) + str(json_object["sort_grids"]) + str(json_object["mode_grid"])
-namefile="newexcel"
+namefile = str(json_object["data"]) + str(json_object["n_samples"]) + str(json_object["sort_grids"]) + str(json_object["mode_grid"])
+# namefile="newexcel"
 ls = []
-# ls.append(json_object["Eps"])
-ls.append(json_object["n_samples"])
-ls.append(R1)
+ls.append(json_object["Eps"])
+# ls.append(json_object["n_samples"])
+ls.append(f1)
 ls.append(alltime)
 df = pd.DataFrame(ls) 
 
-excel_name = f'/content/drive/MyDrive/Colab Notebooks/{namefile}.xlsx'
+excel_name = f'/content/drive/MyDrive/Colab Notebooks/{namefile}"f1".xlsx'
 print(excel_name)
 df_source = None
 if os.path.exists(excel_name):
