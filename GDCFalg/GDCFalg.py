@@ -476,10 +476,10 @@ df_dest.to_excel(excel_name,index=False)
 print("Save excel")'''
 
 #----------------------------------------file for presentaion results------------------------------------------------------------------
-ls = []
-ls.append(json_object["Eps"])
-ls.append(f1)
-ls.append(alltime)
+ls = [[],[],[]]
+ls[0].append(json_object["Eps"])
+ls[1].append(f1)
+ls[2].append(alltime)
 df = pd.DataFrame(ls) 
 excel_name = f'/content/drive/MyDrive/Colab Notebooks/resultfile.xlsx'
 print(excel_name)
@@ -491,7 +491,7 @@ if os.path.exists(excel_name):
 
 if df_source is not None:
     print("df_source is not None")
-    df_source[json_object]["i"]=ls
+    df_source[json_object["i"]]=ls
     df_dest = df_source
     print("df_source if is ok")
 
