@@ -476,7 +476,7 @@ df_dest.to_excel(excel_name,index=False)
 print("Save excel")'''
 
 #----------------------------------------file for presentaion results------------------------------------------------------------------
-cols=['num','mode','time']
+cols=['DataSize','Mode_Grid','Time','Improvment','SortWay','DataSetType','ARI','F1-Score','Purity','Precision']
 df = pd.DataFrame(columns=cols)
 
 # ls = []
@@ -494,11 +494,14 @@ if os.path.exists(excel_name):
 
 if df_source is not None:
     print("df_source is not None")
-    # df_source[json_object["i"]]=ls
-    # df_dest = df_source
-    df_source.at[json_object["i"],'num'] = 4
-    df_source.at[json_object["i"],'mode'] = 5
-    df_source.at[json_object["i"],'time'] = 7
+    df_source.at[json_object["i"],'DataSize'] = json_object["n_samples"]
+    df_source.at[json_object["i"],'Mode_Grid'] = json_object["mode_grid"]
+    df_source.at[json_object["i"],'Time'] = alltime
+    if json_object["mode_grid"] == 2:
+        df_source.at[json_object["i"]-1,'Improvment'] = (df_source.iloc[json_object["i"]]['Time']-df_source.iloc[json_object["i"]-1]['Time'])/df_source.iloc[json_object["i"]]['Time']
+    df_source.at[json_object["i"],'SortWay'] = json_object["sort_grids"]
+    df_source.at[json_object["i"],'DataSetType'] = json_object["data"]
+    df_source.at[json_object["i"],'ARI'] = R1
     df_dest = df_source
     print("df_source if is ok")
 
