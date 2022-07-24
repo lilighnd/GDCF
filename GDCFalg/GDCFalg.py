@@ -499,6 +499,7 @@ if df_source is not None:
     df.at[json_object["i"],'num'] = 4
     df.at[json_object["i"],'mode'] = 5
     df.at[json_object["i"],'time'] = 7
+    df_dest = df_source
     print("df_source if is ok")
 
 else:
