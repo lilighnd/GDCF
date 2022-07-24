@@ -41,13 +41,15 @@ class GDCF:
                 # print(f"order ccore grids Q : {Q}")nnn
 
         # ----------------------------------Random-------------------------------------------
+        def myFunc():
+            return 0.2
         if mode == "Random":
             print("random")
             L = []
             Q = []
             for i in range(len(self.Core_G)):
                 L.append([len(self.Core_G[i]), i])
-            random.shuffle(L)
+            random.shuffle(L,myFunc)
             for j in range(len(L)):
                 Q.append(self.Core_G[L[j][1]])
 
