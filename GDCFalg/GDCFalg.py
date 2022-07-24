@@ -477,7 +477,7 @@ print("Save excel")'''
 
 #----------------------------------------file for presentaion results------------------------------------------------------------------
 cols=['num','mode','time']
-df = pd.DataFrame(columns=cols, index=range(10))
+df = pd.DataFrame(columns=cols, index=range(2))
 
 # ls = []
 # ls.append(json_object["Eps"])
