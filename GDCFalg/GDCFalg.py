@@ -477,13 +477,13 @@ print("Save excel")'''
 
 #----------------------------------------file for presentaion results------------------------------------------------------------------
 cols=['num','mode','time']
-# df = pd.DataFrame(columns=cols, index=range(2))
+df = pd.DataFrame(columns=cols)
 
-ls = []
-ls.append(json_object["Eps"])
-ls.append(f1)
-ls.append(alltime)
-df = pd.DataFrame(ls,columns=cols) 
+# ls = []
+# ls.append(json_object["Eps"])
+# ls.append(f1)
+# ls.append(alltime)
+# df = pd.DataFrame(ls) 
 excel_name = f'/content/drive/MyDrive/Colab Notebooks/resultfile.xlsx'
 print(excel_name)
 df_source = None
@@ -496,9 +496,9 @@ if df_source is not None:
     print("df_source is not None")
     # df_source[json_object["i"]]=ls
     # df_dest = df_source
-    df.loc[json_object["i"],0].num = 4
-    df.loc[json_object["i"],1].mode = 5
-    df.loc[json_object["i"],2].to_timestamp = 6
+    df.at[json_object["i"],'num'] = 4
+    df.at[json_object["i"],'mode'] = 5
+    df.at[json_object["i"],'time'] = 7
     print("df_source if is ok")
 
 else:
