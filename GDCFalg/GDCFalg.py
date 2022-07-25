@@ -495,14 +495,14 @@ if os.path.exists(excel_name):
 if df_source is not None:
     print("df_source is not None")
     df_source.at[int(json_object["i"])+1,'DataSize'] = json_object["n_samples"]
-    df_source.at[json_object["i"],'Mode_Grid'] = json_object["mode_grid"]
-    df_source.at[json_object["i"],'Time'] = alltime
+    df_source.at[int(json_object["i"])+1,'Mode_Grid'] = json_object["mode_grid"]
+    df_source.at[int(json_object["i"])+1,'Time'] = alltime
     # if int(json_object["mode_grid"]) == 2:
     #     print("sqsqsq")
     #     df_source.at[int(json_object["i"])-1,'Improvment'] = (df_source.iloc[int(json_object["i"])]['Time']-df_source.iloc[int(json_object["i"]-1)]['Time'])/df_source.iloc[int(json_object["i"])]['Time']
-    df_source.at[json_object["i"],'SortWay'] = json_object["sort_grids"]
-    df_source.at[json_object["i"],'DataSetType'] = json_object["data"]
-    df_source.at[json_object["i"],'ARI'] = R1
+    df_source.at[int(json_object["i"])+1,'SortWay'] = json_object["sort_grids"]
+    df_source.at[int(json_object["i"])+1,'DataSetType'] = json_object["data"]
+    df_source.at[int(json_object["i"])+1,'ARI'] = R1
     df_dest = df_source
     print("df_source if is ok")
 
