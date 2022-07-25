@@ -497,7 +497,7 @@ if df_source is not None:
     df_source.at[json_object["i"],'DataSize'] = json_object["n_samples"]
     df_source.at[json_object["i"],'Mode_Grid'] = json_object["mode_grid"]
     df_source.at[json_object["i"],'Time'] = alltime
-    if json_object["mode_grid"] == 2:
+    if int(json_object["mode_grid"]) == 2:
         print("sqsqsq")
         df_source.at[json_object["i"]-1,'Improvment'] = (df_source.iloc[json_object["i"]]['Time']-df_source.iloc[json_object["i"]-1]['Time'])/df_source.iloc[json_object["i"]]['Time']
     df_source.at[json_object["i"],'SortWay'] = json_object["sort_grids"]
