@@ -494,7 +494,7 @@ if os.path.exists(excel_name):
 
 if df_source is not None:
     print("df_source is not None")
-    df_source.at[json_object["i"]+1,'DataSize'] = json_object["n_samples"]
+    df_source.at[int(json_object["i"])+1,'DataSize'] = json_object["n_samples"]
     df_source.at[json_object["i"],'Mode_Grid'] = json_object["mode_grid"]
     df_source.at[json_object["i"],'Time'] = alltime
     # if int(json_object["mode_grid"]) == 2:
