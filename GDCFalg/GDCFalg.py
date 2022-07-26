@@ -448,7 +448,7 @@ namefile = str(json_object["data"]) + str(json_object["n_samples"]) + str(json_o
 
 ls = []
 ls.append(json_object["Eps"])
-ls.append(f1)
+ls.append(R1)
 ls.append(alltime)
 df = pd.DataFrame(ls) 
 
