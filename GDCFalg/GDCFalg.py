@@ -444,7 +444,7 @@ print("Labels saved")
 # f2 = metrics.f1_score(True_label, db.labels_, average='weighted')
 
 #----------------------------------------file for find best Eps,cols=90;rows=eps,R1------------------------------------------
-'''namefile = str(json_object["data"]) + str(json_object["n_samples"]) + str(json_object["sort_grids"]) + str(json_object["mode_grid"])
+namefile = str(json_object["data"]) + str(json_object["n_samples"]) + str(json_object["sort_grids"]) + str(json_object["mode_grid"])
 
 ls = []
 ls.append(json_object["Eps"])
@@ -473,7 +473,7 @@ else:
 
 
 df_dest.to_excel(excel_name,index=False)
-print("Save excel")'''
+print("Save excel")
 
 #----------------------------------------file for presentaion results------------------------------------------------------------------
 cols=['DataSize','Mode_Grid','Time','Improvment','SortWay','DataSetType','ARI','F1-Score','Purity','Precision']
