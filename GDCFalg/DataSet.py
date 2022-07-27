@@ -187,7 +187,7 @@ class DataSet:
 
         if D == "circle":
             print("circles data")       
-            data = datasets.make_circles(n_samples=Numbers,noise=Noise,random_state=R,factor=0.1)
+            data = datasets.make_circles(n_samples=Numbers,noise=Noise,random_state=R,factor=0.7)
             excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mydata.xlsx'
             df_data = pd.DataFrame(data[0])
             df_data.to_excel(excel_name_label,index=False)
