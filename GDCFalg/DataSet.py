@@ -174,7 +174,7 @@ class DataSet:
         if D == "blob":
             print("blobs data")       
             data = datasets.make_blobs(n_samples=Numbers, n_features = f, 
-                  centers = 3,cluster_std = 0,random_state=R)
+                  centers = 3,cluster_std = 0.4,random_state=R)
 
         if D == "circle":
             print("circles data")       
