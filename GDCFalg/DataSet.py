@@ -175,6 +175,9 @@ class DataSet:
             print("blobs data")       
             data = datasets.make_blobs(n_samples=Numbers, n_features = f, 
                   centers = 3,cluster_std = 0.4,random_state=R)
+            excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mydata.xlsx'
+            df_data = pd.DataFrame(data[0])
+            df_data.to_excel(excel_name_label,index=False)
 
         if D == "circle":
             print("circles data")       
