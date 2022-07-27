@@ -160,6 +160,12 @@ class DataSet:
         if D == "moon":
             print("moons data")       
             data = datasets.make_moons(n_samples=Numbers,noise=Noise,random_state=R)
+            excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mydata.xlsx'
+            df_data = pd.DataFrame(data[0])
+            df_data.to_excel(excel_name_label,index=False)
+
+
+
             # excel_name = f'/content/drive/MyDrive/Colab Notebooks/mydata.xlsx'
 
             # df1=pd.DataFrame(data[0],columns=['Name', 'M-cap'])
@@ -182,7 +188,9 @@ class DataSet:
         if D == "circle":
             print("circles data")       
             data = datasets.make_circles(n_samples=Numbers,noise=Noise,random_state=R,factor=0.8)
-
+            excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mydata.xlsx'
+            df_data = pd.DataFrame(data[0])
+            df_data.to_excel(excel_name_label,index=False)
 
         True_label = data[1]
         Data=data[0] 
