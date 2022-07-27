@@ -420,9 +420,9 @@ print(f"time_hgb = {time.time() - start_time_hgb}")
 start_time_gdcf=time.time()
 gdcf = GDCF(CoreGrid, CoreObject, 2, B, MinPts, Eps)
 if modeGrid == int(1):
-    ClusterForest = gdcf.BuildGDCF(json_object["sort_grids"],"Hex", gridData, m, Grids)
+    ClusterForest = gdcf.BuildGDCF(int(json_object["sort_grids"]),"Hex", gridData, m, Grids)
 if modeGrid == int(2):
-    ClusterForest = gdcf.BuildGDCF(json_object["sort_grids"],"Square", gridData, m, Grids)
+    ClusterForest = gdcf.BuildGDCF(int(json_object["sort_grids"]),"Square", gridData, m, Grids)
 print("run GDCF")
 print(f"time_gdcf = {time.time() - start_time_gdcf}")
 
