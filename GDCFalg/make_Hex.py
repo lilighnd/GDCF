@@ -15,9 +15,28 @@ class make_Hex():
 
     def GridHex(self):
         LengthCell = (self.Eps*2)
+        #---------------------------------new for n dimention--------------------------------------------------
+        # dim=3
+        # Min=[]
+        # Max=[]
+        # numgrid=[]
+        # for i in range(dim):
+        #    Min.append(min(self.Data[:,dim])) 
+        #    Max.append(max(self.Data[:,dim])) 
 
-        maxX = max(self.Data[:, 0])  # ==> 26
-        minX = min(self.Data[:, 0])  # ==> 1min(Data[0])
+        # point = np.array([])
+        # for j in range(dim):
+        #     point[j] = Min[j]
+
+
+        # for k in range(dim):
+        #     numgrid.append()
+
+
+
+
+        maxX = max(self.Data[:, 0])  
+        minX = min(self.Data[:, 0])  
 
         maxY = max(self.Data[:, 1])  # ==> 21
         minY = min(self.Data[:, 1])  # ==> 1min(Data[1])
