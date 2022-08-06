@@ -63,6 +63,7 @@ class GDCF:
                     N = G1.NeighbourGrid(NonEmptyGrids)
                     Neighbours.append([g, N])
                     Q = list(sorted(Neighbours, reverse=True, key=sort))
+                    print(Q)
 
         # ----------------------------GDFC-------------------------------------------------------
         # print(f"Q(Core Grids) : {Q}")
@@ -109,7 +110,7 @@ class GDCF:
             # with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'w') as openfile:
             #     Saveobj = json.dump(save_object, openfile)
             #     openfile.close()
-
+            
             A = [g[0]]
             if any(g[0] in sublist for sublist in Forest) == False:  # نباشد P عضو جنگل  g
                 Tree = [X, g[0]]
