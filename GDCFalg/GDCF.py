@@ -62,8 +62,10 @@ class GDCF:
                     G1 = NeighbourGridQuery(g, self.dimention, self.HGBLst)
                     N = G1.NeighbourGrid(NonEmptyGrids)
                     Neighbours.append([g, N])
-                    Q = list(sorted(Neighbours, reverse=True, key=sort))
-                    print(Q)
+            Q = list(sorted(Neighbours, reverse=True, key=sort))
+            # print(f"g {g}")
+            print(f"Q {Q}")
+                    
 
         # ----------------------------GDFC-------------------------------------------------------
         # print(f"Q(Core Grids) : {Q}")
