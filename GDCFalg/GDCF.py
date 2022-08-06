@@ -63,7 +63,7 @@ class GDCF:
                     N = G1.NeighbourGrid(NonEmptyGrids)
                     Neighbours.append([g, N])
             print(f"Nei {Neighbours}")
-            Q = list(sorted(Neighbours, reverse=False, key=sort))
+            Q = list(sorted(Neighbours, reverse=True, key=sort))
             print(f"Q {Q}")
                     
 
