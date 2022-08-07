@@ -22,7 +22,7 @@ from sklearn.metrics import r2_score
 from sklearn.metrics import adjusted_mutual_info_score
 from sklearn.metrics import calinski_harabasz_score
 from sklearn import metrics
-
+from sklearn.metrics.cluster import normalized_mutual_info_score
 import time
 import warnings
 
@@ -434,7 +434,8 @@ for i in range(len(ClusterForest)):
 alltime = time.time() - start_time
 R1 = adjusted_rand_score(True_label, Pred_label)
 f1 = metrics.f1_score(True_label, Pred_label,average='micro')
-print(f"R1,alltime : {R1,f1,alltime}")
+nmi = normalized_mutual_info_score(True_label, Pred_label)
+print(f"R1,alltime : {R1,nmi,f1,alltime}")
 
 excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mylabels.xlsx'
 df_plabels = pd.DataFrame(Pred_label)
