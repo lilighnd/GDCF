@@ -1,7 +1,7 @@
 import numpy as np
 import math
 from GDCF import *
-
+import time
 
 class NeighbourHex():
 
@@ -13,7 +13,7 @@ class NeighbourHex():
         # print("********************start NHEX******************")
         # print(Grids)
     
-        
+        st_neiHex=time.time()
         n = len(self.B[0][0])
         Q = []
         tmp1 = np.ones((1, n))
@@ -81,7 +81,8 @@ class NeighbourHex():
             if tmp1[0][j] == 1 and Grids[j] != []:
                 # Q.append('g'+str(j+1))
                 Q.append(Grids[j])
-
+        time_neiHex=time.time()-st_neiHex
+        print(f"Nei time Hex : {time_neiHex}")
         return Q
 
 

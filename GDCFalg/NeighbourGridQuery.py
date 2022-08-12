@@ -1,6 +1,7 @@
 import numpy as np
 import math
 from GDCF import *
+import time
 class NeighbourGridQuery():
 
     def __init__(self,G,dim,b):
@@ -9,6 +10,7 @@ class NeighbourGridQuery():
         self.B=b#HGB
     def NeighbourGrid(self,Grids):
         # print("-------------square grid neighbour------------")
+        st_neiSq=time.time()
         n=len(self.B[0][0]) 
         Q=[]
         tmp1=np.ones((1,n))
@@ -32,7 +34,8 @@ class NeighbourGridQuery():
             if tmp1[0][j]==1 and Grids[j]!= []: #and 'g'+str(j+1)!=self.g[0]:#g is neighbour of self
                 #Q.append('g'+str(j+1))
                 Q.append( Grids[j] )
-
+        time_neiSq=time.time()-st_neiSq
+        print(f"Nei time Sq : {time_neiSq}")   
         return Q
 
 
