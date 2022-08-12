@@ -36,45 +36,45 @@ class NeighbourHex():
         i = 0
 
 
-        x = self.g[0] - 2
-        y = self.g[1] - 2
-        if [x, y, 'Not Empty Grid'] in Grids:
-            indx = Grids.index([x, y, 'Not Empty Grid'])
-            # print(f"tmp1 start: {tmp1[0][indx]}")
-            # print(f"tmp1 start: {tmp2[0]}")
-            tmp1[0][indx] = 0 
-            # print(f"indx and grid: {indx,[x, y, 'Not Empty Grid']}")
-            # print(f"tmp1 end: {tmp1[0][indx]}")
-        # print(f"grids : {Grids}")
-        x = self.g[0] - 2
-        y = self.g[1] + 2
-        if [x, y, 'Not Empty Grid'] in Grids:
-            indx = Grids.index([x, y, 'Not Empty Grid'])
-            tmp1[0][indx] = 0 
+        # x = self.g[0] - 2
+        # y = self.g[1] - 2
+        # if [x, y, 'Not Empty Grid'] in Grids:
+        #     indx = Grids.index([x, y, 'Not Empty Grid'])
+        #     # print(f"tmp1 start: {tmp1[0][indx]}")
+        #     # print(f"tmp1 start: {tmp2[0]}")
+        #     tmp1[0][indx] = 0 
+        #     # print(f"indx and grid: {indx,[x, y, 'Not Empty Grid']}")
+        #     # print(f"tmp1 end: {tmp1[0][indx]}")
+        # # print(f"grids : {Grids}")
+        # x = self.g[0] - 2
+        # y = self.g[1] + 2
+        # if [x, y, 'Not Empty Grid'] in Grids:
+        #     indx = Grids.index([x, y, 'Not Empty Grid'])
+        #     tmp1[0][indx] = 0 
 
-        x = self.g[0] + 2
-        y = self.g[1] - 2
-        if [x, y, 'Not Empty Grid'] in Grids:
-            indx = Grids.index([x, y, 'Not Empty Grid'])
-            tmp1[0][indx] = 0 
+        # x = self.g[0] + 2
+        # y = self.g[1] - 2
+        # if [x, y, 'Not Empty Grid'] in Grids:
+        #     indx = Grids.index([x, y, 'Not Empty Grid'])
+        #     tmp1[0][indx] = 0 
 
-        x = self.g[0] +2 
-        y = self.g[1] -1
-        if [x, y, 'Not Empty Grid'] in Grids:
-            indx = Grids.index([x, y, 'Not Empty Grid'])
-            tmp1[0][indx] = 0
+        # x = self.g[0] +2 
+        # y = self.g[1] -1
+        # if [x, y, 'Not Empty Grid'] in Grids:
+        #     indx = Grids.index([x, y, 'Not Empty Grid'])
+        #     tmp1[0][indx] = 0
 
-        x = self.g[0] + 2
-        y = self.g[1] + 1
-        if [x, y, 'Not Empty Grid'] in Grids:
-            indx = Grids.index([x, y, 'Not Empty Grid'])
-            tmp1[0][indx] = 0 
+        # x = self.g[0] + 2
+        # y = self.g[1] + 1
+        # if [x, y, 'Not Empty Grid'] in Grids:
+        #     indx = Grids.index([x, y, 'Not Empty Grid'])
+        #     tmp1[0][indx] = 0 
 
-        x = self.g[0] + 2
-        y = self.g[1] + 2
-        if [x, y, 'Not Empty Grid'] in Grids:
-            indx = Grids.index([x, y, 'Not Empty Grid'])
-            tmp1[0][indx] = 0 
+        # x = self.g[0] + 2
+        # y = self.g[1] + 2
+        # if [x, y, 'Not Empty Grid'] in Grids:
+        #     indx = Grids.index([x, y, 'Not Empty Grid'])
+        #     tmp1[0][indx] = 0 
         # m=[Grids[i][0] for i in range(len(Grids))]#Number  of grids
         for j in range(0, n):
             # and 'g'+str(j+1)!=self.g[0]:#g is neighbour of self
