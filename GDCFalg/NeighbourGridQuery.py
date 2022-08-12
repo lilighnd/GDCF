@@ -35,8 +35,7 @@ class NeighbourGridQuery():
             if tmp1[0][j]==1 and Grids[j]!= []: #and 'g'+str(j+1)!=self.g[0]:#g is neighbour of self
                 #Q.append('g'+str(j+1))
                 Q.append( Grids[j] )
-        time_neiSq=time.time()-st_neiSq
-        print(f"Nei time Sq : {time_neiSq}")   
+        time_neiSq=time.time()-st_neiSq 
         time_neisq=time.time()-st_neisq
         return Q,time_neisq
 
