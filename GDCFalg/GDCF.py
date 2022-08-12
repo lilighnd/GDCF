@@ -99,6 +99,8 @@ class GDCF:
                     G1 = NeighbourHex(g, self.dimention, self.HGBLst)  # LDF
                     G,t= G1.NeighbourGrid(NonEmptyGrids)  # LDF
                     sumtime=sumtime+t
+                    print(f"Nei time Hex : {sumtime}")
+
                     # print(f"Neighbor g : {G}{g}")nnn
                 
                 g = [g, G]  # LDF"""
