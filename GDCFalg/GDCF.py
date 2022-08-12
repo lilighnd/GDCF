@@ -69,6 +69,7 @@ class GDCF:
 
         # ----------------------------GDFC-------------------------------------------------------
         # print(f"Q(Core Grids) : {Q}")
+        sumtime=0
         X = 1
         Forest = [[None]]
         A = []
@@ -96,7 +97,8 @@ class GDCF:
 
                 if HS == "Hex":
                     G1 = NeighbourHex(g, self.dimention, self.HGBLst)  # LDF
-                    G = G1.NeighbourGrid(NonEmptyGrids)  # LDF
+                    G,t= G1.NeighbourGrid(NonEmptyGrids)  # LDF
+                    sumtime=sumtime+t
                     # print(f"Neighbor g : {G}{g}")nnn
                 
                 g = [g, G]  # LDF"""

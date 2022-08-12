@@ -81,10 +81,10 @@ class NeighbourHex():
             if tmp1[0][j] == 1 and Grids[j] != []:
                 # Q.append('g'+str(j+1))
                 Q.append(Grids[j])
+
         time_neiHex=time.time()-st_neiHex
-        sumtime+=time_neiHex
         print(f"Nei time Hex : {time_neiHex}")
-        return Q
+        return Q,time_neiHex
 
 
 
