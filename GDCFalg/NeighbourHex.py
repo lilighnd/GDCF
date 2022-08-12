@@ -82,6 +82,7 @@ class NeighbourHex():
                 # Q.append('g'+str(j+1))
                 Q.append(Grids[j])
         time_neiHex=time.time()-st_neiHex
+        sumtime+=time_neiHex
         print(f"Nei time Hex : {time_neiHex}")
         return Q
 
