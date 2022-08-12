@@ -9,6 +9,7 @@ class NeighbourGridQuery():
         self.d=dim
         self.B=b#HGB
     def NeighbourGrid(self,Grids):
+        st_neisq=time.time()
         # print("-------------square grid neighbour------------")
         st_neiSq=time.time()
         n=len(self.B[0][0]) 
@@ -36,7 +37,8 @@ class NeighbourGridQuery():
                 Q.append( Grids[j] )
         time_neiSq=time.time()-st_neiSq
         print(f"Nei time Sq : {time_neiSq}")   
-        return Q
+        time_neisq=time.time()-st_neisq
+        return Q,time_neisq
 
 
 def ORarray(a,b):
