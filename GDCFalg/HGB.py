@@ -5,6 +5,7 @@ class HGB():
         self.nonemptyGrids=s
         self.d=dim
     def BuildHGB(self):
+        print(f"nonempty : {len(self.nonemptyGrids)}")
         k=0
         B=[]
         Max=[0,0]

@@ -12,7 +12,6 @@ class NeighbourHex():
     def NeighbourGrid(self, Grids):
         # print("********************start NHEX******************")
         # print(Grids)
-    
         st_neiHex=time.time()
         n = len(self.B[0][0])
         print(f"n : {n}")
