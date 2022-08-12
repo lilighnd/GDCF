@@ -12,7 +12,8 @@ class NeighbourGridQuery():
         st_neisq=time.time()
         # print("-------------square grid neighbour------------")
         st_neiSq=time.time()
-        n=len(self.B[0][0]) 
+        n=len(self.B[0][0])
+        print(f"n : {n}")
         Q=[]
         tmp1=np.ones((1,n))
         for i in range(self.d):
