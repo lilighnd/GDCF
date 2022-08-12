@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import matplotlib.path as path
 import matplotlib.patches as patches
 from Plot import *
+import time
 ##==============================
 class Make_Square():
     def __init__(self,D,e):
@@ -10,6 +11,8 @@ class Make_Square():
         self.Data=np.transpose(np.array(D))
         self.Eps=e
     def GridHex(self):
+        st_time_partSq=time.time()
+
         LengthCell = (self.Eps/np.sqrt(2))
 
 
@@ -106,6 +109,9 @@ class Make_Square():
             if DataInGrid[i]!=[]:
                 dim_Grids.append(numG[i])
                 NonEmptyGrid.append(DataInGrid[i])
+
+        time_partSq=time.time()-st_time_partSq
+        print(f"partition time Sq : {time_partSq}")   
         return dim_Grids,NonEmptyGrid
         #*****************************plt.show()
 
@@ -246,7 +252,7 @@ class Make_Square():
         #     x = h[i+k][0] + (self.Eps/(np.sqrt(2))*np.cos(np.pi+((np.pi/2)*i)))
         #     y = h[i+k][1] + (self.Eps/(np.sqrt(2))*np.sin(np.pi+((np.pi/2)*i)))
         #     h.append(np.round([x,y],2))
-            
+        
         return(np.array(h))
 ##------------------------------
 

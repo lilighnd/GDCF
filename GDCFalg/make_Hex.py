@@ -4,6 +4,7 @@ import matplotlib.path as path
 import matplotlib.patches as patches
 from Plot import *
 import math
+import time
 # ==============================
 
 
@@ -14,6 +15,8 @@ class make_Hex():
         self.Eps = e
 
     def GridHex(self):
+        st_time_partHex=time.time()
+
         LengthCell = (self.Eps*2)
         #---------------------------------new for n dimention--------------------------------------------------
         # dim=3
@@ -138,6 +141,8 @@ class make_Hex():
                 dim_Grids.append(numG[i])
                 NonEmptyGrid.append(DataInGrid[i])
         # print(f"dim_Grids,NonEmptygrids : {dim_Grids,NonEmptyGrid}")nnn
+        time_partHex=time.time()-st_time_partHex
+        print(f"partition time hex : {time_partHex}")
         return dim_Grids, NonEmptyGrid
         # *****************************plt.show()
 
