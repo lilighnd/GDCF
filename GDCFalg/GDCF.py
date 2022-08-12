@@ -92,15 +92,15 @@ class GDCF:
             if mode == "LDF" or mode == "Random":
                 if HS == "Square":
                     G1 = NeighbourGridQuery(g, self.dimention, self.HGBLst)  # LDF
-                    G,t= G1.NeighbourGrid(NonEmptyGrids)  # LDF
-                    sumtime=sumtime+t
+                    G= G1.NeighbourGrid(NonEmptyGrids)  # LDF
+                    #sumtime=sumtime+t
                     
 
 
                 if HS == "Hex":
                     G1 = NeighbourHex(g, self.dimention, self.HGBLst)  # LDF
-                    G,t= G1.NeighbourGrid(NonEmptyGrids)  # LDF
-                    sumtime=sumtime+t
+                    G= G1.NeighbourGrid(NonEmptyGrids)  # LDF
+                    # sumtime=sumtime+t
 
                     # print(f"Neighbor g : {G}{g}")nnn
                 
@@ -265,7 +265,7 @@ class GDCF:
                     else:
                         Cluster_Num[Clusters[i][j]][k] = Data[Clusters[i][j]][k]
         # print(f"Cluster_Num : {Cluster_Num}")nnn
-        print(f"Nei time: {sumtime}")
+        # print(f"Nei time: {sumtime}")
         return Cluster_Num
         print("m")
 
