@@ -15,6 +15,7 @@ class NeighbourHex():
     
         st_neiHex=time.time()
         n = len(self.B[0][0])
+        print(f"n : {n}")
         Q = []
         tmp1 = np.ones((1, n))
         # print(f"tmp1 : {len(tmp1[0])}")
