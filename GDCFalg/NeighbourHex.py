@@ -14,7 +14,7 @@ class NeighbourHex():
         # print(Grids)
         st_neiHex=time.time()
         n = len(self.B[0][0])
-        print(f"n : {n}")
+        # print(f"n : {n}")
         Q = []
         tmp1 = np.ones((1, n))
         # print(f"tmp1 : {len(tmp1[0])}")
@@ -82,8 +82,8 @@ class NeighbourHex():
                 # Q.append('g'+str(j+1))
                 Q.append(Grids[j])
 
-        time_neiHex=time.time()-st_neiHex
-        return Q,time_neiHex
+        # time_neiHex=time.time()-st_neiHex
+        return Q
 
 
 

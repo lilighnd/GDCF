@@ -13,7 +13,7 @@ class NeighbourGridQuery():
         # print("-------------square grid neighbour------------")
         st_neiSq=time.time()
         n=len(self.B[0][0])
-        print(f"n : {n}")
+        # print(f"n : {n}")
         Q=[]
         tmp1=np.ones((1,n))
         for i in range(self.d):
@@ -36,9 +36,9 @@ class NeighbourGridQuery():
             if tmp1[0][j]==1 and Grids[j]!= []: #and 'g'+str(j+1)!=self.g[0]:#g is neighbour of self
                 #Q.append('g'+str(j+1))
                 Q.append( Grids[j] )
-        time_neiSq=time.time()-st_neiSq 
-        time_neisq=time.time()-st_neisq
-        return Q,time_neisq
+        # time_neiSq=time.time()-st_neiSq 
+        # time_neisq=time.time()-st_neisq
+        return Q
 
 
 def ORarray(a,b):
