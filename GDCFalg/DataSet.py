@@ -130,7 +130,7 @@ class DataSet:
     @classmethod
     def dataclutot(cls):
         True_label=[]
-        path = f'/content/drive/MyDrive/complex8.csv'
+        path = f'/content/drive/MyDrive/aggregation.csv'
         df = pd.read_csv(path)
         data = df.values.tolist()
 
