@@ -456,7 +456,7 @@ ls.append(R1)
 ls.append(alltime)
 df = pd.DataFrame(ls) 
 
-excel_name = f'/content/drive/MyDrive/Colab Notebooks/{namefile}"R1".xlsx'
+excel_name = f'/content/drive/MyDrive/Colab Notebooks/{namefile}"R1"agg.xlsx'
 print(excel_name)
 df_source = None
 if os.path.exists(excel_name):
