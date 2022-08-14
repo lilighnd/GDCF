@@ -8,6 +8,9 @@ import json
 # import xlsxwriter
 import numpy as np
 import pandas as pd
+from sklearn.decomposition import PCA
+from sklearn.manifold import LocallyLinearEmbedding
+
 class DataSet:
     def __init__(self, data):
         self.Data = data
@@ -184,6 +187,20 @@ class DataSet:
             excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mydata.xlsx'
             df_data = pd.DataFrame(data[0])
             df_data.to_excel(excel_name_label,index=False)
+
+
+        if D == "blobnd":
+            print("blobs data")       
+            data = datasets.make_blobs(n_samples=Numbers, n_features = 4, 
+                    centers = 3,cluster_std = 1,random_state=R)
+            
+            x = LocallyLinearEmbedding(n_components=2)
+            X_transformed = x.fit_transform(data[0][:Numbers])
+            excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mydatablob3d.xlsx'
+            data[0]=X_transformed
+            df_data = pd.DataFrame(data[0])
+            df_data.to_excel(excel_name_label,index=False)
+
 
         if D == "circle":
             print("circles data")       
