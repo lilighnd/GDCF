@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 from sklearn.decomposition import PCA
 from sklearn.manifold import LocallyLinearEmbedding
-
+import time
 class DataSet:
     def __init__(self, data):
         self.Data = data
@@ -193,9 +193,12 @@ class DataSet:
             print("blobs data")       
             data = datasets.make_blobs(n_samples=Numbers, n_features = f, 
                     centers = 3,cluster_std = 1,random_state=R)
-            
+
+            t1=time.time()
             x = LocallyLinearEmbedding(n_components=2)
             X_transformed = x.fit_transform(data[0][:Numbers])
+            t2=time.time()-t1
+            print(f"time locally linear:{t2}")
             excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mydatablob3d.xlsx'
             datand=X_transformed
             df_data = pd.DataFrame(data[0])
