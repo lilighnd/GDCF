@@ -191,7 +191,7 @@ class DataSet:
 
         if D == "blobnd":
             print("blobs data")       
-            data = datasets.make_blobs(n_samples=Numbers, n_features = 4, 
+            data = datasets.make_blobs(n_samples=Numbers, n_features = f, 
                     centers = 3,cluster_std = 1,random_state=R)
             
             x = LocallyLinearEmbedding(n_components=2)
