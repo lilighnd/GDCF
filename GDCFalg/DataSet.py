@@ -197,7 +197,7 @@ class DataSet:
             x = LocallyLinearEmbedding(n_components=2)
             X_transformed = x.fit_transform(data[0][:Numbers])
             excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mydatablob3d.xlsx'
-            data[0]=X_transformed
+            datand=X_transformed
             df_data = pd.DataFrame(data[0])
             df_data.to_excel(excel_name_label,index=False)
 
@@ -210,7 +210,8 @@ class DataSet:
             df_data.to_excel(excel_name_label,index=False)
 
         True_label = data[1]
-        Data=data[0] 
+        # Data=data[0] 
+        Data=datand#for n-dimention data
         # X_train,X_test,Y_train,Y_test = train_test_split(moons,True_label,test_size=1,random_state=42)
         # print(f"Data and labels :{Data,len(True_label)}")
         return cls(Data),True_label   
