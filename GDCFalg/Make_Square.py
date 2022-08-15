@@ -320,7 +320,8 @@ def GridSqn(self):
         else:
             ind=dim_Grids.index(DimGrid)
             NonEmptyGrid[ind].append(i)
-        
+    return dim_Grids,NonEmptyGrid
+
         
 
 
