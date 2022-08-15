@@ -6,7 +6,8 @@ from Plot import *
 import time
 ##==============================
 class Make_Square():
-    def __init__(self,D,e):
+    def __init__(self,D,e,dim):
+        self.dim=dim
         self.d=D
         self.Data=np.transpose(np.array(D))
         self.Eps=e
@@ -298,11 +299,11 @@ class Make_Square():
 
 #---------------------------------------------square n-dim---------------------------------------------------
     def GridSqn(self):
-        LengthCell = (self.Eps/np.sqrt(self.d))
+        LengthCell = (self.Eps/np.sqrt(self.dim))
         numGrid=[]
         dim_Grids=[]
         NonEmptyGrid=[]
-        for d in range(self.d):
+        for d in range(self.dim):
             Max = max(self.Data[:,d])  
             Min = min(self.Data[:,d])             
             DataInGrid=[]
@@ -311,7 +312,7 @@ class Make_Square():
 
         for i in range(len(self.Data)):
             DimGrid=[]
-            for j in range(self.d):
+            for j in range(self.dim):
                 Number_Grid=int(np.ceil(self.Data[i][j]/LengthCell))
                 DimGrid.append(Number_Grid)
             if DimGrid not in dim_Grids:
