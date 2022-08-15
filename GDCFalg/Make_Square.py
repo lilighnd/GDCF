@@ -318,7 +318,10 @@ class Make_Square():
                 dim_Grids.append(DimGrid)
                 NonEmptyGrid.append([i])
             else:
-                ind=dim_Grids.index(DimGrid)
+                for k in range(len(dim_Grids)):
+                    if DimGrid==dim_Grids[k]:
+                        ind=k
+                # ind=dim_Grids.index(DimGrid)
                 NonEmptyGrid[ind].append(i)
         return dim_Grids,NonEmptyGrid
 
