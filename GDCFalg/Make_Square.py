@@ -111,7 +111,8 @@ class Make_Square():
                 NonEmptyGrid.append(DataInGrid[i])
 
         time_partSq=time.time()-st_time_partSq
-        print(f"partition time Sq : {time_partSq}")   
+        print(f"dim_grids : {dim_Grids}")   
+        print(f"NonEmptyGrid : {NonEmptyGrid}")   
         return dim_Grids,NonEmptyGrid
         #*****************************plt.show()
 
@@ -294,6 +295,20 @@ class Make_Square():
 
 
 
+
+#---------------------------------------------square n-dim---------------------------------------------------
+# def GridSqn(self):
+#     LengthCell = (self.Eps/np.sqrt(self.d))
+#     numGrid=[]
+#     for d in range(self.d):
+#         Max = max(self.Data[:,d])  
+#         Min = min(self.Data[:,d])             
+#         DataInGrid=[]
+#         numG=[]
+#         numGrid.append(int(np.ceil((Max-Min)/LengthCell)))
+
+#     for i in range(len(self.Data)):
+#         for j in range(self.d):
 
 
 
