@@ -299,6 +299,7 @@ class Make_Square():
 
 #---------------------------------------------square n-dim---------------------------------------------------
     def GridSqn(self):
+        print(f"Data : {self.Data}")
         LengthCell = (self.Eps/np.sqrt(self.dim))
         numGrid=[]
         dim_Grids=[]
