@@ -308,7 +308,7 @@ class Make_Square():
         for d in range(self.dim):
             Max = max(self.Data[:,d])  
             Min = min(self.Data[:,d])     
-            x.append(0-np.ceil(Min/self.Eps))
+            x.append(0-np.floor(Min/self.Eps))
             DataInGrid=[]
             numG=[]
             numGrid.append(int(np.ceil((Max-Min)/LengthCell)))
