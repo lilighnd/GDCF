@@ -302,8 +302,8 @@ class Make_Square():
         print(f"Data : {self.Data}")
         LengthCell = (self.Eps/np.sqrt(self.dim))
         numGrid=[]
-        dim_Grids=[]
-        NonEmptyGrid=[]
+        dim_Grids1=[]
+        NonEmptyGrid1=[]
         x=[]
         for d in range(self.dim):
             Max = max(self.Data[:,d])  
@@ -318,16 +318,23 @@ class Make_Square():
             for j in range(self.dim):
                 Number_Grid=int((np.ceil(self.Data[i][j]/LengthCell))+x[j])
                 DimGrid.append(Number_Grid)
-            if DimGrid not in dim_Grids:
-                dim_Grids.append(DimGrid)
-                NonEmptyGrid.append([i])
+            if DimGrid not in dim_Grids1:
+                dim_Grids1.append(DimGrid)
+                NonEmptyGrid1.append([i])
             else:
-                for k in range(len(dim_Grids)):
-                    if DimGrid==dim_Grids[k]:
+                for k in range(len(dim_Grids1)):
+                    if DimGrid==dim_Grids1[k]:
                         ind=k
                         break
                 # ind=dim_Grids.index(DimGrid)
-                NonEmptyGrid[ind].append(i)
+                NonEmptyGrid1[ind].append(i)
+
+        NonEmptyGrid=[]
+        dim_Grids=[]
+        for i in range(len(DataInGrid)):
+            if DataInGrid[i]!=[]:
+                dim_Grids.append(numG[i])
+                NonEmptyGrid.append(DataInGrid[i])
         print(f"dim_grids : {dim_Grids}")   
         print(f"NonEmptyGrid : {NonEmptyGrid}")  
         return dim_Grids,NonEmptyGrid
