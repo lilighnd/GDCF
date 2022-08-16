@@ -331,10 +331,10 @@ class Make_Square():
 
         NonEmptyGrid=[]
         dim_Grids=[]
-        for i in range(len(DataInGrid)):
-            if DataInGrid[i]!=[]:
-                dim_Grids.append(numG[i])
-                NonEmptyGrid.append(DataInGrid[i])
+        for i in range(len(NonEmptyGrid1)):
+            if NonEmptyGrid1[i]!=[]:
+                dim_Grids.append(dim_Grids1[i])
+                NonEmptyGrid.append(NonEmptyGrid1[i])
         print(f"dim_grids : {dim_Grids}")   
         print(f"NonEmptyGrid : {NonEmptyGrid}")  
         return dim_Grids,NonEmptyGrid
