@@ -381,7 +381,7 @@ if modeGrid == int(2):
     print("square mode")
     parts = Make_Square(Data,Eps,2)
     # Grids, gridData = parts.GridHex()
-    Grids, gridData = parts.GridSqn()
+    Grids, gridData,numGrid_dim = parts.GridSqn()
     print("run grid")
 print(f"time_grid = {time.time() - start_time_grid}")
 # -----------------------Recalling Saved Cores-------------------
@@ -415,7 +415,7 @@ print("run core")
 
 # ----------------------------------------HGB--------------------------------------------------------------
 start_time_hgb=time.time()
-HGBmatrix = HGB(Grids, dim)
+HGBmatrix = HGB(Grids, dim,numGrid_dim)
 B = HGBmatrix.BuildHGB()
 print("run HGB")
 print(f"time_hgb = {time.time() - start_time_hgb}")

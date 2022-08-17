@@ -308,10 +308,10 @@ class Make_Square():
         for d in range(self.dim):
             Max = max(self.Data[:,d])  
             Min = min(self.Data[:,d])     
-            x.append(0-np.floor(Min/self.Eps))
-            DataInGrid=[]
-            numG=[]
-            numGrid.append(int(np.ceil((Max-Min)/LengthCell)))
+            x.append(0-np.ceil((Min-0.01)/self.Eps))
+            numGrid.append(int(np.ceil(((Max+0.01)-(Min-0.01))/LengthCell)))
+ 
+
     
         for i in range(len(self.Data)):
             DimGrid=[]
@@ -337,7 +337,7 @@ class Make_Square():
                 NonEmptyGrid.append(NonEmptyGrid1[i])
         print(f"dim_grids : {dim_Grids}")   
         print(f"NonEmptyGrid : {NonEmptyGrid}")  
-        return dim_Grids,NonEmptyGrid
+        return dim_Grids,NonEmptyGrid,numGrid
 
         
 
