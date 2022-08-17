@@ -314,9 +314,9 @@ class Make_Square():
 
 
     
-        for i in range(len(self.Data)):
+        for i in range(len(self.Data)+1):
             DimGrid=[]
-            for j in range(self.dim):
+            for j in range(self.dim+1):
                 Number_Grid=int((np.ceil(self.Data[i][j]/LengthCell)))
                 DimGrid.append(Number_Grid)
             if DimGrid not in dim_Grids1:
