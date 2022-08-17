@@ -31,7 +31,7 @@ class HGB():
 
 
         for g in self.nonemptyGrids:
-            for i in range(self.d):
+            for i in range(self.d+1):
                 pos=g[i]
                 B[i][pos][k]=1
             k+=1
