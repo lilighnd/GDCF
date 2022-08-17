@@ -37,11 +37,8 @@ class HGB():
                 print(f"i,pos,k : {i,pos,k}")
 
             k+=1
-        print(f"B : {B[0][3][0]}")
-        print(f"B : {B[0][3][1]}")
-        print(f"B : {B[0][3][2]}")
-        print(f"B : {B[0][3][3]}")
-        print(f"B : {B[0][3]}")
+        
+        print(f"B : {B[0]}")
         return B
                     
 
