@@ -11,7 +11,7 @@ import pandas as pd
 from sklearn.decomposition import PCA
 from sklearn.manifold import LocallyLinearEmbedding
 import time
-import preprocessing
+from sklearn import preprocessing
 class DataSet:
     def __init__(self, data):
         self.Data = data
