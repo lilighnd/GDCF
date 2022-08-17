@@ -300,8 +300,9 @@ class Make_Square():
 #---------------------------------------------square n-dim---------------------------------------------------
     def GridSqn(self):
         print(f"Data : {self.Data}")
+        print(f"Dim : {self.dim}")
         LengthCell = (self.Eps/np.sqrt(self.dim))
-        numGrid=[]
+        numberOfGrid=[]
         dim_Grids1=[]
         NonEmptyGrid1=[]
         x=[]
@@ -309,7 +310,7 @@ class Make_Square():
             Max = max(self.Data[:,d])  
             Min = min(self.Data[:,d])     
             x.append(0-np.ceil((Min-0.01)/self.Eps))
-            numGrid.append(int(np.ceil(((Max+0.01)-(Min-0.01))/LengthCell)))
+            numberOfGrid.append(int(np.ceil(((Max+0.01)-(Min-0.01))/LengthCell)))
  
 
     
@@ -337,7 +338,7 @@ class Make_Square():
                 NonEmptyGrid.append(NonEmptyGrid1[i])
         print(f"dim_grids : {dim_Grids}")   
         print(f"NonEmptyGrid : {NonEmptyGrid}")  
-        return dim_Grids,NonEmptyGrid,numGrid
+        return dim_Grids,NonEmptyGrid,numberOfGrid
 
         
 
