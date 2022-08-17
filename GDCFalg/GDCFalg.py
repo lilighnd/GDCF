@@ -415,7 +415,7 @@ print("run core")
 
 # ----------------------------------------HGB--------------------------------------------------------------
 start_time_hgb=time.time()
-HGBmatrix = HGB(Grids, dim,numGrid_dim)
+HGBmatrix = HGB(Grids,3,numGrid_dim)
 B = HGBmatrix.BuildHGB()
 print("run HGB")
 print(f"time_hgb = {time.time() - start_time_hgb}")
