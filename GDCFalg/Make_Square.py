@@ -332,7 +332,8 @@ class Make_Square():
                         break
                 # ind=dim_Grids.index(DimGrid)
                 NonEmptyGrid1[ind].append(i)
-
+        print(f"dim_grids : {dim_Grids1}")   
+        print(f"NonEmptyGrid : {NonEmptyGrid1}")
         NonEmptyGrid=[]
         dim_Grids=[]
         for i in range(len(NonEmptyGrid1)):
