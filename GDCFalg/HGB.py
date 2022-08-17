@@ -18,12 +18,11 @@ class HGB():
         #             Max[1]=self.nonemptyGrids[j][1]
         #     b=np.zeros((Max[i]+1,len(self.nonemptyGrids)))
         #     B.append(b)
-
         print(f"self.rowHGB:{self.rowHGB}")
         for i in range(self.d):
             b=np.zeros((self.rowHGB[i],len(self.nonemptyGrids)))
             B.append(b)
-        print(f"B : {B}")
+        
 
         # numG[numGX,numGY]
         # for i in range(self.d):
@@ -36,7 +35,7 @@ class HGB():
                 pos=g[i]
                 B[i][pos][k]=1
             k+=1
-        print(f"hgb : {B[0][0]}")
+        print(f"B : {B}")
         return B
                     
 
