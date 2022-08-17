@@ -340,7 +340,7 @@ class Make_Square():
                 dim_Grids.append(dim_Grids1[i])
                 NonEmptyGrid.append(NonEmptyGrid1[i])
         print(f"dim_grids : {dim_Grids}")   
-        print(f"NonEmptyGrid : {len(NonEmptyGrid)}")  
+        print(f"NonEmptyGrid : {NonEmptyGrid}")  
         return dim_Grids,NonEmptyGrid,numberOfGrid
 
         
