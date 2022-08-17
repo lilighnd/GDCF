@@ -18,6 +18,8 @@ class HGB():
         #             Max[1]=self.nonemptyGrids[j][1]
         #     b=np.zeros((Max[i]+1,len(self.nonemptyGrids)))
         #     B.append(b)
+
+        print(f"self.rowHGB:{self.rowHGB}")
         for i in range(self.d):
             b=np.zeros((self.rowHGB[i],len(self.nonemptyGrids)))
             B.append(b)
