@@ -31,7 +31,7 @@ class HGB():
 
 
         for g in self.nonemptyGrids:
-            for i in range(self.d+1):
+            for i in range(self.d):
                 print(f"g,i : {g,i}")
                 
                 pos=g[i]
