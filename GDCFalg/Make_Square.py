@@ -319,7 +319,7 @@ class Make_Square():
         for i in range(len(self.Data)):
             DimGrid=[]
             for j in range(self.dim):
-                Number_Grid=int((np.ceil(self.Data[i][j]/LengthCell)))
+                Number_Grid=int((np.ceil(self.Data[i][j]/LengthCell)))-1
                 
                 print(f"Number_Grid : {i,j,Number_Grid}")
                 DimGrid.append(Number_Grid)
