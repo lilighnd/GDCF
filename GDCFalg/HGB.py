@@ -32,13 +32,15 @@ class HGB():
         for g in self.nonemptyGrids:
             for i in range(self.d):
                 print(f"g,i : {g,i}")
-                
                 pos=g[i]
                 B[i][pos][k]=1
                 print(f"i,pos,k : {i,pos,k}")
 
             k+=1
-        print(f"B : {B}")
+        print(f"B : {B[0][0]}")
+        print(f"B : {B[0][1]}")
+        print(f"B : {B[0][2]}")
+        print(f"B : {B[0][3][0]}")
         return B
                     
 
