@@ -403,6 +403,7 @@ print(f"time_grid = {time.time() - start_time_grid}")
 
 core = CoreGrids(Grids, gridData, Data, Eps, MinPts, m)
 CoreGrid, CoreObject = core.Find_CoreGrids()
+print(f"core:{CoreGrid,CoreObject}")
 print("run core")
 
 

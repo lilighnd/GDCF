@@ -311,8 +311,8 @@ class Make_Square():
             if num_G<0:
                 numberOfGrid.append(0)
             numberOfGrid.append(num_G)
-            print(f"min,max,numberOfGrid:{Min,Max,num_G}")
-        print(f"numg : {numberOfGrid,x}")
+        #     print(f"min,max,numberOfGrid:{Min,Max,num_G}")
+        # print(f"numg : {numberOfGrid,x}")
 
 
     
@@ -320,7 +320,7 @@ class Make_Square():
             DimGrid=[]
             for j in range(self.dim):
                 Number_Grid=int((np.ceil(self.Data[i][j]/LengthCell)))-1
-                print(f"Number_Grid : {i,j,Number_Grid}")
+                # print(f"Number_Grid : {i,j,Number_Grid}")
                 DimGrid.append(Number_Grid)
             if DimGrid not in dim_Grids1:
                 dim_Grids1.append(DimGrid)
@@ -333,8 +333,8 @@ class Make_Square():
                 # ind=dim_Grids.index(DimGrid)
                 NonEmptyGrid1[ind].append(i)
         
-        print(f"dim_grids : {dim_Grids1}")   
-        print(f"NonEmptyGrid : {NonEmptyGrid1}")  
+        # print(f"dim_grids : {dim_Grids1}")   
+        # print(f"NonEmptyGrid : {NonEmptyGrid1}")  
         return dim_Grids1,NonEmptyGrid1,numberOfGrid
 
         
