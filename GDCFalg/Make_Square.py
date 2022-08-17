@@ -333,7 +333,7 @@ class Make_Square():
                 # ind=dim_Grids.index(DimGrid)
                 NonEmptyGrid1[ind].append(i)
         
-        # print(f"dim_grids : {dim_Grids1}")   
+        print(f"dim_grids : {dim_Grids1}")   
         # print(f"NonEmptyGrid : {NonEmptyGrid1}")  
         return dim_Grids1,NonEmptyGrid1,numberOfGrid
 
