@@ -234,7 +234,7 @@ with open('/content/drive/MyDrive/Colab Notebooks/inputobject.json', 'r') as ope
 
 
 
-dim = 2
+dim = 3
 m = DataSet.data()
 True_label = m[1]
 m = m[0].Data#type of m and True_labels is List
@@ -415,7 +415,7 @@ print("run core")
 
 # ----------------------------------------HGB--------------------------------------------------------------
 start_time_hgb=time.time()
-HGBmatrix = HGB(Grids,3,numGrid_dim)
+HGBmatrix = HGB(Grids,dim,numGrid_dim)
 B = HGBmatrix.BuildHGB()
 print("run HGB")
 print(f"time_hgb = {time.time() - start_time_hgb}")
