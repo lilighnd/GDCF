@@ -205,6 +205,7 @@ class DataSet:
 
             normalized = preprocessing.normalize(data[0])#normalize
             # df_data = pd.DataFrame(data[0])#normalize
+            print(f"normal : {normalized}")
             df_data = pd.DataFrame(normalized)
             df_data.to_excel(excel_name_label,index=False)
 
