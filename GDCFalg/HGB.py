@@ -36,7 +36,7 @@ class HGB():
                 
                 pos=g[i]
                 B[i][pos][k]=1
-                print(f"pos : {pos,B[i][pos][k]}")
+                print(f"i,pos,k : {i,pos,k}")
 
             k+=1
         print(f"B : {B}")
