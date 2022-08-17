@@ -309,7 +309,7 @@ class Make_Square():
         for d in range(self.dim):
             Max = max(self.Data[:,d])  
             Min = min(self.Data[:,d])     
-            x.append(0-np.ceil((Min-0.01)/self.Eps))
+            x.append(0-np.ceil((Min-0.01)/LengthCell))
             numberOfGrid.append(int(np.ceil(((Max+0.01)-(Min-0.01))/LengthCell)))
  
 
