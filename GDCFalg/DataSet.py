@@ -11,7 +11,7 @@ import pandas as pd
 from sklearn.decomposition import PCA
 from sklearn.manifold import LocallyLinearEmbedding
 import time
-from sklearn import preprocessing
+
 class DataSet:
     def __init__(self, data):
         self.Data = data
@@ -203,8 +203,8 @@ class DataSet:
             excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mydatablob3d.xlsx'
             datand=X_transformed
 
-            normalized = preprocessing.normalize(data[0])#normalize
-            # df_data = pd.DataFrame(data[0])#normalize
+            normalized = NormalizeData(data[0])#normalize
+            # df_data = pd.DataFrame(data[0])
             print(f"normal : {normalized}")
             df_data = pd.DataFrame(normalized)
             df_data.to_excel(excel_name_label,index=False)
@@ -234,3 +234,8 @@ class DataSet:
             True_label.append(data[i][-1])
             data[i] = data[i][0:2]
         return cls(data),True_label
+
+
+
+def NormalizeData(data):
+    return (data - np.min(data)) / (np.max(data) - np.min(data))
