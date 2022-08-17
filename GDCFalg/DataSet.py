@@ -11,6 +11,7 @@ import pandas as pd
 from sklearn.decomposition import PCA
 from sklearn.manifold import LocallyLinearEmbedding
 import time
+import preprocessing
 class DataSet:
     def __init__(self, data):
         self.Data = data
@@ -201,7 +202,10 @@ class DataSet:
             print(f"time locally linear:{t2}")
             excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mydatablob3d.xlsx'
             datand=X_transformed
-            df_data = pd.DataFrame(data[0])
+
+            normalized = preprocessing.normalize(data[0])#normalize
+            # df_data = pd.DataFrame(data[0])#normalize
+            df_data = pd.DataFrame(normalized)
             df_data.to_excel(excel_name_label,index=False)
 
 
