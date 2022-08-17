@@ -38,6 +38,7 @@ class GDCF:
             L = sorted(L)
             for j in range(len(L)):
                 Q.append(self.Core_G[L[j][1]])
+                print(f"Q:{Q}")
                 # print(f"order ccore grids Q : {Q}")nnn
 
         # ----------------------------------Random-------------------------------------------
