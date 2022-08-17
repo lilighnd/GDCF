@@ -140,8 +140,7 @@ for currentArgument, currentValue in arguments:
 
     elif currentArgument in ("-e", "--Epsilon"):
         Epsilon = currentValue
-        print(Epsilon)
-        print(type(Epsilon))
+        
     
     elif currentArgument in ("-m", "--Minpoints"):
         Minpoints = currentValue
@@ -239,7 +238,7 @@ m = DataSet.data()
 True_label = m[1]
 m = m[0].Data#type of m and True_labels is List
 Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
-print(m[0])
+
 # ------Read Data another way---------
 # m = DataSet.dataclutot()
 # True_label = m[1]
@@ -341,11 +340,12 @@ print(m[0])
 
 
 # ----------------------------------Kinds of Grid--------------------------------------------------------
-print(json_object["data"]) 
-print(json_object["mode_grid"]) 
-print(json_object["n_samples"]) 
-print(json_object["random_state"]) 
-print(json_object["i"]) 
+# 
+
+
+
+
+
 Eps = float(json_object["Eps"])
 MinPts = int(json_object["Minpts"])
 G = []
