@@ -38,7 +38,7 @@ class NeighbourGridQuery():
                 Q.append( Grids[j] )
         # time_neiSq=time.time()-st_neiSq 
         # time_neisq=time.time()-st_neisq
-        print(f"Q:{Q}")
+        # print(f"Q:{Q}")
         return Q
 
 

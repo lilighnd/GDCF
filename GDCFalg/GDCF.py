@@ -38,7 +38,7 @@ class GDCF:
             L = sorted(L)
             for j in range(len(L)):
                 Q.append(self.Core_G[L[j][1]])
-                print(f"Q:{Q}")
+                # print(f"Q:{Q}")
                 # print(f"order ccore grids Q : {Q}")nnn
 
         # ----------------------------------Random-------------------------------------------
@@ -106,7 +106,7 @@ class GDCF:
                     # print(f"Neighbor g : {G}{g}")nnn
                 
                 g = [g, G]  # LDF"""
-
+                print(f"g:{g}")
             # # read
             # with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
             #     # Reading from json file
