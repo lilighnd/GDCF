@@ -28,7 +28,7 @@ class HGB():
         # for i in range(self.d):
         #     b=np.zeros((numG[i]+1,len(self.nonemptyGrids)))
         #     B.append(b)
-
+        print(f"nonEmptyGrid : {self.nonemptyGrids}")
         for g in self.nonemptyGrids:
             for i in range(self.d):
                 print(f"g,i : {g,i}")
