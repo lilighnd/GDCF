@@ -278,8 +278,11 @@ def mergability(self, ind_g, ind_gprim, DataGrids, Data):
     # m=[[],[]]
     for data in range(len(DataGrids[ind_g])):
         for dataNeighbourGrid in range(len(DataGrids[ind_gprim])):
+            print(f"DataGrids[ind_g]: {DataGrids[ind_g]}")
+            print(f"DataGrids[ind_gprim]: {DataGrids[ind_gprim]}")
             dist = distance.euclidean(
                 Data[DataGrids[ind_g][data]], Data[DataGrids[ind_gprim][dataNeighbourGrid]])  # Calculate euclidean
+            print(f"dist: {dist}")
             if dist <= self.Eps and (DataGrids[ind_g][data] in self.Core_Objects and DataGrids[ind_gprim][dataNeighbourGrid] in self.Core_Objects):
                 return True
 
