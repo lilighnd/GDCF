@@ -38,7 +38,7 @@ class GDCF:
             L = sorted(L)
             for j in range(len(L)):
                 Q.append(self.Core_G[L[j][1]])
-                print(f"Q:{Q}")
+                # print(f"Q:{Q}")
                 # print(f"order ccore grids Q : {Q}")nnn
 
         # ----------------------------------Random-------------------------------------------
@@ -128,7 +128,8 @@ class GDCF:
 
             offset2 = -1
             for gprim in g[1]:
-                # print(f"gprim : {gprim}")nnn
+                print(f"g[0] : {g[0]}")
+                print(f"gprim : {gprim}")
             # for gprim_count, gprim in enumerate(g[1], start=(offset2+1)):
                 # # read
                 # with open('/content/drive/MyDrive/Colab Notebooks/saveobject.json', 'r') as openfile:
@@ -150,15 +151,17 @@ class GDCF:
                 if Root_g == Root_gprim:
                     # print(f"g , gprim root : {Root_g}{Root_gprim}")nnn
                     continue
+
+                print(f"rootg,gprim : {Root_g,Root_gprim}")
                 
                 # if g in self.Core_G and gprim in self.Core_G:
                 if mergability(self, indx_g, indx_gprim, DataGrids, Data) == True:
                     if any(gprim in sublist for sublist in Forest) == False:
                         Forest[Root_g].append(gprim)  # new
-                        # print(f"g , gprim are mergable and gprim add to forest : {Forest}")nnn
+                        print(f"g , gprim are mergable and gprim add to forest : {Forest}")
                     else:
                         A.append(gprim)
-                        # print(f"g , gprim are not mergable and gprim add to A : {A}")nnn
+                        print(f"g , gprim are not mergable and gprim add to A : {A}")
 
 
 
