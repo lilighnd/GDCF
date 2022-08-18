@@ -305,15 +305,16 @@ class Make_Square():
         dim_Grids1=[]
         NonEmptyGrid1=[]
         x=[]
+        Max=[];Min=[]
         data=np.transpose(self.Data)
         for d in range(self.dim):
-            Max = max(data[d,:])  
-            Min = min(data[d,:])   
-            num_G=int(np.ceil(((Max+0.01)-(Min-0.01))/LengthCell))+1
+            Max.append(max(data[d,:]))  
+            Min.append(min(data[d,:]))   
+            num_G=int(np.ceil(((Max[d]+0.01)-(Min[d]-0.01))/LengthCell))+1
             if num_G<0:
                 numberOfGrid.append(0)
             numberOfGrid.append(num_G)
-            print(f"min,max,numberOfGrid:{Min,Max,num_G}")
+        print(f"min,max,numberOfGrid:{Min,Max,num_G}")
         print(f"numg : {numberOfGrid,x}")
 
 
@@ -321,7 +322,7 @@ class Make_Square():
         for i in range(len(self.Data)):
             DimGrid=[]
             for j in range(self.dim):
-                Number_Grid=int((np.ceil(self.Data[i][j]/LengthCell)))-1
+                Number_Grid=int((np.ceil((self.Data[i][j]-(Min[j]-0.01))/LengthCell)))-1
                 if Number_Grid<0:
                     Number_Grid=0
                 print(f"Number_Grid : {len(self.Data),len(self.Data[0]),self.Data[i][j],i,j,Number_Grid}")
