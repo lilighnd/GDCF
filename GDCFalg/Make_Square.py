@@ -320,10 +320,11 @@ class Make_Square():
         for i in range(len(self.Data)):
             DimGrid=[]
             for j in range(self.dim):
-                Number_Grid=int((np.ceil(self.Data[i][j]/LengthCell)))-1
+                # Number_Grid=int((np.ceil(self.Data[i][j]/LengthCell)))-1
+                Number_Grid=int((np.ceil(self.Data[j][i]/LengthCell)))-1
                 if Number_Grid<0:
                     Number_Grid=0
-                print(f"Number_Grid : {self.Data[1][0],self.Data[i][j],i,j,Number_Grid}")
+                print(f"Number_Grid : {self.Data[10][0],self.Data[i][j],i,j,Number_Grid}")
                 DimGrid.append(Number_Grid)
             if DimGrid not in dim_Grids1:
                 dim_Grids1.append(DimGrid)
