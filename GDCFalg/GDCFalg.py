@@ -501,6 +501,7 @@ True_label=[
 
 
 print(Data,True_label)
+print(len(Data),len(True_label))
 Eps = float(json_object["Eps"])
 MinPts = int(json_object["Minpts"])
 G = []
