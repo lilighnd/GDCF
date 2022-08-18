@@ -592,7 +592,7 @@ print(f"time_gdcf = {time.time() - start_time_gdcf}")
 Pred_label = []
 for i in range(len(ClusterForest)):
     Pred_label.append(ClusterForest[i][-1])
-    
+print(f"pred:{Pred_label}")   
 alltime = time.time() - start_time
 R1 = adjusted_rand_score(True_label, Pred_label)
 f1 = metrics.f1_score(True_label, Pred_label,average='micro')
