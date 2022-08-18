@@ -218,8 +218,8 @@ class DataSet:
             df_data.to_excel(excel_name_label,index=False)
 
         True_label = data[1]
-        # Data=data[0] #for 1-dim
-        Data=normalized#for 3-dim
+        Data=data[0] #for 1-dim
+        # Data=normalized#for 3-dim
         # Data=datand#for n-dimention data
         # X_train,X_test,Y_train,Y_test = train_test_split(moons,True_label,test_size=1,random_state=42)
         # print(f"Data and labels :{Data,len(True_label)}")
