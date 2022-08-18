@@ -323,7 +323,7 @@ class Make_Square():
                 Number_Grid=int((np.ceil(self.Data[i][j]/LengthCell)))-1
                 if Number_Grid<0:
                     Number_Grid=0
-                print(f"Number_Grid : {self.Data[i][j],i,j,Number_Grid}")
+                print(f"Number_Grid : {self.Data[0][1],self.Data[i][j],i,j,Number_Grid}")
                 DimGrid.append(Number_Grid)
             if DimGrid not in dim_Grids1:
                 dim_Grids1.append(DimGrid)
