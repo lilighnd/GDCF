@@ -239,7 +239,7 @@ True_label = m[1]
 m = m[0].Data#type of m and True_labels is List
 Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
 
-Data=[[5.1,3.5,1.4,0.2],
+Data1=[[5.1,3.5,1.4,0.2],
 [4.9,3,1.4,0.2],
 [4.7,3.2,1.3,0.2],
 [4.6,3.1,1.5,0.2],
@@ -389,6 +389,7 @@ Data=[[5.1,3.5,1.4,0.2],
 [6.5,3,5.2,2],
 [6.2,3.4,5.4,2.3],
 [5.9,3,5.1,1.8]]
+Data=np.transpose(np.array(Data1))#type of Data is array and Data is transpose of m
 
 True_label=[
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
