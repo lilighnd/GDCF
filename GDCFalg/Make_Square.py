@@ -305,10 +305,10 @@ class Make_Square():
         dim_Grids1=[]
         NonEmptyGrid1=[]
         x=[]
-        data=np.transpose(np.array(self.Data))
+        data=np.transpose(self.Data)
         for d in range(self.dim):
-            Max = max(data[:,d])  
-            Min = min(data[:,d])   
+            Max = max(data[d,:])  
+            Min = min(data[d,:])   
             num_G=int(np.ceil(((Max+0.01)-(Min-0.01))/LengthCell))+1
             if num_G<0:
                 numberOfGrid.append(0)
