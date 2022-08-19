@@ -407,6 +407,10 @@ X_transformed = x.fit_transform(m[:150])
 t2=time.time()-t1
 print(f"Data : {X_transformed}")
 print(f"t-LLE : {t2}")
+
+m=X_transformed
+Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
+
 #--------------------------------------------------------------------------------------------------------
 print(f"data : {m}")
 True_label=[
