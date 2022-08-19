@@ -35,6 +35,8 @@ from itertools import cycle, islice
 import getopt, sys
 import pandas as pd
 import os
+from sklearn.manifold import LocallyLinearEmbedding
+
 # from numpyencoder import NumpyEncoder
 # --------------------------------------save code--------------------------------------------------
 '''countg=0
@@ -234,10 +236,10 @@ with open('/content/drive/MyDrive/Colab Notebooks/inputobject.json', 'r') as ope
 
 
 dim = 4
-m = DataSet.data()
-True_label = m[1]
-m = m[0].Data#type of m and True_labels is List
-Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
+# m = DataSet.data()
+# True_label = m[1]
+# m = m[0].Data#type of m and True_labels is List
+# Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
 
 m=[[5.1,3.5,1.4,0.2],
 [4.9,3,1.4,0.2],
@@ -390,11 +392,21 @@ m=[[5.1,3.5,1.4,0.2],
 [6.2,3.4,5.4,2.3],
 [5.9,3,5.1,1.8]]
 Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
-m = NormalizeData(m)#normalize
-Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
-def NormalizeData(data):
-    return (data - np.min(data)) / (np.max(data) - np.min(data))
+#------------------------------------------Normalized----------------------------------------------------
+# m = NormalizeData(m)#normalize
+# Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
+# def NormalizeData(data):
+#     return (data - np.min(data)) / (np.max(data) - np.min(data))
+#-------------------------------------------------------------------------------------------------------
 
+#---------------------------------LL--------------------------------------------------------------------
+t1=time.time()
+x = LocallyLinearEmbedding(n_components=2)
+X_transformed = x.fit_transform(m[0][:Number_Data])
+t2=time.time()-t1
+print(f"Data : {X_transformed}")
+print(f"t-LLE : {t2}")
+#-------------------------------------------------------------------------------------------------------
 print(f"data : {m}")
 True_label=[
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
