@@ -55,6 +55,8 @@ class make_Hex():
         # print(f"data : {np.array(self.Data)}")#-------
         numGridX = int(np.ceil(((maxX-minX)/(3*(self.Eps/2)))*2))  # ==> 5
         numGridY = int(np.ceil((maxY-minY)/(0.866*self.Eps)))  # ==> 4
+        GX=[]
+        GX.append(numGridX,numGridY)
         GX = int(numGridX * numGridY)
         # print(f"xgrid,ygrid,allgrid : {numGridX,numGridY,GX}")nnn
         # print(f"all grid : {GX}")
@@ -143,7 +145,7 @@ class make_Hex():
         # print(f"dim_Grids,NonEmptygrids : {dim_Grids,NonEmptyGrid}")nnn
         time_partHex=time.time()-st_time_partHex
         print(f"partition time hex : {time_partHex}")
-        return dim_Grids, NonEmptyGrid,int(GX)
+        return dim_Grids, NonEmptyGrid,GX
         # *****************************plt.show()
 
     def ahex(self, p):
