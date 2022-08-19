@@ -410,7 +410,7 @@ print(f"t-LLE : {t2}")
 
 m=X_transformed
 Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
-
+dim=2
 #--------------------------------------------------------------------------------------------------------
 print(f"data : {m}")
 True_label=[
