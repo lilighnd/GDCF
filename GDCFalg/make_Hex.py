@@ -43,6 +43,8 @@ class make_Hex():
 
         maxY = max(self.Data[:, 1])  # ==> 21
         minY = min(self.Data[:, 1])  # ==> 1min(Data[1])
+        print(f"maxx,minx : {maxX,minX}")
+        print(f"maxy,miny : {maxY,minY}")
 
         DataInGrid = []
         flg = True
