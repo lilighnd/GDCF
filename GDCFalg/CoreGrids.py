@@ -29,8 +29,8 @@ class CoreGrids:
             dists = self.distances(self.m[pointOfData])
             if (dists <= self.Eps).sum() >= self.MinPts:
                 Core_Objects.append(pointOfData)
-                print(f"pointOfData : {pointOfData}") 
-                print(f"dist : {dists}")
+                # print(f"pointOfData : {pointOfData}") 
+                # print(f"dist : {dists}")
                 continue
 
             # count = 0
