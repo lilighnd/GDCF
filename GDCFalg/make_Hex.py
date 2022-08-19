@@ -143,7 +143,7 @@ class make_Hex():
         # print(f"dim_Grids,NonEmptygrids : {dim_Grids,NonEmptyGrid}")nnn
         time_partHex=time.time()-st_time_partHex
         print(f"partition time hex : {time_partHex}")
-        return dim_Grids, NonEmptyGrid
+        return dim_Grids, NonEmptyGrid,GX
         # *****************************plt.show()
 
     def ahex(self, p):
