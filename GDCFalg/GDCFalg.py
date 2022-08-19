@@ -537,7 +537,7 @@ print(modeGrid,int(1))
 if modeGrid == int(1):
     print("Hex mode")
     parts=make_Hex(Data,Eps)
-    Grids,gridData=parts.GridHex()
+    Grids,gridData,numGrid_dim=parts.GridHex()
 
     
 
