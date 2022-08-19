@@ -300,7 +300,7 @@ class Make_Square():
 #---------------------------------------------square n-dim---------------------------------------------------
     def GridSqn(self):
         LengthCell = (self.Eps/np.sqrt(self.dim))
-        print(f"LengthCell :{LengthCell}")
+        # print(f"LengthCell :{LengthCell}")
         numberOfGrid=[]
         dim_Grids1=[]
         NonEmptyGrid1=[]
@@ -314,8 +314,8 @@ class Make_Square():
             if num_G<0:
                 numberOfGrid.append(0)
             numberOfGrid.append(num_G)
-        print(f"min,max,numberOfGrid:{Min,Max,num_G}")
-        print(f"numg : {numberOfGrid,x}")
+        # print(f"min,max,numberOfGrid:{Min,Max,num_G}")
+        # print(f"numg : {numberOfGrid,x}")
 
 
     
@@ -325,7 +325,7 @@ class Make_Square():
                 Number_Grid=int((np.ceil((self.Data[i][j]-(Min[j]-0.01))/LengthCell)))-1
                 if Number_Grid<0:
                     Number_Grid=0
-                print(f"Number_Grid : {len(self.Data),len(self.Data[0]),self.Data[i][j],i,j,Number_Grid}")
+                # print(f"Number_Grid : {len(self.Data),len(self.Data[0]),self.Data[i][j],i,j,Number_Grid}")
                 DimGrid.append(Number_Grid)
             if DimGrid not in dim_Grids1:
                 dim_Grids1.append(DimGrid)
@@ -338,8 +338,8 @@ class Make_Square():
                 # ind=dim_Grids.index(DimGrid)
                 NonEmptyGrid1[ind].append(i)
         
-        print(f"dim_grids : {dim_Grids1}")   
-        print(f"NonEmptyGrid : {NonEmptyGrid1}")  
+        # print(f"dim_grids : {dim_Grids1}")   
+        # print(f"NonEmptyGrid : {NonEmptyGrid1}")  
         return dim_Grids1,NonEmptyGrid1,numberOfGrid
 
         

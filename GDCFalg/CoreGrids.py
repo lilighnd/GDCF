@@ -17,6 +17,8 @@ class CoreGrids:
         # print(self.m)
 
     def distances(self, Point):
+        print(f"m,point : {self.m,[Point]}")
+
         dist = distance.cdist([Point], self.m, 'euclidean')
         # print(f"dist : {dist}")
         return dist
