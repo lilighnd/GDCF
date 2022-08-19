@@ -394,6 +394,8 @@ m = NormalizeData(m)#normalize
 Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
 def NormalizeData(data):
     return (data - np.min(data)) / (np.max(data) - np.min(data))
+
+print(f"data : {m}")
 True_label=[
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 ,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
