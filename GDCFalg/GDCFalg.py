@@ -400,10 +400,10 @@ Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
 #--------------------------------------------------------------------------------------------------------
 
 #---------------------------------LL---------------------------------------------------------------------
-print(m[0][:Number_Data])
+print(m[:150])
 t1=time.time()
 x = LocallyLinearEmbedding(n_components=2)
-X_transformed = x.fit_transform(m[0][:Number_Data])
+X_transformed = x.fit_transform(m[:150])
 t2=time.time()-t1
 print(f"Data : {X_transformed}")
 print(f"t-LLE : {t2}")
