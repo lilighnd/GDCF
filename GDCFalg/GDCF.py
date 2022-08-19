@@ -158,10 +158,10 @@ class GDCF:
                 if mergability(self, indx_g, indx_gprim, DataGrids, Data) == True:
                     if any(gprim in sublist for sublist in Forest) == False:
                         Forest[Root_g].append(gprim)  # new
-                        print(f"g , gprim are mergable and gprim add to forest : {Forest}")
+                        # print(f"g , gprim are mergable and gprim add to forest : {Forest}")
                     else:
                         A.append(gprim)
-                        print(f"g , gprim are not mergable and gprim add to A : {A}")
+                        # print(f"g , gprim are not mergable and gprim add to A : {A}")
 
 
 
@@ -285,7 +285,7 @@ def mergability(self, ind_g, ind_gprim, DataGrids, Data):
             # print(f"Data[DataGrids[ind_gprim][dataNeighbourGrid]]: {Data[DataGrids[ind_gprim][dataNeighbourGrid]]}")
             dist = distance.euclidean(
                 Data[DataGrids[ind_g][data]], Data[DataGrids[ind_gprim][dataNeighbourGrid]])  # Calculate euclidean
-            print(f"dist: {dist}")
+            # print(f"dist: {dist}")
             if dist <= self.Eps and (DataGrids[ind_g][data] in self.Core_Objects and DataGrids[ind_gprim][dataNeighbourGrid] in self.Core_Objects):
                 return True
 
