@@ -17,10 +17,8 @@ class CoreGrids:
         # print(self.m)
 
     def distances(self, Point):
-        print(f"m,point : {self.m,[Point]}")
-
+        # print(f"m,point : {self.m,[Point]}")
         dist = distance.cdist([Point], self.m, 'euclidean')
-        # print(f"dist : {dist}")
         return dist
 
     def Find_CoreObject(self):
@@ -31,6 +29,8 @@ class CoreGrids:
             dists = self.distances(self.m[pointOfData])
             if (dists <= self.Eps).sum() >= self.MinPts:
                 Core_Objects.append(pointOfData)
+                print(f"pointOfData : {pointOfData}") 
+                print(f"dist : {dist}")
                 continue
 
             # count = 0
