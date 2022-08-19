@@ -390,7 +390,10 @@ m=[[5.1,3.5,1.4,0.2],
 [6.2,3.4,5.4,2.3],
 [5.9,3,5.1,1.8]]
 Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
-
+m = NormalizeData(m)#normalize
+Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
+def NormalizeData(data):
+    return (data - np.min(data)) / (np.max(data) - np.min(data))
 True_label=[
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 ,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
