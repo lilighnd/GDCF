@@ -397,17 +397,17 @@ Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
 # Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
 # def NormalizeData(data):
 #     return (data - np.min(data)) / (np.max(data) - np.min(data))
-#-------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
 
-#---------------------------------LL--------------------------------------------------------------------
+#---------------------------------LL---------------------------------------------------------------------
 print(m[0][:Number_Data])
 t1=time.time()
 x = LocallyLinearEmbedding(n_components=2)
-X_transformed = x.fit_transform(m[:Number_Data])
+X_transformed = x.fit_transform(m[0][:Number_Data])
 t2=time.time()-t1
 print(f"Data : {X_transformed}")
 print(f"t-LLE : {t2}")
-#-------------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------
 print(f"data : {m}")
 True_label=[
 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
