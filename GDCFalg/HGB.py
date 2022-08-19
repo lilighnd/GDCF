@@ -23,7 +23,7 @@ class HGB():
             print(f"rowhgb : {self.rowHGB}")
             b=np.zeros((self.rowHGB[i],len(self.nonemptyGrids)))
             B.append(b)
-        
+        print(F"B : {B}")
 
         # numG[numGX,numGY]
         # for i in range(self.d):
