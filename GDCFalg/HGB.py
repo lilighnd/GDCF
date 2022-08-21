@@ -20,11 +20,11 @@ class HGB():
         #     B.append(b)
         # print(f"self.rowHGB:{self.rowHGB}")
         for i in range(self.d):
-            print(f"nonemptyGrids : {len(self.nonemptyGrids)}")
-            print(f"rowhgb : {self.rowHGB}")
+            # print(f"nonemptyGrids : {len(self.nonemptyGrids)}")
+            # print(f"rowhgb : {self.rowHGB}")
             b=np.zeros((self.rowHGB[i],len(self.nonemptyGrids)))
             B.append(b)
-        print(F"B : {B}")
+        # print(F"B : {B}")
 
         # numG[numGX,numGY]
         # for i in range(self.d):
@@ -33,11 +33,11 @@ class HGB():
         # print(f"nonEmptyGrid : {self.nonemptyGrids}")
         for g in self.nonemptyGrids:
             for i in range(self.d):
-                print(f"g,i : {g,i}")
+                # print(f"g,i : {g,i}")
                 pos=g[i]
                 B[i][pos][k]=1
-                print(f"B : {B}")
-                print(f"i,pos,k : {i,pos,k}")
+                # print(f"B : {B}")
+                # print(f"i,pos,k : {i,pos,k}")
 
             k+=1
         
