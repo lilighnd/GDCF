@@ -4,7 +4,7 @@ from scipy.spatial import distance
 import random
 import json
 import time
-
+from scipy.spatial.distance import cityblock
 
 class GDCF:
     def __init__(self, CoreGrids, coreobjects, dim, b, Minpts, Eps):
@@ -278,7 +278,7 @@ def mergability(self, ind_g, ind_gprim, DataGrids, Data):
     # m=[[],[]]
     for data in range(len(DataGrids[ind_g])):
         for dataNeighbourGrid in range(len(DataGrids[ind_gprim])):
-            dist = distance.manhattan(
+            dist = distance.cityblock(
                 Data[DataGrids[ind_g][data]], Data[DataGrids[ind_gprim][dataNeighbourGrid]])  # Calculate euclidean
             # dist = distance.euclidean(
             #     Data[DataGrids[ind_g][data]], Data[DataGrids[ind_gprim][dataNeighbourGrid]])  # Calculate euclidean
