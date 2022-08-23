@@ -565,7 +565,7 @@ if modeGrid == int(2):
     print("square mode")
     parts = Make_Square(Data,Eps,dim)
     # Grids, gridData = parts.GridHex()
-    Grids, gridData,numGrid_dim = parts.Make_Square()
+    Grids, gridData,numGrid_dim = parts.GridHex()
     print("run grid")
 print(f"time_grid = {time.time() - start_time_grid}")
 # -----------------------Recalling Saved Cores-------------------
