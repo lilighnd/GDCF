@@ -11,8 +11,7 @@ import time
 class make_Hex():
     def __init__(self, D, e):
         self.d = D
-        self.Data = (np.array(D))
-        # self.Data = np.transpose(np.array(D))
+        self.Data = np.transpose(np.array(D))
         self.Eps = e
 
     def GridHex(self):
