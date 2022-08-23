@@ -564,6 +564,7 @@ if modeGrid == int(1):
 if modeGrid == int(2):
     print("square mode")
     parts = Make_Square(Data,Eps,dim)
+    print(Data)
     # Grids, gridData = parts.GridHex()
     Grids, gridData,numGrid_dim = parts.GridHex()
     print("run grid")
