@@ -112,8 +112,8 @@ class Make_Square():
                 NonEmptyGrid.append(DataInGrid[i])
 
         time_partSq=time.time()-st_time_partSq
-        print(f"dim_grids : {dim_Grids}")   
-        print(f"NonEmptyGrid : {NonEmptyGrid}")   
+        # print(f"dim_grids : {dim_Grids}")   
+        # print(f"NonEmptyGrid : {NonEmptyGrid}")   
         return dim_Grids,NonEmptyGrid,[numGridX,numGridY]
         #*****************************plt.show()
 
