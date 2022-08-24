@@ -20,8 +20,8 @@ class HGB():
         #     B.append(b)
         # print(f"self.rowHGB:{self.rowHGB}")
         for i in range(self.d):
-            print(f"nonemptyGrids : {len(self.nonemptyGrids)}")
-            print(f"rowhgb : {self.rowHGB}")
+            # print(f"nonemptyGrids : {len(self.nonemptyGrids)}")
+            # print(f"rowhgb : {self.rowHGB}")
             b=np.zeros((self.rowHGB[i],len(self.nonemptyGrids)))
             B.append(b)
         # print(F"B : {B}")
