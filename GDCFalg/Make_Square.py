@@ -114,7 +114,7 @@ class Make_Square():
         time_partSq=time.time()-st_time_partSq
         print(f"dim_grids : {dim_Grids}")   
         print(f"NonEmptyGrid : {NonEmptyGrid}")   
-        return dim_Grids,NonEmptyGrid
+        return dim_Grids,NonEmptyGrid,GX
         #*****************************plt.show()
 
 
