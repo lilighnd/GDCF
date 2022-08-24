@@ -528,7 +528,7 @@ Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
 
 
 
-print(Data,True_label)
+# print(Data,True_label)
 Eps = float(json_object["Eps"])
 MinPts = int(json_object["Minpts"])
 
@@ -564,7 +564,7 @@ if modeGrid == int(1):
 if modeGrid == int(2):
     print("square mode")
     parts = Make_Square(Data,Eps,dim)
-    print(Data)
+    # print(Data)
     # Grids, gridData = parts.GridHex()
     Grids, gridData,numGrid_dim = parts.GridHex()
     print("run grid")
