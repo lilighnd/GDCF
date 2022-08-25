@@ -284,7 +284,7 @@ def mergability(self, ind_g, ind_gprim, DataGrids, Data):
             #     Data[DataGrids[ind_g][data]], Data[DataGrids[ind_gprim][dataNeighbourGrid]])  # Calculate euclidean
             # dist = distance.euclidean(
             #     Data[DataGrids[ind_g][data]], Data[DataGrids[ind_gprim][dataNeighbourGrid]])  # Calculate euclidean
-            dist = distance.canberra(
+            dist = distance.correlation(
                 Data[DataGrids[ind_g][data]], Data[DataGrids[ind_gprim][dataNeighbourGrid]])  # Calculate euclidean
             # print(f"dist: {dist}")
             if dist <= self.Eps and (DataGrids[ind_g][data] in self.Core_Objects and DataGrids[ind_gprim][dataNeighbourGrid] in self.Core_Objects):
