@@ -280,10 +280,10 @@ def mergability(self, ind_g, ind_gprim, DataGrids, Data):
         for dataNeighbourGrid in range(len(DataGrids[ind_gprim])):
             # dist = distance.cityblock(
             #     Data[DataGrids[ind_g][data]], Data[DataGrids[ind_gprim][dataNeighbourGrid]])  # Calculate euclidean
-            # dist = distance.chebyshev(
-            #     Data[DataGrids[ind_g][data]], Data[DataGrids[ind_gprim][dataNeighbourGrid]])  # Calculate euclidean
-            dist = distance.euclidean(
+            dist = distance.chebyshev(
                 Data[DataGrids[ind_g][data]], Data[DataGrids[ind_gprim][dataNeighbourGrid]])  # Calculate euclidean
+        #    ta dist = distance.euclidean(
+        #         Da[DataGrids[ind_g][data]], Data[DataGrids[ind_gprim][dataNeighbourGrid]])  # Calculate euclidean
             # print(f"dist: {dist}")
             if dist <= self.Eps and (DataGrids[ind_g][data] in self.Core_Objects and DataGrids[ind_gprim][dataNeighbourGrid] in self.Core_Objects):
                 return True
