@@ -235,7 +235,7 @@ with open('/content/drive/MyDrive/Colab Notebooks/inputobject.json', 'r') as ope
 
 
 
-dim = 2
+dim = int(json_object["features"])
 m = DataSet.data()
 True_label = m[1]
 m = m[0].Data#type of m and True_labels is List
