@@ -22,7 +22,6 @@ class CoreGrids:
         # dist = distance.cdist([Point], self.m, 'chebyshev')
         # dist = distance.cdist([Point], self.m, 'cityblock')
         dist = distance.cdist([Point], self.m, 'jaccard')
-        print(dist)
         return dist
 
     def Find_CoreObject(self):
