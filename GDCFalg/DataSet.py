@@ -223,7 +223,7 @@ class DataSet:
         # Data=datand#for n-dimention data
         # X_train,X_test,Y_train,Y_test = train_test_split(moons,True_label,test_size=1,random_state=42)
         # print(f"Data and labels :{Data,len(True_label)}")
-        print(Data)
+        # print(Data)
         return cls(Data),True_label   
         # return cls(X_test),Y_test   
     @classmethod
