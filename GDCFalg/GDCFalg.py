@@ -531,7 +531,7 @@ Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
 # print(Data,True_label)
 Eps = float(json_object["Eps"])
 MinPts = int(json_object["Minpts"])
-
+print(f"dim :{dim}")
 G = []
 start_time = time.time()
 # ---------------Hex Grids-----------
