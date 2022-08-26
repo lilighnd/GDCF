@@ -229,13 +229,13 @@ class DataSet:
             path = f'/content/drive/MyDrive/wine-clustering.csv'
             df = pd.read_csv(path)
             data = df.values.tolist()
-
+            print(data)
         
             for i in range(len(data)):
                 True_label.append(data[i][-1])
                 data[i] = data[i][0:12]
             Data=data
-            
+
         True_label = data[1]
         Data=data[0]
         return cls(Data),True_label   
