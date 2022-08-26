@@ -226,14 +226,15 @@ class DataSet:
 
         if D == "Wine":
             True_label=[]
+            data=[]
             path = f'/content/drive/MyDrive/wine-clustering.csv'
             df = pd.read_csv(path)
-            data = df.values.tolist()
+            data1 = df.values.tolist()
             print(data)
         
-            for i in range(len(data)):
-                True_label.append(data[i][-1])
-                data[i] = data[i][0:12]
+            for i in range(len(data1)):
+                True_label.append(data1[i][-1])
+                data.append(data1[i][0:12])
             print(data)
 
             Data=data
