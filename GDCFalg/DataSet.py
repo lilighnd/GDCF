@@ -217,8 +217,7 @@ class DataSet:
             df_data = pd.DataFrame(data[0])
             df_data.to_excel(excel_name_label,index=False)
 
-        True_label = data[1]
-        Data=data[0] #for 1-dim
+        #for 1-dim
         # Data=normalized#for 3-dim
         # Data=datand#for n-dimention data
         # X_train,X_test,Y_train,Y_test = train_test_split(moons,True_label,test_size=1,random_state=42)
@@ -237,6 +236,8 @@ class DataSet:
                 data[i] = data[i][0:12]
             Data=data
             
+        True_label = data[1]
+        Data=data[0]
         return cls(Data),True_label   
         # return cls(X_test),Y_test   
 
