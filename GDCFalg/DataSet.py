@@ -92,11 +92,11 @@ class DataSet:
     
 
     @classmethod
-    def Test30(cls):
+    def Datasets(cls):
         True_label=[]
         #path = f'/content/blobs/blobsData1m.csv'
         # path = f'/content/drive/MyDrive/Colab Notebooks/blobsData1m.csv'
-        path = f'/content/drive/MyDrive/Colab Notebooks/moonsData38.csv'
+        path = f'/content/drive/MyDrive/wine-clustering.csv'
         df = pd.read_csv(path)
         data = df.values.tolist()
 
@@ -108,7 +108,7 @@ class DataSet:
         # for i in range(len(data)):
         for i in range(len(data)):
             True_label.append(data[i][-1])
-            data[i] = data[i][0:2]
+            data[i] = data[i][0:12]
             
         
         
@@ -132,7 +132,7 @@ class DataSet:
 
         
     @classmethod
-    def dataclutot(cls):
+    def data(cls):
         True_label=[]
         path = f'/content/drive/MyDrive/aggregation.csv'
         df = pd.read_csv(path)
@@ -224,8 +224,24 @@ class DataSet:
         # X_train,X_test,Y_train,Y_test = train_test_split(moons,True_label,test_size=1,random_state=42)
         # print(f"Data and labels :{Data,len(True_label)}")
         # print(Data)
+
+        if D == "Wine":
+            True_label=[]
+            path = f'/content/drive/MyDrive/wine-clustering.csv'
+            df = pd.read_csv(path)
+            data = df.values.tolist()
+
+        
+            for i in range(len(data)):
+                True_label.append(data[i][-1])
+                data[i] = data[i][0:12]
+            Data=data
+            
         return cls(Data),True_label   
         # return cls(X_test),Y_test   
+
+
+
     @classmethod
     def d1(cls):
         True_label=[]
