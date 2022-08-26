@@ -216,7 +216,8 @@ class DataSet:
             excel_name_label = f'/content/drive/MyDrive/Colab Notebooks/mydata.xlsx'
             df_data = pd.DataFrame(data[0])
             df_data.to_excel(excel_name_label,index=False)
-
+        # True_label = data[1]
+        # Data=data[0]
         #for 1-dim
         # Data=normalized#for 3-dim
         # Data=datand#for n-dimention data
@@ -234,13 +235,12 @@ class DataSet:
         
             for i in range(len(data1)):
                 True_label.append(data1[i][-1])
-                data.append(data1[i][0:12])
+                data.append(data1[i][0:13])
             print(data)
 
             Data=data
 
-        True_label = data[1]
-        Data=data[0]
+        
         return cls(Data),True_label   
         # return cls(X_test),Y_test   
 
