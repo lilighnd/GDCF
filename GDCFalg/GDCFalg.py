@@ -36,7 +36,7 @@ import getopt, sys
 import pandas as pd
 import os
 from sklearn.manifold import LocallyLinearEmbedding
-
+from sklearn.cluster import DBSCAN
 # from numpyencoder import NumpyEncoder
 # --------------------------------------save code--------------------------------------------------
 '''countg=0
@@ -240,8 +240,10 @@ m = DataSet.data()
 True_label = m[1]
 m = m[0].Data#type of m and True_labels is List
 Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
-print(m)
-
+# print(m)
+clustering = DBSCAN(eps=3, min_samples=2).fit(Data)
+R1 = adjusted_rand_score(True_label, clustering.labels_)
+print(R1)
 #-----------------------------------start iris---------------------------------------------
 # m=[[5.1,3.5,1.4,0.2],
 # [4.9,3,1.4,0.2],
