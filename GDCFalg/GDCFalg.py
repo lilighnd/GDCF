@@ -241,7 +241,7 @@ True_label = m[1]
 m = m[0].Data#type of m and True_labels is List
 Data=np.transpose(np.array(m))#type of Data is array and Data is transpose of m
 # print(m)
-clustering = DBSCAN(eps=50, min_samples=14).fit(m)
+clustering = DBSCAN(eps= float(json_object["Eps"]), min_samples=int(json_object["Minpts"])).fit(m)
 R1 = adjusted_rand_score(True_label, clustering.labels_)
 print(R1)
 #-----------------------------------start iris---------------------------------------------
