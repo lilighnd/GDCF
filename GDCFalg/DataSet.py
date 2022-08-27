@@ -275,6 +275,22 @@ class DataSet:
 
             Data=data
         
+
+        if D == "indian":
+            True_label=[]
+            data=[]
+            path = f'/content/drive/MyDrive/Indian.csv'
+            df = pd.read_csv(path)
+            data1 = df.values.tolist()
+        
+            for i in range(len(data1)):
+                True_label.append(data1[i][-1])
+                data.append(data1[i][0:9])
+            # print(data)
+            print(f"data:{data}")
+            print(f"label:{True_label}")
+
+            Data=data
         return cls(Data),True_label   
         # return cls(X_test),Y_test   
 
