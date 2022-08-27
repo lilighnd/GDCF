@@ -250,7 +250,7 @@ class DataSet:
         
             for i in range(len(data1)):
                 True_label.append(data1[i][-1])
-                data.append(data1[i][0:2])
+                data.append(data1[i][0:4])
             # print(data)
 
             Data=data
