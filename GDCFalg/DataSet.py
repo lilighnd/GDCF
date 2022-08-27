@@ -217,10 +217,10 @@ class DataSet:
             df_data = pd.DataFrame(data[0])
             df_data.to_excel(excel_name_label,index=False)
         
-        True_label = data[1]
-        Data=data[0]
-        print(True_label)
-        print(Data)
+        # True_label = data[1]
+        # Data=data[0]
+        # print(True_label)
+        # print(Data)
         #for 1-dim
         # Data=normalized#for 3-dim
         # Data=datand#for n-dimention data
@@ -255,6 +255,7 @@ class DataSet:
                 data.append(data1[i][0:2])
             # print(data)
             print(f"data:{data}")
+            print(f"label:{True_label}")
 
             Data=data
         
