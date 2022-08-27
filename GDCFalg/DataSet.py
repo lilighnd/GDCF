@@ -285,7 +285,7 @@ class DataSet:
         
             for i in range(len(data1)):
                 True_label.append(data1[i][-1])
-                data.append(data1[i][0:9])
+                data.append(data1[i][0:8])
             # print(data)
             print(f"data:{data}")
             print(f"label:{True_label}")
