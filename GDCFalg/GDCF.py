@@ -282,10 +282,10 @@ def mergability(self, ind_g, ind_gprim, DataGrids, Data):
             #     Data[DataGrids[ind_g][data]], Data[DataGrids[ind_gprim][dataNeighbourGrid]])  # Calculate euclidean
             # dist = distance.minkowski(
             #     Data[DataGrids[ind_g][data]], Data[DataGrids[ind_gprim][dataNeighbourGrid]])  # Calculate euclidean
-            # dist = distance.chebyshev(
-            #     Data[DataGrids[ind_g][data]], Data[DataGrids[ind_gprim][dataNeighbourGrid]])  # Calculate euclidean
-            dist = distance.euclidean(
+            dist = distance.chebyshev(
                 Data[DataGrids[ind_g][data]], Data[DataGrids[ind_gprim][dataNeighbourGrid]])  # Calculate euclidean
+            # dist = distance.euclidean(
+            #     Data[DataGrids[ind_g][data]], Data[DataGrids[ind_gprim][dataNeighbourGrid]])  # Calculate euclidean
             # dist = distance.jaccard(
             #     Data[DataGrids[ind_g][data]], Data[DataGrids[ind_gprim][dataNeighbourGrid]])  # Calculate euclidean
             # print(f"dist: {dist}")
